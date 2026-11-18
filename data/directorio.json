@@ -1,0 +1,6 @@
+{
+"validado": false,
+"nota": "Directorio de canalización. Mientras 'validado' sea false, la app solo muestra el 911 y no publica ningún otro teléfono. Para activarlo: capture las instituciones validadas y cambie 'validado' a true. Campos: nombre, servicio, telefono (solo dígitos), direccion, horario, municipio, fuente, fecha_validacion.",
+"ejemplo_de_registro": {"nombre":"", "servicio":"", "telefono":"", "direccion":"", "horario":"", "municipio":"", "fuente":"", "fecha_validacion":""},
+"instituciones": []
+}

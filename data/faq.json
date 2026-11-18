@@ -1,0 +1,768 @@
+{
+ "nota": "Respuestas redactadas a partir del texto literal de los artículos citados (corte 18/11/2026). Cada cita se muestra con el nombre del ordenamiento y su fecha de última reforma tomados de docs.json.",
+ "faq": [
+  {
+   "id": "tipos",
+   "modo": "ambos",
+   "q": "¿Qué tipos de violencia reconoce la ley?",
+   "kw": "tipos violencia clases formas modalidades cuales son reconoce ley psicologica fisica patrimonial economica sexual digital vicaria pega golpea golpes golpeo empuja esposo pareja marido novio exnovio maltrato maltrata",
+   "intro": "La Ley General de Acceso de las Mujeres a una Vida Libre de Violencias reconoce estos tipos de violencia:",
+   "lista": [
+    "Psicológica: insultos, humillaciones, celos, amenazas, abandono, rechazo o limitar tus decisiones.",
+    "Física: cualquier daño no accidental con la fuerza, un arma, un objeto o una sustancia.",
+    "Patrimonial: quitar, destruir o retener tus cosas, documentos, bienes o dinero.",
+    "Económica: controlar tus ingresos o pagarte menos por el mismo trabajo.",
+    "Sexual: cualquier acto que degrada o daña tu cuerpo o tu sexualidad.",
+    "A través de interpósita persona: dañar o amenazar a tus hijas, hijos o personas cercanas para lastimarte.",
+    "Cualquier otra forma parecida que dañe tu dignidad, integridad o libertad."
+   ],
+   "cierre": "La ley de Jalisco agrega de forma expresa la violencia digital y la violencia vicaria. Además, la ley distingue los ámbitos donde ocurre la violencia (modalidades): familiar, laboral y docente, en la comunidad, institucional, política, digital y mediática; su forma extrema es la violencia feminicida.",
+   "facil": [
+    "La ley reconoce varias formas de violencia.",
+    "No solo los golpes son violencia.",
+    "También los insultos, los celos y las amenazas.",
+    "También quitarte tu dinero o tus papeles.",
+    "También dañar a tus hijas o hijos para lastimarte.",
+    "Ninguna forma de violencia es tu culpa."
+   ],
+   "infografia": "tipos",
+   "citas": [
+    {
+     "d": "080",
+     "u": "Artículo 6"
+    },
+    {
+     "d": "050",
+     "u": "Artículo 10"
+    },
+    {
+     "d": "050",
+     "u": "Artículo 11"
+    },
+    {
+     "d": "080",
+     "u": "Artículo 21"
+    }
+   ]
+  },
+  {
+   "id": "psicologica",
+   "modo": "ciudadania",
+   "q": "¿Cómo sé si lo que vivo es violencia psicológica?",
+   "kw": "psicologica emocional insulta humilla grita celos celoso amenaza menosprecia ignora controla decide me hace sentir mal autoestima revisa celular telefono vigila controla prohibe no me deja",
+   "intro": "La ley describe la violencia psicológica como cualquier acto u omisión que dañe tu estabilidad emocional. Puede ser:",
+   "lista": [
+    "Insultos, humillaciones o devaluación (hacerte sentir que no vales).",
+    "Celos excesivos (la ley los llama celotipia).",
+    "Amenazas.",
+    "Abandono, descuido reiterado, indiferencia o rechazo.",
+    "Comparaciones destructivas o marginación.",
+    "Limitar que tomes tus propias decisiones."
+   ],
+   "cierre": "La ley reconoce que este tipo de violencia puede llevar a la depresión, al aislamiento y a dañar tu autoestima. No necesitas tener golpes o lesiones para que sea violencia.",
+   "facil": [
+    "Si te insultan o te humillan, es violencia.",
+    "Si te amenazan, es violencia.",
+    "Si te celan y te controlan, es violencia.",
+    "No necesitas tener golpes para pedir ayuda."
+   ],
+   "citas": [
+    {
+     "d": "080",
+     "u": "Artículo 6",
+     "det": "fracción I"
+    },
+    {
+     "d": "050",
+     "u": "Artículo 10",
+     "det": "fracción II"
+    }
+   ]
+  },
+  {
+   "id": "patrimonial",
+   "modo": "ciudadania",
+   "q": "Me quita el dinero o mis documentos: ¿eso es violencia?",
+   "kw": "dinero sueldo quita papeles documentos credencial acta escrituras casa bienes gasto no me da controla dinero patrimonial economica pension",
+   "intro": "Sí. La ley lo reconoce como dos tipos de violencia:",
+   "lista": [
+    "Violencia patrimonial: quitar, destruir, retener o esconder tus objetos, documentos personales, bienes o dinero para tus necesidades.",
+    "Violencia económica: controlar, quitar o limitar tus ingresos, vigilar el gasto para dominarte, no aportar al sustento familiar pudiendo hacerlo, o limitar cómo usas tus propios bienes."
+   ],
+   "cierre": "La ley de Jalisco enumera expresamente estas conductas de violencia económica. Puedes pedir orientación en un Centro de Justicia para las Mujeres.",
+   "facil": [
+    "Si te quita tu dinero, es violencia.",
+    "Si esconde tus papeles, es violencia.",
+    "Si no te deja usar tus cosas, es violencia.",
+    "Puedes pedir ayuda."
+   ],
+   "citas": [
+    {
+     "d": "080",
+     "u": "Artículo 6",
+     "det": "fracciones III y IV"
+    },
+    {
+     "d": "050",
+     "u": "Artículo 10",
+     "det": "fracciones III y IV"
+    }
+   ]
+  },
+  {
+   "id": "digital",
+   "modo": "ambos",
+   "q": "Difundieron o amenazan con difundir mis fotos íntimas: ¿qué hago?",
+   "kw": "fotos intimas videos packs difundir publicar subir redes sociales amenaza publicar digital internet whatsapp facebook ley olimpia sexting",
+   "intro": "Difundir, publicar o compartir imágenes, audios o videos íntimos sin tu consentimiento es violencia digital, según la ley general y la ley de Jalisco.",
+   "lista": [
+    "El Ministerio Público o una jueza o juez debe ordenar de inmediato medidas de protección, incluso que las plataformas o redes sociales bloqueen o eliminen ese contenido.",
+    "Para ordenar el retiro, la autoridad necesita identificar la plataforma y el enlace exacto (URL) donde está el contenido. Si puedes hacerlo de forma segura, guarda capturas de pantalla y enlaces.",
+    "La ley de Jalisco también considera violencia digital el acoso, las amenazas y los insultos por internet."
+   ],
+   "cierre": "No es tu culpa. Puedes acudir al Ministerio Público o a un Centro de Justicia para las Mujeres.",
+   "facil": [
+    "Nadie puede compartir tus fotos íntimas sin tu permiso.",
+    "Eso es violencia digital.",
+    "La autoridad puede ordenar que las borren.",
+    "Guarda los enlaces si es seguro para ti.",
+    "No es tu culpa."
+   ],
+   "citas": [
+    {
+     "d": "080",
+     "u": "Artículo 20 Quáter"
+    },
+    {
+     "d": "080",
+     "u": "Artículo 20 Sexies"
+    },
+    {
+     "d": "050",
+     "u": "Artículo 10",
+     "det": "fracción VI"
+    }
+   ]
+  },
+  {
+   "id": "orden",
+   "modo": "ambos",
+   "q": "¿Qué es una orden de protección y cómo la pido?",
+   "kw": "orden de proteccion medida alejamiento restriccion que no se acerque sacarlo de la casa protegerme pedir solicitar como obtengo",
+   "intro": "Las órdenes de protección son medidas urgentes para evitar que la persona agresora te dañe o tenga contacto contigo.",
+   "lista": [
+    "Las pueden dar de oficio o cuando tú las pides: autoridades administrativas, el Ministerio Público o las juezas y jueces.",
+    "En Jalisco las dictan juezas y jueces de primera instancia y municipales, el Ministerio Público y las síndicas y síndicos. La policía debe solicitarlas de inmediato cuando se requieran.",
+    "Pueden incluir, entre otras: que la persona agresora salga del domicilio, que no se acerque ni se comunique contigo, y auxilio de la policía.",
+    "En Jalisco deben expedirse de inmediato o, a más tardar, dentro de las 4 horas siguientes a que la autoridad conoce el hecho.",
+    "Puedes pedirlas en cualquier estado, aunque los hechos ocurrieran en otro.",
+    "No te pueden exigir acreditar tu situación migratoria para dártelas."
+   ],
+   "cierre": "Si estás en peligro ahora, llama al 911.",
+   "facil": [
+    "Una orden de protección te cuida.",
+    "Hace que el agresor no se acerque a ti.",
+    "La puedes pedir al Ministerio Público o a una jueza.",
+    "La policía también debe pedirla por ti.",
+    "Si estás en peligro, llama al 911."
+   ],
+   "citas": [
+    {
+     "d": "080",
+     "u": "Artículo 27"
+    },
+    {
+     "d": "080",
+     "u": "Artículo 28"
+    },
+    {
+     "d": "080",
+     "u": "Artículo 34 Bis"
+    },
+    {
+     "d": "080",
+     "u": "Artículo 34 Undecies"
+    },
+    {
+     "d": "050",
+     "u": "Artículo 57"
+    },
+    {
+     "d": "050",
+     "u": "Artículo 57 A"
+    },
+    {
+     "d": "050",
+     "u": "Artículo 57 D"
+    }
+   ]
+  },
+  {
+   "id": "denunciar",
+   "modo": "ciudadania",
+   "q": "¿Dónde puedo denunciar en Jalisco?",
+   "kw": "denunciar denuncia donde acudo ir a quien acudir querella ministerio publico fiscalia demandar acusar reportar",
+   "intro": "Puedes presentar tu denuncia ante el Ministerio Público (Fiscalía). También puedes acudir a un Centro de Justicia para las Mujeres, que cuenta con agencias del Ministerio Público especializadas en violencia contra las mujeres.",
+   "lista": [
+    "La denuncia puede hacerse por cualquier medio, incluso de forma oral; la autoridad debe registrarla.",
+    "El Ministerio Público y la policía deben investigar sin pedirte requisitos adicionales.",
+    "Los Centros de Justicia para las Mujeres deben dar acceso a la justicia las 24 horas, todos los días del año."
+   ],
+   "cierre": "Tienes derecho a una asesora o asesor jurídico gratuito durante todo el proceso.",
+   "facil": [
+    "Puedes denunciar en el Ministerio Público.",
+    "También en un Centro de Justicia para las Mujeres.",
+    "Puedes contarlo hablando, no necesitas escribir.",
+    "Te deben atender sin pedirte más requisitos."
+   ],
+   "citas": [
+    {
+     "d": "026",
+     "u": "Artículo 221"
+    },
+    {
+     "d": "026",
+     "u": "Artículo 223"
+    },
+    {
+     "d": "080",
+     "u": "Artículo 59 Ter",
+     "det": "fracción IX y párrafo final"
+    },
+    {
+     "d": "026",
+     "u": "Artículo 109",
+     "det": "fracción VII"
+    }
+   ],
+   "directorio": true
+  },
+  {
+   "id": "abogada",
+   "modo": "ciudadania",
+   "q": "¿Tengo derecho a una abogada gratuita?",
+   "kw": "abogada abogado gratis gratuito licenciada asesoria juridica asesor juridico defensor no tengo dinero para abogado representacion legal",
+   "intro": "Sí. Varias leyes te reconocen el derecho a asesoría jurídica gratuita:",
+   "lista": [
+    "Como víctima de violencia: asesoría jurídica gratuita y expedita.",
+    "En un proceso penal: contar con una asesora o asesor jurídico gratuito en cualquier etapa.",
+    "En los Centros de Justicia para las Mujeres: asesoría y orientación jurídica, y representación legal en materia penal, familiar y civil, de forma gratuita.",
+    "En Jalisco, la asesoría jurídica para víctimas es gratuita para todas las que la soliciten."
+   ],
+   "cierre": "",
+   "facil": [
+    "Tienes derecho a una abogada o abogado gratis.",
+    "Te puede ayudar en todo el proceso.",
+    "Pídelo en el Centro de Justicia para las Mujeres."
+   ],
+   "citas": [
+    {
+     "d": "080",
+     "u": "Artículo 52",
+     "det": "fracción IV"
+    },
+    {
+     "d": "026",
+     "u": "Artículo 109",
+     "det": "fracción VII"
+    },
+    {
+     "d": "080",
+     "u": "Artículo 59 Ter",
+     "det": "fracciones II y III"
+    },
+    {
+     "d": "054",
+     "u": "Artículo 119"
+    }
+   ]
+  },
+  {
+   "id": "derechos",
+   "modo": "ambos",
+   "q": "¿Qué derechos tengo como víctima?",
+   "kw": "derechos victima que derechos tengo trato respeto proteccion informacion refugio garantias",
+   "intro": "La ley te reconoce, entre otros, estos derechos:",
+   "lista": [
+    "Que te traten con respeto a tu integridad.",
+    "Protección inmediata y efectiva de las autoridades.",
+    "Información veraz y suficiente, en formatos accesibles, para que decidas qué hacer.",
+    "Asesoría jurídica gratuita y expedita.",
+    "Información médica y psicológica.",
+    "Un refugio mientras lo necesites; si tienes hijas o hijos, pueden ir contigo.",
+    "No ser obligada a conciliar con tu agresor.",
+    "En un proceso penal: atención médica y psicológica de urgencia y ser atendida por personal del sexo que elijas, cuando lo requieras."
+   ],
+   "cierre": "Las mujeres indígenas tienen derecho a intérpretes gratuitos, y las mujeres sordas a interpretación en lengua de señas mexicana.",
+   "facil": [
+    "Te deben tratar con respeto.",
+    "Te deben proteger rápido.",
+    "Te deben explicar tus opciones.",
+    "Tienes derecho a una abogada gratis.",
+    "Nadie te puede obligar a arreglarte con tu agresor."
+   ],
+   "citas": [
+    {
+     "d": "080",
+     "u": "Artículo 52"
+    },
+    {
+     "d": "026",
+     "u": "Artículo 109",
+     "det": "fracciones III y VII"
+    }
+   ]
+  },
+  {
+   "id": "cjm",
+   "modo": "ambos",
+   "q": "¿Qué es un Centro de Justicia para las Mujeres y qué servicios ofrece?",
+   "kw": "centro de justicia para las mujeres cjm que es servicios que hacen donde atienden ciudad mujer",
+   "intro": "Es una institución de atención integral y de procuración e impartición de justicia para mujeres víctimas de violencia, sus hijas e hijos. Por ley debe ofrecer gratis, como mínimo:",
+   "lista": [
+    "Atención médica y psicológica, incluida la contención emocional.",
+    "Asesoría jurídica y representación legal (penal, familiar, civil).",
+    "Ministerio Público especializado en violencia contra las mujeres.",
+    "Albergue temporal, cuidado infantil y trabajo social.",
+    "Protección para víctimas en riesgo grave.",
+    "Apoyo para documentos oficiales, educación, empleo y empoderamiento económico."
+   ],
+   "cierre": "Deben dar acceso a la justicia las 24 horas, todos los días del año. En Jalisco, la Red de Centros de Justicia para las Mujeres los coordina.",
+   "facil": [
+    "Es un lugar que ayuda a mujeres que viven violencia.",
+    "Ahí te atienden gratis.",
+    "Hay abogadas, psicólogas y Ministerio Público.",
+    "También cuidan a tus hijas e hijos.",
+    "Atienden todos los días."
+   ],
+   "citas": [
+    {
+     "d": "080",
+     "u": "Artículo 59 Ter"
+    },
+    {
+     "d": "101",
+     "u": "Artículo 4"
+    },
+    {
+     "d": "080",
+     "u": "Artículo 59 Bis"
+    }
+   ],
+   "directorio": true
+  },
+  {
+   "id": "refugio",
+   "modo": "ciudadania",
+   "q": "¿Puedo ir a un refugio con mis hijas e hijos?",
+   "kw": "refugio albergue casa de seguridad donde quedarme no tengo a donde ir me corrio de la casa hijos hijas dormir",
+   "intro": "Sí. En casos de violencia familiar, puedes acudir a un refugio con tus hijas e hijos. Los refugios deben darles gratis:",
+   "lista": [
+    "Hospedaje, alimentación, vestido y calzado.",
+    "Servicio médico, apoyo psicológico y asesoría jurídica.",
+    "Capacitación y apoyo para conseguir trabajo, si lo deseas."
+   ],
+   "cierre": "Los refugios deben velar por tu seguridad. Nadie puede mantenerte en un refugio en contra de tu voluntad.",
+   "facil": [
+    "Puedes ir a un refugio con tus hijas e hijos.",
+    "Ahí te dan casa, comida y ropa.",
+    "También doctora, psicóloga y abogada.",
+    "Es gratis.",
+    "Puedes irte cuando tú quieras."
+   ],
+   "citas": [
+    {
+     "d": "080",
+     "u": "Artículo 52",
+     "det": "fracciones VI y VIII"
+    },
+    {
+     "d": "080",
+     "u": "Artículo 56"
+    },
+    {
+     "d": "080",
+     "u": "Artículo 54"
+    },
+    {
+     "d": "080",
+     "u": "Artículo 59"
+    },
+    {
+     "d": "050",
+     "u": "Artículo 45 Bis",
+     "det": "fracción III"
+    }
+   ],
+   "directorio": true
+  },
+  {
+   "id": "laboral",
+   "modo": "ambos",
+   "q": "Sufro acoso u hostigamiento en el trabajo: ¿qué hago?",
+   "kw": "acoso hostigamiento trabajo jefe compañero laboral oficina me molesta acoso sexual empleo patron",
+   "intro": "La ley lo reconoce como violencia laboral:",
+   "lista": [
+    "Hostigamiento sexual: cuando quien lo hace tiene poder sobre ti (por ejemplo, tu jefe) y hay conductas de connotación sexual.",
+    "Acoso sexual: aunque no haya subordinación, hay un abuso de poder que te deja en indefensión o en riesgo; puede ser un solo evento o varios.",
+    "En Jalisco también es violencia laboral pagarte menos por el mismo trabajo, impedirte la lactancia, humillarte o pedirte examen de no embarazo para contratarte."
+   ],
+   "cierre": "Si trabajas en el sector privado, la Ley Federal del Trabajo obliga al patrón a tener un protocolo contra el acoso y el hostigamiento, y te permite terminar la relación laboral sin responsabilidad para ti si el patrón o sus representantes te hostigan. En la conciliación laboral, si hay riesgo de revictimización, la autoridad debe evitar que te encuentres con la persona agresora. Si trabajas en el gobierno aplican otras leyes que no forman parte de esta base.",
+   "facil": [
+    "El acoso en el trabajo es violencia.",
+    "No es tu culpa.",
+    "Tu trabajo debe tener reglas para atenderlo.",
+    "Puedes pedir orientación en un Centro de Justicia para las Mujeres."
+   ],
+   "citas": [
+    {
+     "d": "080",
+     "u": "Artículo 10"
+    },
+    {
+     "d": "080",
+     "u": "Artículo 13"
+    },
+    {
+     "d": "050",
+     "u": "Artículo 11",
+     "det": "fracción II"
+    },
+    {
+     "d": "077",
+     "u": "Artículo 3 Bis"
+    },
+    {
+     "d": "077",
+     "u": "Artículo 132",
+     "det": "fracción XXXI"
+    },
+    {
+     "d": "077",
+     "u": "Artículo 51",
+     "det": "fracción II"
+    },
+    {
+     "d": "077",
+     "u": "Artículo 684 E",
+     "det": "fracción XII"
+    }
+   ]
+  },
+  {
+   "id": "mediacion",
+   "modo": "ambos",
+   "q": "¿Me pueden obligar a conciliar o a una mediación con mi agresor?",
+   "kw": "conciliar conciliacion mediacion acuerdo arreglarnos platicar con el agresor perdonar acuerdo reparatorio me obligan",
+   "intro": "No. La ley dice que la víctima no será obligada a participar en mecanismos de conciliación con su agresor.",
+   "lista": [
+    "La ley general ordena evitar la mediación o conciliación, porque no son viables en una relación de sometimiento.",
+    "La ley de Jalisco prohíbe los acuerdos reparatorios o la mediación en cualquier caso, por la misma razón.",
+    "También establece que no te atienda la misma persona que atiende a tu agresor."
+   ],
+   "cierre": "",
+   "facil": [
+    "Nadie te puede obligar a arreglarte con tu agresor.",
+    "La ley lo prohíbe.",
+    "Tienes derecho a decir que no."
+   ],
+   "citas": [
+    {
+     "d": "080",
+     "u": "Artículo 52",
+     "det": "fracción IX"
+    },
+    {
+     "d": "080",
+     "u": "Artículo 8",
+     "det": "fracción IV"
+    },
+    {
+     "d": "050",
+     "u": "Artículo 45 Bis",
+     "det": "fracciones V y VI"
+    }
+   ]
+  },
+  {
+   "id": "desaparicion",
+   "modo": "ambos",
+   "q": "Una persona desapareció: ¿qué hago y cuánto debo esperar?",
+   "kw": "desaparecio desaparecida desaparecido no aparece no llega no se nada de ella no localizada buscar busqueda 72 horas esperar reportar",
+   "intro": "No tienes que esperar. Ningún protocolo puede establecer plazos de espera para iniciar la investigación.",
+   "lista": [
+    "Cualquier persona puede pedir la búsqueda con una noticia, un reporte o una denuncia, incluso de forma anónima.",
+    "La búsqueda y la investigación deben hacerse sin dilación.",
+    "La autoridad que recibe el aviso debe informar de inmediato a la Fiscalía Especializada.",
+    "En Jalisco, la búsqueda inmediata significa iniciar de oficio, sin dilación y con celeridad."
+   ],
+   "cierre": "Si hay riesgo inmediato, llama al 911.",
+   "facil": [
+    "No esperes.",
+    "Avisa de inmediato a la autoridad.",
+    "Cualquier persona puede avisar.",
+    "Puedes hacerlo sin decir tu nombre."
+   ],
+   "citas": [
+    {
+     "d": "090",
+     "u": "Artículo 80"
+    },
+    {
+     "d": "060",
+     "u": "Artículo 4",
+     "det": "fracción V"
+    },
+    {
+     "d": "060",
+     "u": "Artículo 8"
+    }
+   ],
+   "urgente": true
+  },
+  {
+   "id": "uig",
+   "modo": "servidora",
+   "q": "¿Cuáles son las funciones de una Unidad de Igualdad de Género?",
+   "kw": "unidad de igualdad de genero uig funciones que hace atribuciones objetivo transversalizacion perspectiva de genero",
+   "intro": "El Modelo de Atención Integral de Jalisco define las Unidades de Igualdad de Género como órganos especializados, con enfoque integral, de largo plazo, interseccional y transversal, dentro de las Coordinaciones Generales Estratégicas (entre ellas la de Seguridad), la Jefatura de Gabinete y la Secretaría de Planeación y Participación Ciudadana.",
+   "lista": [
+    "Su fin es asegurar que la transversalización e institucionalización de la perspectiva de género sean pilares en la toma de decisiones administrativas y en la ejecución de políticas públicas.",
+    "El Reglamento de la Ley de Acceso de Jalisco incluye entre las acciones para prevenir la violencia institucional promover la creación de Unidades de Género y capacitar al funcionariado público en derechos humanos de las mujeres."
+   ],
+   "cierre": "Nota: los lineamientos específicos de las UIG no forman parte de esta base; esta respuesta se limita a lo que dicen los documentos citados.",
+   "facil": [
+    "Las UIG son oficinas dentro del gobierno.",
+    "Ayudan a que las decisiones tomen en cuenta a las mujeres.",
+    "También ayudan a evitar la violencia institucional."
+   ],
+   "citas": [
+    {
+     "d": "120",
+     "u": "Pág. 182"
+    },
+    {
+     "d": "120",
+     "u": "Pág. 183"
+    },
+    {
+     "d": "135",
+     "u": "Artículo 58",
+     "det": "fracciones I y III"
+    }
+   ]
+  },
+  {
+   "id": "ruta",
+   "modo": "servidora",
+   "q": "Una mujer llega a pedir ayuda: ¿cuál es la ruta de atención?",
+   "kw": "ruta de atencion llega una mujer pedir ayuda que hago como atiendo primer contacto pasos etapas protocolo modelo atender",
+   "intro": "La Ley de Acceso de Jalisco establece cuatro etapas del modelo de atención, que retoma el Protocolo Unificado:",
+   "lista": [
+    "1. Identificación de la problemática: tipo y modalidad de violencia, riesgos y efectos para víctimas directas e indirectas.",
+    "2. Determinación de prioridades: necesidades inmediatas y mediatas, y las medidas de protección que se requieran.",
+    "3. Orientación y canalización: orientación social y jurídica con lenguaje accesible y canalización a la instancia que corresponda, preferentemente al Centro de Justicia para las Mujeres.",
+    "4. Seguimiento: verificar que la derivación se cumpla y que los servicios se presten a tiempo."
+   ],
+   "cierre": "Si detectas riesgo alto o extremo, el Protocolo Unificado prevé la canalización a un refugio temporal. Si hay peligro inmediato, llama al 911.",
+   "facil": [
+    "Primero, escucha y entiende qué pasa.",
+    "Después, decide qué es lo más urgente.",
+    "Luego, explica sus opciones y envíala al lugar correcto.",
+    "Al final, da seguimiento."
+   ],
+   "infografia": "ruta",
+   "citas": [
+    {
+     "d": "050",
+     "u": "Artículo 47"
+    },
+    {
+     "d": "131",
+     "u": "Pág. 14"
+    },
+    {
+     "d": "131",
+     "u": "Pág. 37"
+    },
+    {
+     "d": "131",
+     "u": "Pág. 30"
+    }
+   ]
+  },
+  {
+   "id": "institucional",
+   "modo": "servidora",
+   "q": "¿Qué es la violencia institucional y cómo evito cometerla?",
+   "kw": "violencia institucional servidor publico no me atendieron revictimizacion no me hicieron caso obstaculizar dilatar evitar cometer",
+   "intro": "Es la que cometen servidoras y servidores públicos cuando discriminan, usan estereotipos de género o dilatan, obstaculizan o impiden que las mujeres ejerzan sus derechos o accedan a la atención de la violencia.",
+   "lista": [
+    "Informa a la víctima sobre sus derechos y aclara sus dudas.",
+    "Usa lenguaje comprensible y respetuoso; no generes falsas expectativas.",
+    "No emitas juicios de valor ni opiniones personales.",
+    "Explícale el proceso y cuánto tarda cada etapa.",
+    "No propongas mediación ni conciliación con el agresor."
+   ],
+   "cierre": "Estas pautas provienen del Protocolo Unificado de Atención y de las leyes general y de Jalisco.",
+   "facil": [
+    "La violencia institucional es cuando el gobierno no atiende bien a una mujer.",
+    "Trátala con respeto.",
+    "Explícale sus opciones.",
+    "No la juzgues."
+   ],
+   "citas": [
+    {
+     "d": "080",
+     "u": "Artículo 18"
+    },
+    {
+     "d": "050",
+     "u": "Artículo 11",
+     "det": "fracción V"
+    },
+    {
+     "d": "131",
+     "u": "Pág. 39"
+    },
+    {
+     "d": "050",
+     "u": "Artículo 45 Bis",
+     "det": "fracción VI"
+    }
+   ]
+  },
+  {
+   "id": "canalizar",
+   "modo": "servidora",
+   "q": "¿Cómo canalizo a una víctima y a qué institución?",
+   "kw": "canalizar canalizacion derivar enviar a que institucion oficio referir turnar a donde la mando",
+   "intro": "La canalización es la tercera etapa del modelo de atención: se orienta a la víctima y se le canaliza a la instancia que corresponda.",
+   "lista": [
+    "Primero se agotan los recursos disponibles en la misma institución, preferentemente en el Centro de Justicia para las Mujeres.",
+    "Si no se cuenta con el servicio, se canaliza a la víctima, sus hijas e hijos a la instancia que corresponda.",
+    "Si la situación lo requiere, se canaliza a un centro de refugio temporal para garantizar su seguridad.",
+    "Se da seguimiento para verificar que la derivación se cumpla."
+   ],
+   "cierre": "El directorio de instituciones de esta app está en proceso de validación.",
+   "facil": [
+    "Canalizar es enviar a la mujer al lugar que la puede ayudar.",
+    "Primero, intenta ayudarla donde estás.",
+    "Si no se puede, envíala al lugar correcto.",
+    "Después, pregunta si la atendieron."
+   ],
+   "citas": [
+    {
+     "d": "050",
+     "u": "Artículo 47",
+     "det": "fracciones III y IV"
+    },
+    {
+     "d": "131",
+     "u": "Pág. 37"
+    },
+    {
+     "d": "050",
+     "u": "Artículo 45 Bis",
+     "det": "fracción III"
+    }
+   ],
+   "directorio": true
+  },
+  {
+   "id": "alerta",
+   "modo": "servidora",
+   "q": "¿Qué es la Alerta de Violencia de Género?",
+   "kw": "alerta de violencia de genero avg avgm alerta que es objetivo emergencia",
+   "intro": "Es el conjunto de acciones gubernamentales coordinadas, integrales, de emergencia y temporales entre los tres órdenes de gobierno para enfrentar y erradicar la violencia feminicida en un territorio determinado.",
+   "lista": [
+    "Garantizar la vida, la integridad, la libertad, la seguridad y el acceso a la justicia de las mujeres, adolescentes y niñas.",
+    "Generar condiciones y políticas públicas para disminuir y hacer cesar la violencia feminicida.",
+    "Eliminar la desigualdad y discriminación producidas por leyes o políticas públicas que agravian los derechos de las mujeres."
+   ],
+   "cierre": "",
+   "facil": [
+    "Es una alarma del gobierno.",
+    "Se activa cuando hay mucha violencia contra las mujeres en un lugar.",
+    "Sirve para proteger su vida."
+   ],
+   "citas": [
+    {
+     "d": "080",
+     "u": "Artículo 22"
+    },
+    {
+     "d": "080",
+     "u": "Artículo 23"
+    }
+   ]
+  },
+  {
+   "id": "politica",
+   "modo": "servidora",
+   "q": "¿Qué es la violencia política contra las mujeres en razón de género?",
+   "kw": "violencia politica candidata regidora cargo publico electoral elecciones razon de genero",
+   "intro": "Es toda acción u omisión, incluida la tolerancia, basada en elementos de género, que busca o logra limitar, anular o menoscabar los derechos políticos y electorales de las mujeres o el ejercicio de su cargo.",
+   "lista": [
+    "Se basa en elementos de género cuando se dirige a una mujer por ser mujer, la afecta desproporcionadamente o tiene un impacto diferenciado en ella.",
+    "La definición está en la ley general y en la LGIPE.",
+    "En Jalisco, el Tribunal Electoral del Estado, el Instituto Electoral y de Participación Ciudadana y la Fiscalía Especializada en Delitos Electorales pueden solicitar órdenes de protección."
+   ],
+   "cierre": "",
+   "facil": [
+    "Es violencia contra mujeres en la política.",
+    "Por ejemplo, impedir que una mujer ejerza su cargo por ser mujer.",
+    "Las autoridades electorales pueden pedir protección para ella."
+   ],
+   "citas": [
+    {
+     "d": "080",
+     "u": "Artículo 20 Bis"
+    },
+    {
+     "d": "082",
+     "u": "Artículo 3",
+     "det": "inciso k)"
+    },
+    {
+     "d": "050",
+     "u": "Artículo 57"
+    }
+   ]
+  },
+  {
+   "id": "reparacion",
+   "modo": "ambos",
+   "q": "¿Qué es la reparación integral del daño?",
+   "kw": "reparacion integral del dano indemnizacion compensacion restitucion rehabilitacion me deben pagar no repeticion",
+   "intro": "Las víctimas tienen derecho a ser reparadas de manera oportuna, plena, diferenciada, transformadora, integral y efectiva. La reparación integral comprende:",
+   "lista": [
+    "Restitución: volver, en lo posible, a la situación anterior.",
+    "Rehabilitación: apoyo para enfrentar los efectos de lo sufrido.",
+    "Compensación: pago proporcional a la gravedad del daño y a las pérdidas.",
+    "Satisfacción: reconocer y restablecer la dignidad de la víctima.",
+    "No repetición: medidas para que no vuelva a ocurrir."
+   ],
+   "cierre": "Ante la violencia feminicida, la ley general obliga al Estado a reparar el daño conforme a los tratados internacionales y a la Ley General de Víctimas.",
+   "facil": [
+    "Reparar el daño es ayudarte a recuperar lo que perdiste.",
+    "Incluye apoyo, pago y respeto a tu dignidad.",
+    "También que no vuelva a pasar."
+   ],
+   "citas": [
+    {
+     "d": "088",
+     "u": "Artículo 26"
+    },
+    {
+     "d": "088",
+     "u": "Artículo 27"
+    },
+    {
+     "d": "080",
+     "u": "Artículo 26"
+    }
+   ]
+  }
+ ]
+}

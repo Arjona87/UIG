@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Asistente UIG · Orientación normativa</title>
+<meta name="description" content="Asistente UIG: orientación sobre leyes de violencia contra las mujeres en Jalisco, con cita de artículo, ordenamiento y fecha de última reforma.">
+<meta name="theme-color" content="#3A1560">
+<meta name="referrer" content="no-referrer">
+<link rel="manifest" href="manifest.webmanifest">
+<link rel="icon" type="image/png" href="assets/favicon.png">
+<link rel="apple-touch-icon" href="assets/apple-touch-icon.png">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-title" content="Asistente UIG">
+<link rel="stylesheet" href="assets/fuentes.css">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<a class="saltar" href="#entrada">Ir a escribir tu pregunta</a>
+
+<div class="tope">
+<!-- Franja fija del 911: siempre visible -->
+<div class="franja911" role="region" aria-label="Emergencias">
+  <span class="f911-txt"><b>Si estás en peligro, llama al 911</b></span>
+  <a class="f911-btn" href="tel:911" aria-label="Llamar al 911">Llamar al 911</a>
+</div>
+
+<header class="cab">
+  <div class="cab-int">
+    <img class="cab-avatar" src="assets/violeta-96.webp" alt="" width="40" height="40">
+    <div class="cab-tit"><b>Asistente UIG</b><span>Orientación normativa · Unidades de Igualdad de Género</span></div>
+    <div class="cab-acc">
+      <button class="btn-modo" id="btnModo" type="button" aria-label="Cambiar perfil" hidden></button>
+      <button class="btn-ajuste" id="btnFacil" type="button" role="switch" aria-checked="false" title="Lectura fácil">Lectura fácil</button>
+      <button class="btn-ajuste" id="btnTexto" type="button" aria-label="Aumentar tamaño de letra" title="Tamaño de letra">A+</button>
+      <button class="btn-salir" id="btnSalir" type="button" title="Salida rápida (también: tecla Esc dos veces)">Salir</button>
+    </div>
+  </div>
+  <img class="cab-logo" src="assets/logo-cges.png" alt="Coordinación General Estratégica de Seguridad, Gobierno de Jalisco" height="28">
+</header>
+</div>
+
+<div class="aviso-red" id="avisoRed" role="status" hidden></div>
+
+<main id="principal">
+  <section class="chat" id="chat" aria-live="polite" aria-relevant="additions" aria-label="Conversación con Asistente UIG"></section>
+</main>
+
+<div class="sugerencias" id="sugerencias" aria-label="Preguntas sugeridas"></div>
+
+<form class="entrada" id="formEntrada" autocomplete="off">
+  <label for="entrada" class="oculto-sr">Escribe tu pregunta</label>
+  <textarea id="entrada" rows="1" maxlength="600" placeholder="Escribe tu pregunta…" enterkeyhint="send"></textarea>
+  <button type="submit" class="btn-enviar">Enviar</button>
+</form>
+
+<div class="instalar" id="instalar" role="dialog" aria-labelledby="instTit" hidden>
+  <img src="assets/violeta-96.webp" alt="" width="44" height="44">
+  <div><b id="instTit">Instala Asistente UIG</b><span id="instTxt">Quedará en tu teléfono y funcionará sin internet.</span></div>
+  <button type="button" id="instSi" class="btn-prim">Instalar</button>
+  <button type="button" id="instNo" class="btn-sec" aria-label="Ahora no">Ahora no</button>
+</div>
+
+<div id="zonaImpresion" aria-hidden="true"></div>
+
+<script src="app.js" defer></script>
+</body>
+</html>

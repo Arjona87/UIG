@@ -1,0 +1,16 @@
+{
+  "name": "Asistente UIG",
+  "short_name": "Asistente UIG",
+  "description": "Orientación normativa sobre violencia contra las mujeres en Jalisco, con cita de artículo, ordenamiento y fecha de última reforma.",
+  "lang": "es-MX",
+  "start_url": "./",
+  "scope": "./",
+  "display": "standalone",
+  "background_color": "#F1EEF6",
+  "theme_color": "#3A1560",
+  "icons": [
+    {"src": "assets/icono-192.png", "sizes": "192x192", "type": "image/png", "purpose": "any"},
+    {"src": "assets/icono-512.png", "sizes": "512x512", "type": "image/png", "purpose": "any"},
+    {"src": "assets/icono-512.png", "sizes": "512x512", "type": "image/png", "purpose": "maskable"}
+  ]
+}

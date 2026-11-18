@@ -1,0 +1,526 @@
+/* Asistente UIG · Fase 1 (sin IA)
+   Todas las respuestas salen de la base normativa (data/) o del catálogo de preguntas frecuentes
+   redactado y verificado contra el texto literal de los artículos citados. No se inventa nada:
+   si no hay coincidencia, la asistente lo dice y canaliza. No se guardan conversaciones. */
+'use strict';
+
+const CONFIG = {
+  ia: false,                 // Fase 2: activar con intermediario (Cloudflare Worker) y API de Anthropic
+  estadisticas: null,        // Fase 2: URL del contador anónimo (solo tema, perfil y fecha)
+  salida: 'https://www.google.com/',
+  lineaVida: { tel: '8009112000', texto: '800 911 2000', fuente: 'Línea de la Vida, Secretaría de Salud (24 horas, gratuita)' },
+  maxResultados: 4,
+};
+
+const SALUDO = '¡Hola! Soy Asistente UIG, tu compañera digital para orientarte en las funciones de las Unidades de Igualdad de Género y brindarte la información confiable que requieres.';
+
+const $ = (s, el = document) => el.querySelector(s);
+const E = { docs: [], docMap: {}, faq: [], riesgo: [], dir: null, corte: '', modo: null, facil: false, esc: 1,
+  idx: null, idxN3: null, shards: new Map(), instalarEvt: null, instaladoMostrado: false };
+
+/* ---------- Normalización (idéntica a construir_base.py) ---------- */
+const STOP = new Set(`a al algo algun alguna algunas alguno algunos ante antes asi aun bajo bien cada como con contra cual
+cuales cuando de del desde donde dos e el ella ellas ello ellos en entre era es esa esas ese eso esos esta estan estas
+este esto estos fue fueron ha han hasta hay la las le les lo los mas me mi mis mismo muy nada ni no nos o otra otras otro
+otros para pero poco por porque que quien quienes se segun ser si sido sin sobre son su sus tal tambien tan te tiene
+tienen todo todos tu tus u un una unas uno unos y ya yo fraccion fracciones articulo articulos presente ley parrafo
+inciso dicha dicho dichos dichas mediante asi cual misma mismas mismos cuya cuyo deberan debera podra podran sera seran`.split(/\s+/));
+const norm = s => s.toLowerCase().normalize('NFD').replace(/[̀-ͯ]/g, '').replace(/[^a-z0-9]+/g, ' ').trim();
+function stem(w) {
+  if (w.length > 4 && w.endsWith('es') && !'aeiou'.includes(w[w.length - 3])) w = w.slice(0, -2);
+  else if (w.length > 3 && w.endsWith('s')) w = w.slice(0, -1);
+  return w.slice(0, 7);
+}
+function tokens(s) {
+  const out = [];
+  for (const w of norm(s).split(' ')) {
+    if (!w || STOP.has(w) || w.length < 2 || (/^\d+$/.test(w) && w.length > 4)) continue;
+    out.push(stem(w));
+  }
+  return out;
+}
+const QSTOP = new Set(['hacer','hago','saber','quiero','quisiera','puedo','pued','necesito','necesit','ayuda','informacion','informac','tengo','dice','decir','pasa','paso','caso','alguien','favor','gracia','hola','buena','buenas','tarde','noche','dia','duda','pregunta','pregunt','explica','explic','debo','deb','como','donde','cual','cuando','esta','estoy'].map(stem));
+const MAPA = { 'á':'a','à':'a','ä':'a','â':'a','é':'e','è':'e','ë':'e','ê':'e','í':'i','ì':'i','ï':'i','î':'i','ó':'o','ò':'o','ö':'o','ô':'o','ú':'u','ù':'u','ü':'u','û':'u','ñ':'n' };
+const plano = s => Array.from(s.toLowerCase(), c => MAPA[c] || c).join('');   // misma longitud que el original
+const esc = s => String(s).replace(/[&<>"']/g, c => ({ '&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;' }[c]));
+
+/* Lenguaje coloquial → términos jurídicos (amplía la búsqueda, no cambia lo que se cita) */
+const SINONIMOS = [
+  ['me pega','violencia fisica'],['golpe','violencia fisica'],['golpea','violencia fisica'],['empuj','violencia fisica'],
+  ['me grita','violencia psicologica'],['insult','violencia psicologica'],['humill','violencia psicologica'],['celos','celotipia violencia psicologica'],['celoso','celotipia violencia psicologica'],
+  ['papeles','documentos personales violencia patrimonial'],['documentos','violencia patrimonial'],['dinero','violencia economica percepciones'],['sueldo','violencia economica salario'],['gasto','violencia economica'],
+  ['fotos','violencia digital contenido intimo'],['videos','violencia digital contenido intimo'],['packs','violencia digital contenido intimo'],['redes sociales','violencia digital'],['internet','violencia digital'],
+  ['jefe','violencia laboral hostigamiento'],['trabajo','violencia laboral'],['maestro','violencia docente'],['escuela','violencia docente'],
+  ['no me atendieron','violencia institucional'],['no me hicieron caso','violencia institucional'],
+  ['alejamiento','orden de proteccion'],['restriccion','orden de proteccion'],['que no se acerque','orden de proteccion'],
+  ['denunciar','denuncia ministerio publico'],['demanda','denuncia'],['abogad','asesoria juridica gratuita asesor juridico'],['licenciad','asesoria juridica'],
+  ['albergue','refugio'],['donde quedarme','refugio'],['casa de seguridad','refugio'],
+  ['desaparec','desaparicion busqueda persona desaparecida'],['no aparece','desaparicion busqueda'],
+  ['violacion','violencia sexual'],['abuso sexual','violencia sexual'],['acoso','acoso hostigamiento'],
+  ['pension','obligaciones alimentarias alimentos'],['custodia','guarda custodia'],
+  ['parto','violencia obstetrica'],['novio','violencia noviazgo'],['esposo','violencia familiar'],['pareja','violencia familiar'],['marido','violencia familiar'],
+  ['feminicidio','violencia feminicida'],['candidata','violencia politica'],['regidora','violencia politica'],
+];
+function expandir(qn) {
+  const p = ' ' + qn;
+  return SINONIMOS.filter(([f]) => p.includes(' ' + f)).map(([, x]) => x).join(' ');
+}
+
+/* ---------- Utilidades de interfaz ---------- */
+const chat = () => $('#chat');
+function burbuja(html, { usuario = false, serena = false, clase = '' } = {}) {
+  const m = document.createElement('div');
+  m.className = 'msg ' + (usuario ? 'usr ' : '') + clase;
+  m.innerHTML = usuario ? `<div class="burbuja">${html}</div>`
+    : `<img class="av" src="assets/${serena ? 'violeta-serena-96' : 'violeta-96'}.webp" alt="Violeta, Asistente UIG" width="40" height="40"><div class="burbuja">${html}</div>`;
+  chat().appendChild(m);
+  m.scrollIntoView({ behavior: 'smooth', block: 'start' });
+  return m;
+}
+function escribiendo() {
+  return burbuja('<span class="cargando" aria-label="Buscando en la base normativa"><span></span><span></span><span></span></span>');
+}
+function aclaracion() {
+  const extra = E.modo === 'ciudadania' ? ' No estás sola: hay instituciones que te pueden acompañar.' : '';
+  return `<p class="aclara">Información orientativa basada en la normativa vigente al ${esc(E.corte)}. No es asesoría legal ni sustituye la atención de una institución; verifica con la instancia correspondiente.${extra}</p>`;
+}
+
+/* ---------- Citas ---------- */
+function fechaTxt(d) {
+  const f = d.fecha || '';
+  if (/^\d{2}\/\d{2}\/\d{4}$/.test(f)) return 'Última reforma: ' + f;
+  if (/^versi[oó]n del documento/i.test(f)) return 'Fecha de versión por confirmar';
+  return f;
+}
+function marcas(d) {
+  const c = d.cita || '';
+  if (c.startsWith('Con marca: vigencia')) return '<span class="marca conf">Vigencia por confirmar</span>';
+  if (c.startsWith('Con marca: proyecto')) return '<span class="marca conf">Proyecto, no vigente</span>';
+  if (c.startsWith('Con aviso de transición')) return '<span class="marca trans">En transición</span>';
+  if (c.startsWith('Doctrina')) return '<span class="marca doct">Doctrina, no es norma</span>';
+  if (c.startsWith('Histórico')) return '<span class="marca hist">Abrogada (histórico)</span>';
+  return '';
+}
+const etiquetaUnidad = u => u.replace(/^Pág\. /, 'Página ').replace(/^Págs\. /, 'Páginas ');
+function citaHTML(c) {
+  const d = E.docMap[c.d]; if (!d) return '';
+  const et = etiquetaUnidad(c.u) + (c.det ? ', ' + c.det : '');
+  const url = d.url ? ` · <a href="${esc(d.url)}" target="_blank" rel="noopener noreferrer">Fuente oficial</a>` : '';
+  return `<div class="cita"><b>${esc(et)}</b> · ${esc(d.nombre)} ${marcas(d)}<br>
+    <span class="fec">${esc(d.ambito)} · ${esc(fechaTxt(d))}</span>${url}
+    <span class="sep">·</span> <button type="button" class="btn-ver" data-d="${c.d}" data-u="${esc(c.u)}">Ver texto</button><div class="txt"></div></div>`;
+}
+function formatearTexto(t) {
+  let h = esc(t);
+  h = h.replace(/((?:Fracción|Párrafo|Artículo|Inciso|Apartado|Denominación del Título|Denominación del Capítulo|Capítulo|Título|Fe de erratas)[^.\n]{0,70}?(?:reformad|adicionad|derogad|recorrid|reubicad)[oa]s?[^.\n]{0,40}?DOF \d{2}-\d{2}-\d{4}(?:,? \d{2}-\d{2}-\d{4})*)/g,
+    '<span class="nota-ref">[$1]</span>');
+  return h;
+}
+
+/* ---------- Carga de datos ---------- */
+async function json(url) { const r = await fetch(url); if (!r.ok) throw new Error(url); return r.json(); }
+async function shard(id) {
+  if (!E.shards.has(id)) E.shards.set(id, json(`data/docs/${id}.json`).then(x => x.u));
+  return E.shards.get(id);
+}
+async function textoUnidad(id, etiqueta) {
+  const u = await shard(id);
+  const x = u.find(([e]) => e === etiqueta);
+  return x ? x[1] : null;
+}
+
+/* ---------- Riesgo ---------- */
+function evaluarRiesgo(texto) {
+  const t = ' ' + norm(texto) + ' ';
+  const r = { rojo: [], naranja: [], suicidio: false, desaparicion: false };
+  for (const e of E.riesgo) {
+    if (!e._re) e._re = new RegExp(e.re);
+    if (e._re.test(t)) {
+      if (e.nivel === 'rojo') r.rojo.push(e);
+      else if (e.nivel === 'naranja') r.naranja.push(e);
+      else if (e.nivel === 'suicidio') r.suicidio = true;
+      else if (e.nivel === 'desaparicion') r.desaparicion = true;
+    }
+  }
+  return r;
+}
+
+/* ---------- Preguntas frecuentes ---------- */
+const GENERICOS = new Map([['violenc', 0.2], ['mujer', 0.3], ['victim', 0.5], ['jalisco', 0.4], ['ley', 0.2], ['derecho', 0.6]]);
+function buscarFAQ(texto) {
+  const qn = norm(texto);
+  const base = [...new Set(tokens(texto))].filter(t => !QSTOP.has(t));
+  if (!base.length) return null;
+  const ext = new Set(tokens(expandir(qn)));
+  const peso = t => GENERICOS.get(t) ?? 1;
+  const total = base.reduce((a, t) => a + peso(t), 0);
+  let mejor = null, mejorS = 0;
+  for (const f of E.faq) {
+    if (E.modo === 'ciudadania' && f.modo === 'servidora') continue;
+    if (!f._k) { f._k = new Set(tokens(f.q + ' ' + f.kw)); f._q = new Set(tokens(f.q)); }
+    let m = 0, enQ = 0, nx = 0;
+    for (const t of base) if (f._k.has(t)) { m += peso(t); if (f._q.has(t)) enQ++; }
+    for (const t of ext) if (f._k.has(t)) nx++;
+    const s = m / total + enQ * 0.1 + nx * 0.05;
+    if (m > 0 && s > mejorS) { mejorS = s; mejor = f; }
+  }
+  return mejorS >= 0.55 ? mejor : null;
+}
+
+/* ---------- Búsqueda BM25 en la base ---------- */
+let vocabPref = null;
+function difusos(t, idx) {
+  if (t.length < 5) return [];
+  if (!vocabPref) { vocabPref = {}; for (const k of Object.keys(idx.p)) (vocabPref[k.slice(0, 2)] ||= []).push(k); }
+  const cand = [];
+  for (const k of vocabPref[t.slice(0, 2)] || []) if (Math.abs(k.length - t.length) <= 1 && dist1(k, t)) cand.push(k);
+  return cand.slice(0, 3);
+}
+function dist1(a, b) {               // ¿distancia de edición ≤ 1?
+  if (a === b) return true;
+  let i = 0, j = 0, e = 0;
+  while (i < a.length && j < b.length) {
+    if (a[i] === b[j]) { i++; j++; continue; }
+    if (++e > 1) return false;
+    if (a.length > b.length) i++; else if (b.length > a.length) j++; else { i++; j++; }
+  }
+  return e + (a.length - i) + (b.length - j) <= 1;
+}
+function mencionados(qn) {
+  const p = ' ' + qn + ' ', out = new Set();
+  for (const d of E.docs) for (const a of d.alias || []) if (a.length > 3 && p.includes(' ' + a + ' ')) out.add(d.id);
+  return out;
+}
+function bm25(idx, pesos, filtroDoc) {
+  const k1 = 1.2, b = 0.5, sc = new Map(), cub = new Map();
+  for (const [t, w] of pesos) {
+    const pl = idx.p[t]; if (!pl) continue;
+    const df = pl.length / 2, idf = Math.log(1 + (idx.N - df + 0.5) / (df + 0.5));
+    for (let i = 0; i < pl.length; i += 2) {
+      const k = pl[i], tf = pl[i + 1];
+      if (filtroDoc && !filtroDoc(idx.ref[2 * k])) continue;
+      const s = w * idf * (tf * (k1 + 1)) / (tf + k1 * (1 - b + b * idx.dl[k] / idx.avgdl));
+      sc.set(k, (sc.get(k) || 0) + s);
+      cub.set(k, (cub.get(k) || 0) + (w >= 0.7 ? 1 : 0.5));
+    }
+  }
+  return { sc, cub };
+}
+function pesoDoc(d) {
+  let w = d.nivel === 1 ? 1 : d.nivel === 2 ? 0.75 : 0.6;
+  const c = d.cita || '';
+  if (c.startsWith('Con marca: vigencia')) w *= 0.8;
+  if (c.startsWith('Con marca: proyecto')) w *= 0.3;
+  if (c.startsWith('Doctrina')) w *= 0.5;
+  if (E.modo === 'servidora' && /^(Protocolo|Modelo|Manual|Lineamientos)/.test(d.tipo || '')) w *= 1.15;
+  return w;
+}
+async function buscarNormas(texto, excluir = new Set()) {
+  if (!E.idx) E.idx = await E.idxPromise;
+  const qn = norm(texto);
+  const base = [...new Set(tokens(texto))].filter(t => !QSTOP.has(t));
+  if (!base.length) return [];
+  const pesos = new Map(base.map(t => [t, 1]));
+  for (const t of tokens(expandir(qn))) if (!pesos.has(t)) pesos.set(t, 0.6);
+  for (const t of base) if (!E.idx.p[t]) for (const c of difusos(t, E.idx)) if (!pesos.has(c)) pesos.set(c, 0.75);
+  const menc = mencionados(qn);
+  const res = [];
+  const recoger = (idx, filtro) => {
+    const { sc, cub } = bm25(idx, pesos, filtro);
+    for (const [k, s] of sc) {
+      const d = E.docs[idx.ref[2 * k]], ui = idx.ref[2 * k + 1];
+      const cov = Math.min(1, (cub.get(k) || 0) / base.length);
+      if (base.length >= 2 && cov < 0.5 && !menc.has(d.id)) continue;   // relevancia mínima
+      let v = s * pesoDoc(d) * (0.3 + 0.7 * cov);
+      if (E.modo !== 'servidora' && d.modo === 'pag') v *= 0.85;
+      if (menc.has(d.id)) v *= 2.5;
+      if (!d._n) d._n = new Set(tokens(d.nombre).filter(t => !GENERICOS.has(t) && !['general','federal','estado','estatal','nacional','codigo','reglamento'].includes(t)));
+      let enNombre = 0; for (const t of base) if (d._n.has(t)) enNombre++;
+      if (enNombre) v *= 1 + 0.6 * enNombre;
+      res.push({ d, ui, fr: (idx.fx && idx.fx[k]) || '', v });
+    }
+  };
+  recoger(E.idx);
+  const n3 = [...menc].filter(id => E.docMap[id] && E.docMap[id].nivel === 3);
+  if (n3.length) {
+    if (!E.idxN3) E.idxN3 = await json('data/indice-n3.json');
+    const set = new Set(n3);
+    recoger(E.idxN3, di => set.has(E.docs[di].id));
+  }
+  res.sort((a, b) => b.v - a.v);
+  const out = [], porDoc = {}, vistos = new Set();
+  const tope = res.length ? res[0].v : 0;
+  for (const r of res) {
+    if (r.v < tope * 0.25) break;
+    if ((r.d.cita || '').startsWith('Histórico') && !menc.has(r.d.id)) continue;
+    const clave = r.d.id + '|' + r.ui;
+    if (vistos.has(clave)) continue;
+    if ((porDoc[r.d.id] || 0) >= 2) continue;
+    const u = (await shard(r.d.id))[r.ui];
+    if (excluir.has(r.d.id + '|' + u[0])) continue;
+    vistos.add(clave); porDoc[r.d.id] = (porDoc[r.d.id] || 0) + 1;
+    out.push({ d: r.d, et: u[0], fr: r.fr, texto: u[1], v: r.v });
+    if (out.length >= CONFIG.maxResultados) break;
+  }
+  // Ley de Transparencia de Jalisco en transición: primero la Ley General (decisión F, opción c)
+  if (out.some(x => x.d.id === '065') && !out.some(x => x.d.id === '087') && E.docMap['087']) {
+    const { sc } = bm25(E.idx, pesos, di => E.docs[di].id === '087');
+    const mejor = [...sc].sort((a, b) => b[1] - a[1])[0];
+    if (mejor) { const u = (await shard('087'))[E.idx.ref[2 * mejor[0] + 1]]; out.unshift({ d: E.docMap['087'], et: u[0], fr: (E.idx.fx && E.idx.fx[mejor[0]]) || '', texto: u[1], v: 0 }); }
+  }
+  return out.map(x => ({ ...x, terms: new Set(pesos.keys()) }));
+}
+function fraccionTexto(t, fr) {
+  const m = new RegExp('(^|\\n)' + fr + '\\.[\\s-]').exec(t);
+  if (!m) return t;
+  const ini = m.index + m[1].length, sig = /\n[IVXLC]+\.[\s-]/.exec(t.slice(ini + 2));
+  return t.slice(ini, sig ? ini + 2 + sig.index : t.length);
+}
+function fragmento(texto, terms, largo = 320) {
+  const p = plano(texto), pos = [];
+  for (const m of p.matchAll(/[a-z0-9]+/g)) if (terms.has(stem(m[0]))) pos.push([m.index, m.index + m[0].length]);
+  let ini = 0;
+  if (pos.length) {
+    let mejor = -1;
+    for (const [a] of pos) { const n = pos.filter(([x]) => x >= a - 40 && x < a + largo - 40).length; if (n > mejor) { mejor = n; ini = Math.max(0, a - 40); } }
+  }
+  let fin = Math.min(texto.length, ini + largo);
+  if (ini > 0) { const s = texto.indexOf(' ', ini); if (s > 0 && s < ini + 30) ini = s + 1; }
+  if (fin < texto.length) { const s = texto.lastIndexOf(' ', fin); if (s > ini + 100) fin = s; }
+  let h = '', c = ini;
+  for (const [a, b] of pos) { if (a < ini || b > fin) continue; h += esc(texto.slice(c, a)) + '<mark>' + esc(texto.slice(a, b)) + '</mark>'; c = b; }
+  h += esc(texto.slice(c, fin));
+  return (ini > 0 ? '… ' : '') + h + (fin < texto.length ? ' …' : '');
+}
+
+/* ---------- Respuestas ---------- */
+function infografia(tipo) {
+  if (tipo === 'tipos') {
+    const t = [['Psicológica','Insultos, humillaciones, celos, amenazas','#6B2FA0'],['Física','Daño con fuerza, armas, objetos o sustancias','#8E2B5E'],
+      ['Patrimonial','Quitar o retener bienes y documentos','#4A3C8C'],['Económica','Controlar ingresos; pagar menos por igual trabajo','#2F5D8A'],
+      ['Sexual','Actos que degradan o dañan el cuerpo','#7A1F3D'],['Interpósita persona','Dañar a hijas, hijos o personas cercanas','#5B2A86'],['Digital (Jalisco)','Por internet: difusión, acoso, amenazas','#3A1560']];
+    return `<div class="info-tipos" role="list" aria-label="Infografía: tipos de violencia">${t.map(([a, b, c]) => `<div role="listitem" style="background:${c}"><b>${a}</b>${b}</div>`).join('')}</div>
+      <p class="info-pie">Fuente: LGAMVLV, art. 6; Ley de Acceso de Jalisco, art. 10.</p>`;
+  }
+  if (tipo === 'ruta') {
+    const t = [['Identificar','Tipo y modalidad de violencia, riesgos y efectos'],['Priorizar','Necesidades inmediatas y medidas de protección'],
+      ['Orientar y canalizar','Lenguaje accesible; instancia que corresponda (preferentemente CJM)'],['Dar seguimiento','Verificar que la derivación se cumpla']];
+    return `<div class="info-ruta" role="list" aria-label="Infografía: ruta de atención">${t.map(([a, b], i) => `<div role="listitem"><i>${i + 1}</i><b>${a}</b>${b}</div>`).join('')}</div>
+      <p class="info-pie">Fuente: Ley de Acceso de Jalisco, art. 47; Protocolo Unificado de Atención.</p>`;
+  }
+  return '';
+}
+function directorioHTML() {
+  if (!E.dir || !E.dir.validado || !E.dir.instituciones.length)
+    return '<div class="directorio"><b>¿A dónde acudir?</b> Si estás en peligro, llama al <a href="tel:911">911</a>. El directorio de instituciones de Jalisco está en proceso de validación y se publicará aquí.</div>';
+  return '<div class="directorio"><b>¿A dónde acudir?</b>' + E.dir.instituciones.map(i =>
+    `<div class="inst"><b>${esc(i.nombre)}</b> · ${esc(i.servicio || '')}<br>${i.telefono ? `<a href="tel:${esc(i.telefono)}">${esc(i.telefono)}</a> · ` : ''}${esc(i.direccion || '')} ${i.horario ? '· ' + esc(i.horario) : ''}</div>`).join('') + '</div>';
+}
+function acciones() {
+  return `<div class="acciones"><button type="button" data-acc="pdf">Descargar PDF</button></div>`;
+}
+async function responderFAQ(f, { naranja = [], urgente = false } = {}) {
+  const alerta = naranja.length ? `<div class="alerta-naranja"><b>Lo que describes puede ser una señal de riesgo.</b> Tienes derecho a protección inmediata. Si en algún momento estás en peligro, llama al <a href="tel:911">911</a>.</div>` : '';
+  const urg = urgente ? `<a class="btn911" href="tel:911">Llamar al 911</a>` : '';
+  const html = `${alerta}${urg}<span class="etq">Respuesta orientativa</span><h2>${esc(f.q)}</h2>
+    <div class="facil"><b>Lectura fácil</b><ul>${f.facil.map(x => `<li>${esc(x)}</li>`).join('')}</ul></div>
+    <div class="detalle"><p>${esc(f.intro)}</p>${f.lista.length ? `<ul>${f.lista.map(x => `<li>${esc(x)}</li>`).join('')}</ul>` : ''}${f.cierre ? `<p>${esc(f.cierre)}</p>` : ''}</div>
+    ${f.infografia ? infografia(f.infografia) : ''}
+    ${f.directorio || urgente || naranja.length ? directorioHTML() : ''}
+    <div class="citas"><h3>Fundamento</h3>${f.citas.map(citaHTML).join('')}</div>
+    ${acciones()}${aclaracion()}`;
+  const m = burbuja(html);
+  contar(f.id);
+  return m;
+}
+async function responderBusqueda(texto, naranja) {
+  const espera = E.idx ? null : escribiendo();
+  let r;
+  try { r = await buscarNormas(texto); } finally { if (espera) espera.remove(); }
+  if (!r.length) return noEncontrado(naranja);
+  const alerta = naranja.length ? `<div class="alerta-naranja"><b>Lo que describes puede ser una señal de riesgo.</b> Tienes derecho a protección inmediata. Si estás en peligro, llama al <a href="tel:911">911</a>.</div>` : '';
+  const trans = r.some(x => x.d.id === '065') ? `<p class="alerta-naranja">La Ley de Transparencia de Jalisco está <b>en transición</b> por la nueva Ley General de Transparencia (DOF 20/03/2025). Se muestra primero la ley general; verifica con la Unidad de Transparencia correspondiente.</p>` : '';
+  const html = `${alerta}<span class="etq">Lo que dice la normativa</span><p>Encontré estos fragmentos relacionados con tu pregunta. Abre el texto completo para leer el artículo íntegro.</p>${trans}
+    ${r.map(x => `<div class="resultado"><div class="ref">${esc(etiquetaUnidad(x.et))}${x.fr ? ', fracción ' + esc(x.fr) : ''} · ${esc(x.d.nombre)} ${marcas(x.d)}</div>
+      <div class="meta">${esc(x.d.ambito)} · ${esc(fechaTxt(x.d))}${x.d.url ? ` · <a href="${esc(x.d.url)}" target="_blank" rel="noopener noreferrer">Fuente oficial</a>` : ''}</div>
+      <div class="frag">${fragmento(x.fr ? fraccionTexto(x.texto, x.fr) : x.texto, x.terms)}</div>
+      <button type="button" class="btn-ver acc-sec" data-d="${x.d.id}" data-u="${esc(x.et)}">Ver texto completo</button><div class="txt"></div></div>`).join('')}
+    <p class="facil-nota facil">La versión de lectura fácil está disponible en las preguntas frecuentes. Para otros artículos se agregará en la fase 2.</p>
+    ${naranja.length ? directorioHTML() : ''}${acciones()}${aclaracion()}`;
+  burbuja(html);
+  contar('busqueda');
+}
+function noEncontrado(naranja = []) {
+  burbuja(`<span class="etq">Sin coincidencias</span><p>No encontré información sobre eso en la base normativa. Para no darte un dato equivocado, prefiero no responder algo que no está en las leyes cargadas.</p>
+    <p>Puedes intentar con otras palabras o elegir una de las preguntas sugeridas abajo.</p>${naranja.length ? directorioHTML() : ''}${aclaracion()}`);
+  contar('sin_resultado');
+}
+function responderCrisis(r) {
+  const sui = r.suicidio;
+  const html = `<h2>${sui ? 'Tu vida importa. Hay ayuda ahora mismo.' : 'Tu seguridad es lo primero.'}</h2>
+    <a class="btn911" href="tel:911">Llamar al 911</a>
+    ${sui ? `<p>También puedes llamar a la <b>Línea de la Vida</b>, gratuita y disponible las 24 horas:</p><a class="btnlinea" href="tel:${CONFIG.lineaVida.tel}">Línea de la Vida · ${CONFIG.lineaVida.texto}</a>
+      <p class="info-pie">${esc(CONFIG.lineaVida.fuente)}.</p>` : ''}
+    ${r.rojo.length ? `<ul><li>Si puedes hacerlo sin riesgo, ve a un lugar seguro o con una persona de confianza.</li>
+      <li>Tienes derecho a <b>protección inmediata y efectiva</b> de las autoridades y a una <b>orden de protección</b> urgente.</li>
+      <li>Si necesitas cerrar esta página rápido, usa el botón <b>Salir</b>.</li></ul>
+      <div class="citas"><h3>Fundamento</h3>${citaHTML({ d: '080', u: 'Artículo 52', det: 'fracción II' })}${citaHTML({ d: '080', u: 'Artículo 27' })}</div>` : ''}
+    <p><b>No estás sola.</b></p>${directorioHTML()}
+    <p class="aclara">Soy una asistente digital: no soy un servicio de emergencia.</p>`;
+  burbuja(html, { serena: true, clase: 'crisis' });
+  contar(sui ? 'crisis_suicidio' : 'crisis');
+}
+
+/* ---------- Flujo principal ---------- */
+async function responder(texto) {
+  texto = texto.trim(); if (!texto) return;
+  burbuja(esc(texto), { usuario: true });
+  if (!E.modo) E.modo = 'ciudadania', pintarModo();
+  const r = evaluarRiesgo(texto);
+  if (r.suicidio || r.rojo.length) { responderCrisis(r); return; }
+  if (r.desaparicion) { await responderFAQ(E.faq.find(f => f.id === 'desaparicion'), { urgente: true }); return; }
+  const f = buscarFAQ(texto);
+  if (f) await responderFAQ(f, { naranja: r.naranja });
+  else await responderBusqueda(texto, r.naranja);
+}
+
+/* Fase 2: conteo anónimo (tema, perfil y fecha). En fase 1 no envía ni guarda nada. */
+function contar(tema) {
+  if (!CONFIG.estadisticas || !navigator.onLine) return;
+  try { navigator.sendBeacon(CONFIG.estadisticas, JSON.stringify({ tema, perfil: E.modo, fecha: new Date().toISOString().slice(0, 10) })); } catch (e) {}
+}
+
+/* ---------- Saludo, perfil y sugerencias ---------- */
+const CHIPS = { tipos:'Tipos de violencia', psicologica:'¿Es violencia psicológica?', patrimonial:'Me quita dinero o papeles', digital:'Difundieron mis fotos',
+  orden:'Orden de protección', denunciar:'¿Dónde denuncio?', abogada:'Abogada gratuita', derechos:'Mis derechos', cjm:'Centro de Justicia para las Mujeres',
+  refugio:'Refugio con mis hijos', laboral:'Acoso en el trabajo', mediacion:'¿Me obligan a conciliar?', desaparicion:'Persona desaparecida',
+  uig:'Funciones de la UIG', ruta:'Ruta de atención', institucional:'Violencia institucional', canalizar:'¿Cómo canalizo?', alerta:'Alerta de Violencia de Género',
+  politica:'Violencia política', reparacion:'Reparación del daño' };
+function pintarSugerencias() {
+  const caja = $('#sugerencias'); caja.innerHTML = '';
+  const orden = E.modo === 'servidora'
+    ? ['ruta','canalizar','institucional','uig','orden','tipos','derechos','alerta','politica','reparacion','mediacion','cjm','desaparicion','digital','laboral']
+    : ['tipos','orden','denunciar','psicologica','patrimonial','digital','abogada','refugio','derechos','cjm','mediacion','laboral','desaparicion','reparacion'];
+  for (const id of orden) {
+    const f = E.faq.find(x => x.id === id); if (!f) continue;
+    const b = document.createElement('button'); b.type = 'button'; b.textContent = CHIPS[id] || f.q;
+    b.onclick = () => responder(f.q); caja.appendChild(b);
+  }
+}
+function pintarModo() {
+  const b = $('#btnModo'); b.hidden = !E.modo;
+  b.textContent = E.modo === 'servidora' ? 'Perfil: servidora pública' : 'Perfil: orientación';
+  pintarSugerencias();
+}
+function elegirModo(m) {
+  E.modo = m; pintarModo();
+  burbuja(m === 'servidora'
+    ? '<p>Perfil de <b>servidora o servidor público</b>. Puedo orientarte sobre rutas de atención, canalización, protocolos y el fundamento de cada paso, con artículo, ordenamiento y fecha de última reforma.</p><p>¿Qué necesitas consultar?</p>'
+    : '<p>Gracias por escribir. Puedo explicarte qué dicen las leyes y a dónde acudir. Escribe con tus palabras lo que necesitas saber, o elige una pregunta de abajo.</p><p>Si en algún momento necesitas cerrar esta página rápido, usa el botón <b>Salir</b>.</p>');
+  sugerirInstalar();
+  $('#entrada').focus();
+}
+function saludo() {
+  const m = burbuja(`<div class="saludo"><h1>${esc(SALUDO)}</h1>
+    <div class="limites"><b>No soy terapeuta, abogada ni un servicio de emergencia.</b> Te oriento con lo que dicen las leyes y te indico a dónde acudir; esta información no es asesoría legal.
+    No guardo tus conversaciones ni te pido datos personales. <a href="aviso-privacidad.html">Aviso de privacidad</a>.</div>
+    <p>¿Cómo puedo asistirte? Elige una opción:</p>
+    <div class="elige"><button type="button" data-modo="ciudadania">Busco orientación<span>Para mí o para alguien cercana</span></button>
+    <button type="button" data-modo="servidora">Soy servidora o servidor público<span>Atención en Unidades de Igualdad de Género</span></button></div>
+    <p class="aclara">Base normativa vigente al ${esc(E.corte)}: ${E.docs.length} documentos federales, de Jalisco e internacionales.</p></div>`);
+  m.querySelectorAll('[data-modo]').forEach(b => b.onclick = () => elegirModo(b.dataset.modo));
+}
+
+/* ---------- Acciones dentro de las respuestas ---------- */
+document.addEventListener('click', async ev => {
+  const v = ev.target.closest('.btn-ver');
+  if (v) {
+    const caja = v.nextElementSibling;
+    if (caja.innerHTML) { caja.innerHTML = ''; v.textContent = v.classList.contains('acc-sec') ? 'Ver texto completo' : 'Ver texto'; return; }
+    const t = await textoUnidad(v.dataset.d, v.dataset.u);
+    caja.innerHTML = t ? `<div class="texto-completo">${formatearTexto(t)}</div>` : '<p class="aclara">Texto no disponible.</p>';
+    v.textContent = 'Ocultar texto';
+    return;
+  }
+  const a = ev.target.closest('[data-acc="pdf"]');
+  if (a) imprimir(a.closest('.burbuja'));
+});
+function imprimir(b) {
+  const z = $('#zonaImpresion');
+  const hoy = new Date().toLocaleDateString('es-MX', { day: '2-digit', month: '2-digit', year: 'numeric' });
+  z.innerHTML = `<div class="imp-cab"><div><b style="font-family:var(--f-display);font-size:14pt;color:#3A1560">Asistente UIG · Respuesta orientativa</b><br>
+    <span style="font-size:9pt">Generado el ${hoy} · Base normativa vigente al ${esc(E.corte)}</span></div><img src="assets/logo-cges.png" alt=""></div>
+    ${b.innerHTML}<div class="imp-pie">Asistente UIG no es terapeuta, abogada ni servicio de emergencia; esta información es orientativa y no constituye asesoría legal.
+    Si estás en peligro, llama al 911. Verifica la vigencia en la fuente oficial de cada ordenamiento.</div>`;
+  z.querySelectorAll('.txt').forEach(x => { if (!x.innerHTML) x.remove(); });
+  document.body.classList.add('imprimiendo');
+  const fin = () => { document.body.classList.remove('imprimiendo'); z.innerHTML = ''; window.removeEventListener('afterprint', fin); };
+  window.addEventListener('afterprint', fin);
+  setTimeout(() => window.print(), 50);
+}
+
+/* ---------- Salida rápida ---------- */
+function salir() {
+  try { document.title = 'Google'; document.body.innerHTML = ''; } catch (e) {}
+  location.replace(CONFIG.salida);
+}
+let ultimoEsc = 0;
+document.addEventListener('keydown', e => {
+  if (e.key === 'Escape') { const t = Date.now(); if (t - ultimoEsc < 900) salir(); ultimoEsc = t; }
+});
+
+/* ---------- Instalación ---------- */
+window.addEventListener('beforeinstallprompt', e => { e.preventDefault(); E.instalarEvt = e; });
+function sugerirInstalar() {
+  if (E.instaladoMostrado || matchMedia('(display-mode: standalone)').matches || navigator.standalone) return;
+  const ios = /iphone|ipad|ipod/i.test(navigator.userAgent);
+  if (!E.instalarEvt && !ios) return;
+  E.instaladoMostrado = true;
+  const p = $('#instalar'); p.hidden = false;
+  if (ios) { $('#instTxt').textContent = 'En Safari toca Compartir y luego «Agregar a inicio». Funcionará sin internet.'; $('#instSi').hidden = true; $('#instNo').textContent = 'Entendido'; }
+  $('#instSi').onclick = async () => { p.hidden = true; if (E.instalarEvt) { E.instalarEvt.prompt(); E.instalarEvt = null; } };
+  $('#instNo').onclick = () => { p.hidden = true; };
+}
+
+/* ---------- Conexión ---------- */
+function estadoRed() {
+  const a = $('#avisoRed');
+  a.hidden = navigator.onLine;
+  a.textContent = 'Sin conexión: Asistente UIG funciona con la base guardada en tu dispositivo. Los enlaces a fuentes oficiales requieren internet.';
+}
+addEventListener('online', estadoRed); addEventListener('offline', estadoRed);
+
+/* ---------- Arranque ---------- */
+async function iniciar() {
+  $('#btnSalir').onclick = salir;
+  $('#btnModo').onclick = () => elegirModo(E.modo === 'servidora' ? 'ciudadania' : 'servidora');
+  $('#btnFacil').onclick = () => { E.facil = !E.facil; document.body.classList.toggle('facil-on', E.facil); $('#btnFacil').setAttribute('aria-checked', String(E.facil)); };
+  $('#btnTexto').onclick = () => { E.esc = E.esc >= 1.3 ? 1 : +(E.esc + 0.15).toFixed(2); document.documentElement.style.setProperty('--esc', E.esc); };
+  const ta = $('#entrada');
+  ta.addEventListener('input', () => { ta.style.height = 'auto'; ta.style.height = Math.min(ta.scrollHeight, 140) + 'px'; });
+  ta.addEventListener('keydown', e => { if (e.key === 'Enter' && !e.shiftKey) { e.preventDefault(); $('#formEntrada').requestSubmit(); } });
+  $('#formEntrada').onsubmit = e => { e.preventDefault(); const t = ta.value; ta.value = ''; ta.style.height = 'auto'; responder(t); };
+  estadoRed();
+  try {
+    const [docs, faq, riesgo, dir] = await Promise.all([json('data/docs.json'), json('data/faq.json'), json('data/riesgo.json'), json('data/directorio.json').catch(() => null)]);
+    E.docs = docs.docs; E.corte = docs.corte; E.faq = faq.faq; E.riesgo = riesgo.expresiones; E.dir = dir;
+    for (const d of E.docs) E.docMap[d.id] = d;
+    E.docsMain = E.docs.filter(d => d.nivel !== 3); E.docsN3 = E.docs.filter(d => d.nivel === 3);
+    E.idxPromise = json('data/indice.json');
+    E.idxPromise.then(x => { E.idx = x; }).catch(() => {});
+  } catch (e) {
+    burbuja('<p>No pude cargar la base normativa. Revisa tu conexión e inténtalo de nuevo. Si estás en peligro, llama al <a href="tel:911">911</a>.</p>');
+    return;
+  }
+  saludo();
+  pintarSugerencias();
+  if ('serviceWorker' in navigator) {
+    try {
+      const reg = await navigator.serviceWorker.register('sw.js');
+      const listo = await navigator.serviceWorker.ready;
+      const urls = E.docs.filter(d => d.nivel !== 3).map(d => `data/docs/${d.id}.json`);
+      (listo.active || reg.active)?.postMessage({ tipo: 'precargar', urls });
+    } catch (e) {}
+  }
+}
+document.addEventListener('DOMContentLoaded', iniciar);
