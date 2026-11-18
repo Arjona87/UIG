@@ -4,10 +4,10 @@ App web instalable (PWA) de orientación normativa para Unidades de Igualdad de 
 Cada respuesta cita **artículo, ordenamiento y fecha de última reforma**, y funciona **sin conexión** después de la primera visita.
 
 ## Publicar en GitHub Pages
-1. Crea el repositorio `AsistenteUIG` en tu cuenta de GitHub (público).
+1. Repositorio: `UIG` en tu cuenta de GitHub (público).
 2. Sube **todo el contenido de esta carpeta** (excepto `_textos/`, que ya está en `.gitignore`).
 3. En el repositorio: *Settings → Pages → Build and deployment → Deploy from a branch → main / (root)*.
-4. Quedará en `https://arjona87.github.io/AsistenteUIG/`.
+4. Quedará en `https://arjona87.github.io/UIG/`.
 
 > La app debe servirse por **https** (GitHub Pages ya lo hace) para que funcionen la instalación y el modo sin conexión.
 > Para probarla en tu computadora: `python -m http.server 8000` dentro de esta carpeta y abre `http://localhost:8000`.
