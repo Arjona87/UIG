@@ -97,6 +97,7 @@ def limpiar_paginas(texto):
     return out
 
 def parrafos(t):
+    t = re.sub(r'(?m)^[ \t]*[•▪●■◦][ \t]*$\n?', '', t)          # viñetas sueltas que deja la extracción del PDF
     t = re.sub(r'(\w)-\n(\w)', r'\1\2', t)
     t = re.sub(r'[ \t]+', ' ', t)
     # conserva saltos antes de fracciones, incisos y numerales; une el resto
@@ -121,9 +122,34 @@ HEAD = re.compile(r'^[ \t]*(?:ART[ÍI]CULO|Art[íi]culo|ARTICULO)\s+(\d{1,4})\s*
                   r'\s*(?:[\.\-–—:]|$|(?=\s+[A-ZÁÉÍÓÚÑ]))', re.M)
 TRANS = re.compile(r'^\s*(?:ART[ÍI]CULOS\s+)?TRANSITORIOS?\s*\.?\s*$', re.M | re.I)
 
+ORD = r'(?:Primero|Segundo|Tercero|Cuarto|Quinto|Sexto|Séptimo|Octavo|Noveno|Décimo|Undécimo|Duodécimo|Decimotercero|Decimocuarto|Decimoquinto|Decimosexto)'
+LIN = re.compile(r'(?m)^[ \t]*(Lineamiento ' + ORD + r')\b')
+
+def por_lineamientos(todo):
+    """Acuerdos con lineamientos numerados por ordinal: una unidad por lineamiento (cita precisa)."""
+    ms = list(LIN.finditer(todo))
+    if len(ms) < 5:
+        return None
+    units = [['Acuerdo y transitorios', parrafos(todo[:ms[0].start()])]]
+    for i, m in enumerate(ms):
+        fin = ms[i + 1].start() if i + 1 < len(ms) else len(todo)
+        cuerpo = todo[m.start():fin]
+        if i + 1 == len(ms):
+            notas = re.search(r'(?m)^\d+\.\s+[A-ZÁÉÍÓÚ]', cuerpo)
+            if notas:
+                units.append([m.group(1), parrafos(cuerpo[:notas.start()])])
+                units.append(['Notas de la ficha', parrafos(cuerpo[notas.start():])])
+                continue
+        units.append([m.group(1), parrafos(cuerpo)])
+    return [u for u in units if len(u[1]) > 3]
+
 def segmentar(texto, tipo):
     pags = limpiar_paginas(texto)
     todo = '\n'.join(pags)
+    if tipo.startswith(('Acuerdo', 'Lineamientos')):
+        lin = por_lineamientos(todo)
+        if lin:
+            return 'lin', lin
     if any(tipo.startswith(t) for t in TIPOS_ART):
         ms = list(HEAD.finditer(todo))
         ini = next((i for i, m in enumerate(ms) if int(m.group(1)) == 1), None)
@@ -226,7 +252,7 @@ def main():
         textos_por_nivel[nivel][nid] = units
         destino = units_n3 if nivel == 3 else units_main
         for i, (et, cuerpo) in enumerate(units):
-            for fr, txt in fracciones(cuerpo) if modo == 'art' else [('', cuerpo)]:
+            for fr, txt in fracciones(cuerpo) if modo in ('art', 'lin') else [('', cuerpo)]:
                 destino.append((len(docs) - 1, i, fr, tokens(et + ' ' + txt)))
     for nombre, lista in (('indice.json', units_main), ('indice-n3.json', units_n3)):
         post = defaultdict(list); dl = []; ref = []; fx = {}

@@ -1,12 +1,12 @@
 /* Asistente UIG · Service worker: funciona sin conexión después de la primera visita.
    construir_base.py actualiza VERSION en cada reconstrucción para que los teléfonos descarguen la base nueva. */
-const VERSION = '202611190854';
+const VERSION = '202611190911';
 const CASCARA = 'uig-cascara-' + VERSION;
 const DATOS = 'uig-datos-' + VERSION;
 const ESENCIALES = ['./', 'index.html', 'styles.css', 'app.js', 'manifest.webmanifest', 'aviso-privacidad.html',
   'assets/fuentes.css', 'assets/logo-cges.png', 'assets/violeta.webp', 'assets/violeta-96.webp', 'assets/violeta-serena-96.webp',
   'assets/icono-192.png', 'assets/favicon.png',
-  'data/docs.json', 'data/faq.json', 'data/riesgo.json', 'data/directorio.json', 'data/version.json', 'data/indice.json'];
+  'data/docs.json', 'data/faq.json', 'data/riesgo.json', 'data/directorio.json', 'data/version.json', 'data/indice.json', 'data/glosario.json'];
 
 self.addEventListener('install', e => {
   e.waitUntil(caches.open(CASCARA).then(c => c.addAll(ESENCIALES)).then(() => self.skipWaiting()));

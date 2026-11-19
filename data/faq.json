@@ -1,11 +1,11 @@
 {
- "nota": "Respuestas redactadas a partir del texto literal de los artículos citados (corte 18/11/2026). Cada cita se muestra con el nombre del ordenamiento y su fecha de última reforma tomados de docs.json.",
+ "nota": "Asistente UIG v3.0 · 100 preguntas frecuentes redactadas a partir del texto literal de los artículos citados (verificación 19/11/2026, CGES/DGAPP/AA).",
  "faq": [
   {
    "id": "tipos",
    "modo": "ambos",
    "q": "¿Qué tipos de violencia reconoce la ley?",
-   "kw": "tipos violencia clases formas modalidades cuales son reconoce ley psicologica fisica patrimonial economica sexual digital vicaria pega golpea golpes golpeo empuja esposo pareja marido novio exnovio maltrato maltrata",
+   "kw": "tipos violencia clases formas modalidades cuales son reconoce ley psicologica fisica patrimonial economica sexual digital vicaria pega golpea golpes golpeo empuja esposo pareja marido novio exnovio maltrato maltrata genero violencia de genero",
    "intro": "La Ley General de Acceso de las Mujeres a una Vida Libre de Violencias reconoce estos tipos de violencia:",
    "lista": [
     "Psicológica: insultos, humillaciones, celos, amenazas, abandono, rechazo o limitar tus decisiones.",
@@ -43,6 +43,11 @@
      "d": "080",
      "u": "Artículo 21"
     }
+   ],
+   "cat": "tipos",
+   "v": [
+    "clases de violencia contra la mujer",
+    "que es violencia de genero"
    ]
   },
   {
@@ -77,6 +82,11 @@
      "u": "Artículo 10",
      "det": "fracción II"
     }
+   ],
+   "cat": "tipos",
+   "v": [
+    "me insulta y me humilla",
+    "mi pareja me grita todo el tiempo"
    ]
   },
   {
@@ -107,6 +117,11 @@
      "u": "Artículo 10",
      "det": "fracciones III y IV"
     }
+   ],
+   "cat": "tipos",
+   "v": [
+    "no me deja trabajar ni tener dinero",
+    "escondio mis documentos"
    ]
   },
   {
@@ -142,6 +157,11 @@
      "u": "Artículo 10",
      "det": "fracción VI"
     }
+   ],
+   "cat": "tipos",
+   "v": [
+    "subieron mis fotos sin permiso",
+    "me amenaza con publicar mis videos"
    ]
   },
   {
@@ -195,6 +215,11 @@
      "d": "050",
      "u": "Artículo 57 D"
     }
+   ],
+   "cat": "proteccion",
+   "v": [
+    "como pido una orden de alejamiento",
+    "quiero que no se me acerque"
    ]
   },
   {
@@ -235,7 +260,12 @@
      "det": "fracción VII"
     }
    ],
-   "directorio": true
+   "directorio": true,
+   "cat": "denuncia",
+   "v": [
+    "donde denuncio violencia en jalisco",
+    "a donde voy a denunciar"
+   ]
   },
   {
    "id": "abogada",
@@ -275,6 +305,11 @@
      "d": "054",
      "u": "Artículo 119"
     }
+   ],
+   "cat": "denuncia",
+   "v": [
+    "necesito un abogado gratis",
+    "no tengo dinero para abogada"
    ]
   },
   {
@@ -311,6 +346,11 @@
      "u": "Artículo 109",
      "det": "fracciones III y VII"
     }
+   ],
+   "cat": "derechos",
+   "v": [
+    "cuales son mis derechos",
+    "derechos de las mujeres victimas"
    ]
   },
   {
@@ -347,9 +387,20 @@
     {
      "d": "080",
      "u": "Artículo 59 Bis"
+    },
+    {
+     "d": "002",
+     "u": "Pág. 6",
+     "det": "sedes y teléfono de la Red de Centros de Justicia para las Mujeres"
     }
    ],
-   "directorio": true
+   "directorio": true,
+   "cat": "adonde",
+   "v": [
+    "que es el cjm",
+    "para que sirve el centro de justicia para las mujeres"
+   ],
+   "tel": "3336681880"
   },
   {
    "id": "refugio",
@@ -394,7 +445,12 @@
      "det": "fracción III"
     }
    ],
-   "directorio": true
+   "directorio": true,
+   "cat": "proteccion",
+   "v": [
+    "necesito un lugar donde quedarme con mis hijos",
+    "albergue para mujeres"
+   ]
   },
   {
    "id": "laboral",
@@ -447,6 +503,11 @@
      "u": "Artículo 684 E",
      "det": "fracción XII"
     }
+   ],
+   "cat": "tipos",
+   "v": [
+    "mi jefe me acosa",
+    "acoso laboral que hago"
    ]
   },
   {
@@ -482,13 +543,18 @@
      "u": "Artículo 45 Bis",
      "det": "fracciones V y VI"
     }
+   ],
+   "cat": "denuncia",
+   "v": [
+    "me quieren hacer firmar un convenio con mi agresor",
+    "me obligan a arreglarme con el"
    ]
   },
   {
    "id": "desaparicion",
    "modo": "ambos",
    "q": "Una persona desapareció: ¿qué hago y cuánto debo esperar?",
-   "kw": "desaparecio desaparecida desaparecido no aparece no llega no se nada de ella no localizada buscar busqueda 72 horas esperar reportar",
+   "kw": "desaparecio desaparecida desaparecido no aparece no llega no se nada de ella no localizada buscar busqueda 72 horas esperar reportar no regresa no ha regresado no llega hermano hijo viernes",
    "intro": "No tienes que esperar. Ningún protocolo puede establecer plazos de espera para iniciar la investigación.",
    "lista": [
     "Cualquier persona puede pedir la búsqueda con una noticia, un reporte o una denuncia, incluso de forma anónima.",
@@ -518,7 +584,12 @@
      "u": "Artículo 8"
     }
    ],
-   "urgente": true
+   "urgente": true,
+   "cat": "desaparicion",
+   "v": [
+    "mi hija no aparece",
+    "cuanto tiempo tengo que esperar para reportar una desaparicion"
+   ]
   },
   {
    "id": "uig",
@@ -544,22 +615,24 @@
    "citas": [
     {
      "d": "144",
-     "u": "Pág. 2",
-     "det": "Lineamientos Primero, Segundo y Quinto"
+     "u": "Lineamiento Primero"
     },
     {
      "d": "144",
-     "u": "Pág. 3",
-     "det": "Lineamiento Sexto, fracción V"
+     "u": "Lineamiento Segundo"
     },
     {
      "d": "144",
-     "u": "Pág. 4",
-     "det": "lo que el Acuerdo no establece"
+     "u": "Lineamiento Quinto"
     },
     {
-     "d": "145",
-     "u": "Pág. 1"
+     "d": "144",
+     "u": "Lineamiento Sexto",
+     "det": "fracción V"
+    },
+    {
+     "d": "144",
+     "u": "Notas de la ficha"
     },
     {
      "d": "120",
@@ -570,7 +643,12 @@
      "u": "Artículo 59 Ter"
     }
    ],
-   "directorio": true
+   "directorio": true,
+   "cat": "uig",
+   "v": [
+    "que hace la uig",
+    "para que sirve la unidad de igualdad de genero"
+   ]
   },
   {
    "id": "ruta",
@@ -609,11 +687,16 @@
      "d": "131",
      "u": "Pág. 30"
     }
+   ],
+   "cat": "servidoras",
+   "v": [
+    "como atiendo a una victima",
+    "protocolo de atencion a mujeres"
    ]
   },
   {
    "id": "institucional",
-   "modo": "servidora",
+   "modo": "ambos",
    "q": "¿Qué es la violencia institucional y cómo evito cometerla?",
    "kw": "violencia institucional servidor publico no me atendieron revictimizacion no me hicieron caso obstaculizar dilatar evitar cometer",
    "intro": "Es la que cometen servidoras y servidores públicos cuando discriminan, usan estereotipos de género o dilatan, obstaculizan o impiden que las mujeres ejerzan sus derechos o accedan a la atención de la violencia.",
@@ -650,6 +733,11 @@
      "u": "Artículo 45 Bis",
      "det": "fracción VI"
     }
+   ],
+   "cat": "servidoras",
+   "v": [
+    "que es violencia institucional",
+    "la autoridad discrimina a la victima"
    ]
   },
   {
@@ -687,7 +775,12 @@
      "det": "fracción III"
     }
    ],
-   "directorio": true
+   "directorio": true,
+   "cat": "servidoras",
+   "v": [
+    "a donde canalizo a una victima",
+    "como derivo un caso"
+   ]
   },
   {
    "id": "alerta",
@@ -715,6 +808,11 @@
      "d": "080",
      "u": "Artículo 23"
     }
+   ],
+   "cat": "servidoras",
+   "v": [
+    "que es la alerta de genero",
+    "alerta de violencia de genero jalisco"
    ]
   },
   {
@@ -748,6 +846,11 @@
      "d": "050",
      "u": "Artículo 57"
     }
+   ],
+   "cat": "tipos",
+   "v": [
+    "violencia contra regidoras",
+    "violencia politica de genero"
    ]
   },
   {
@@ -781,6 +884,2695 @@
     {
      "d": "080",
      "u": "Artículo 26"
+    }
+   ],
+   "cat": "derechos",
+   "v": [
+    "que es reparar el dano",
+    "me tienen que reparar el dano"
+   ]
+  },
+  {
+   "id": "uig_ayuda",
+   "cat": "uig",
+   "modo": "ambos",
+   "q": "¿Cómo me puede ayudar la Unidad de Igualdad de Género si vivo violencia?",
+   "kw": "como me ayuda la uig me puede ayudar unidad de igualdad atender atienden ayuda vivo violencia acudir a la uig",
+   "v": [
+    "la uig me puede atender",
+    "puedo ir a la unidad de igualdad de genero a pedir ayuda"
+   ],
+   "intro": "Depende de dónde trabajes. Las Unidades de Igualdad de Género trabajan hacia el interior de cada dependencia del Gobierno de Jalisco; no son ventanillas de atención al público.",
+   "lista": [
+    "Si eres servidora pública y vives acoso u hostigamiento sexual en tu trabajo, la UIG de tu dependencia te orienta y te canaliza con las autoridades competentes.",
+    "Si no trabajas en el gobierno, o necesitas atención por violencia, acude a un Centro de Justicia para las Mujeres: ahí te dan atención médica, psicológica y jurídica gratuita.",
+    "Para denunciar un delito, acude al Ministerio Público."
+   ],
+   "cierre": "Si estás en peligro, llama al 911.",
+   "facil": [
+    "La UIG trabaja dentro del gobierno.",
+    "Si te acosan en tu trabajo de gobierno, la UIG te orienta.",
+    "Si necesitas ayuda, ve a un Centro de Justicia para las Mujeres.",
+    "Si estás en peligro, llama al 911."
+   ],
+   "citas": [
+    {
+     "d": "144",
+     "u": "Lineamiento Sexto",
+     "det": "fracción V"
+    },
+    {
+     "d": "144",
+     "u": "Notas de la ficha"
+    },
+    {
+     "d": "080",
+     "u": "Artículo 59 Ter"
+    }
+   ],
+   "directorio": true
+  },
+  {
+   "id": "uig_denuncia",
+   "cat": "uig",
+   "modo": "ambos",
+   "q": "¿La Unidad de Igualdad de Género recibe denuncias o quejas?",
+   "kw": "uig recibe denuncias quejas denunciar en la uig levantar queja unidad de igualdad",
+   "v": [
+    "puedo denunciar en la uig",
+    "la unidad de igualdad recibe quejas de acoso"
+   ],
+   "intro": "No. Según sus Lineamientos, la UIG orienta y canaliza; no tiene un procedimiento para recibir denuncias ni quejas.",
+   "lista": [
+    "Las denuncias por delitos se presentan ante el Ministerio Público.",
+    "En casos de acoso u hostigamiento sexual laboral en el gobierno, la UIG te orienta y te canaliza a las instancias que señala el Protocolo Cero."
+   ],
+   "cierre": "",
+   "facil": [
+    "La UIG no recibe denuncias.",
+    "Te dice a dónde ir.",
+    "Las denuncias se hacen en el Ministerio Público."
+   ],
+   "citas": [
+    {
+     "d": "144",
+     "u": "Lineamiento Sexto",
+     "det": "fracción V"
+    },
+    {
+     "d": "144",
+     "u": "Notas de la ficha"
+    },
+    {
+     "d": "026",
+     "u": "Artículo 221"
+    }
+   ]
+  },
+  {
+   "id": "uig_servidora",
+   "cat": "uig",
+   "modo": "ambos",
+   "q": "Soy servidora pública y vivo acoso u hostigamiento sexual en mi trabajo: ¿qué hago?",
+   "kw": "servidora publica acoso hostigamiento sexual trabajo gobierno dependencia jefe me acosa compañero oficina",
+   "v": [
+    "me acosan en mi trabajo de gobierno",
+    "mi jefe en la dependencia me hostiga"
+   ],
+   "intro": "Tienes derechos y hay a dónde acudir:",
+   "lista": [
+    "La UIG de tu dependencia te orienta y te canaliza con las autoridades competentes, conforme al Protocolo Cero.",
+    "La ley obliga al gobierno a darte atención psicológica y legal, especializada y gratuita.",
+    "Tu nombre no debe hacerse público, para evitar que te presionen para dejar el trabajo.",
+    "Los superiores que no reciban o no den curso a tu queja pueden ser sancionados."
+   ],
+   "cierre": "Si el acoso implica un delito, también puedes denunciar ante el Ministerio Público.",
+   "facil": [
+    "No es tu culpa.",
+    "La UIG de tu oficina te orienta.",
+    "Tienes derecho a apoyo psicológico y legal gratis.",
+    "Tu nombre no se hace público."
+   ],
+   "citas": [
+    {
+     "d": "144",
+     "u": "Lineamiento Sexto",
+     "det": "fracción V"
+    },
+    {
+     "d": "080",
+     "u": "Artículo 15",
+     "det": "fracciones IV, VI y VII"
+    },
+    {
+     "d": "080",
+     "u": "Artículo 13"
+    }
+   ]
+  },
+  {
+   "id": "uig_dependencias",
+   "cat": "uig",
+   "modo": "ambos",
+   "q": "¿En qué dependencias de Jalisco hay Unidad de Igualdad de Género?",
+   "kw": "donde hay uig dependencias unidades de igualdad coordinacion seguridad secretaria fiscalia cuales dependencias",
+   "v": [
+    "que dependencias tienen uig",
+    "hay uig en seguridad"
+   ],
+   "intro": "El Acuerdo DIELAG ACU 084/2020 instruyó a todas las dependencias y entidades de la Administración Pública del Estado de Jalisco a instalar su Unidad de Igualdad de Género.",
+   "lista": [
+    "El Modelo de Atención Integral de Jalisco las ubica dentro de las Coordinaciones Generales Estratégicas (entre ellas la de Seguridad), la Jefatura de Gabinete y la Secretaría de Planeación y Participación Ciudadana.",
+    "Cada dependencia institucionaliza su UIG en su reglamento interno."
+   ],
+   "cierre": "",
+   "facil": [
+    "Cada oficina del Gobierno de Jalisco debe tener su UIG."
+   ],
+   "citas": [
+    {
+     "d": "144",
+     "u": "Acuerdo y transitorios"
+    },
+    {
+     "d": "120",
+     "u": "Pág. 182"
+    },
+    {
+     "d": "120",
+     "u": "Pág. 183"
+    }
+   ]
+  },
+  {
+   "id": "uig_integracion",
+   "cat": "uig",
+   "modo": "servidora",
+   "q": "¿Quiénes integran una Unidad de Igualdad de Género?",
+   "kw": "quienes integran la uig integrantes conforman miembros representante secretaria tecnica titular",
+   "v": [
+    "quien forma parte de la uig",
+    "como se integra la unidad de igualdad"
+   ],
+   "intro": "Personas con nivel de dirección o jefatura y facultad de decisión, designadas por la persona titular de la dependencia y notificadas por oficio a la SISEMH.",
+   "lista": [
+    "Como mínimo: las personas titulares de planeación, presupuestación, evaluación y seguimiento, administración y recursos humanos, jurídica y comunicación.",
+    "Si la dependencia está certificada en la Norma NMX-R-025-SCFI-2015, también la persona titular de su Comité de Igualdad Laboral.",
+    "La UIG elige a una persona representante (enlace con la SISEMH) y a una secretaría técnica; cada integrante nombra una suplencia."
+   ],
+   "cierre": "",
+   "facil": [
+    "La forman jefas y jefes de varias áreas de la oficina.",
+    "Una persona es la representante ante la Secretaría de Igualdad."
+   ],
+   "citas": [
+    {
+     "d": "144",
+     "u": "Lineamiento Séptimo"
+    },
+    {
+     "d": "144",
+     "u": "Lineamiento Octavo"
+    },
+    {
+     "d": "144",
+     "u": "Lineamiento Noveno"
+    }
+   ]
+  },
+  {
+   "id": "uig_funciona",
+   "cat": "uig",
+   "modo": "servidora",
+   "q": "¿Cómo trabaja una Unidad de Igualdad de Género?",
+   "kw": "como trabaja la uig sesiones plan anual de trabajo informes validacion reuniones funcionamiento",
+   "v": [
+    "cada cuando sesiona la uig",
+    "plan anual de trabajo de la uig"
+   ],
+   "intro": "La UIG trabaja con un plan anual y rinde cuentas a la SISEMH:",
+   "lista": [
+    "Elabora con la SISEMH un Plan Anual de Trabajo.",
+    "Sesiona de forma ordinaria dos veces al año y de forma extraordinaria cuando lo considere pertinente.",
+    "Envía sus planes e informes a la SISEMH para su validación.",
+    "Sus integrantes reciben capacitación de la SISEMH en igualdad, derechos humanos, comunicación incluyente y presupuestos con perspectiva de género."
+   ],
+   "cierre": "",
+   "facil": [
+    "Hace un plan cada año.",
+    "Se reúne al menos dos veces al año.",
+    "La Secretaría de Igualdad revisa su trabajo."
+   ],
+   "citas": [
+    {
+     "d": "144",
+     "u": "Lineamiento Décimo"
+    },
+    {
+     "d": "144",
+     "u": "Lineamiento Undécimo"
+    },
+    {
+     "d": "144",
+     "u": "Lineamiento Duodécimo"
+    },
+    {
+     "d": "144",
+     "u": "Lineamiento Decimotercero"
+    }
+   ]
+  },
+  {
+   "id": "uig_sisemh",
+   "cat": "uig",
+   "modo": "servidora",
+   "q": "¿Qué relación tiene la UIG con la Secretaría de Igualdad Sustantiva (SISEMH)?",
+   "kw": "sisemh secretaria de igualdad sustantiva relacion enlace uig coordina valida",
+   "v": [
+    "que hace la sisemh con las uig",
+    "quien coordina a las uig"
+   ],
+   "intro": "La SISEMH coordina a las Unidades de Igualdad de Género del Gobierno de Jalisco:",
+   "lista": [
+    "La UIG es el vínculo de cada dependencia con la SISEMH, a través de su persona representante.",
+    "La SISEMH emite el plan de trabajo de las UIG, valida sus planes e informes y capacita a sus integrantes.",
+    "La validación se hace conforme al artículo 25, fracción X, de la Ley Orgánica del Poder Ejecutivo del Estado."
+   ],
+   "cierre": "",
+   "facil": [
+    "La Secretaría de Igualdad Sustantiva coordina a todas las UIG."
+   ],
+   "citas": [
+    {
+     "d": "144",
+     "u": "Lineamiento Segundo"
+    },
+    {
+     "d": "144",
+     "u": "Lineamiento Noveno"
+    },
+    {
+     "d": "144",
+     "u": "Lineamiento Duodécimo"
+    },
+    {
+     "d": "144",
+     "u": "Acuerdo y transitorios"
+    }
+   ]
+  },
+  {
+   "id": "cultura_inst",
+   "cat": "uig",
+   "modo": "servidora",
+   "q": "¿Qué es el Programa de Cultura Institucional?",
+   "kw": "programa de cultura institucional clima laboral cultura institucional igualdad interior dependencia",
+   "v": [
+    "que es la cultura institucional",
+    "clima laboral con perspectiva de genero"
+   ],
+   "intro": "Es la primera línea estratégica de las UIG: medidas de cultura institucional para mejorar el clima laboral al interior de cada dependencia.",
+   "lista": [
+    "La UIG lo adopta, le da seguimiento, procura recursos para implementarlo y monitorea la política interna de igualdad."
+   ],
+   "cierre": "",
+   "facil": [
+    "Son acciones para que en las oficinas de gobierno haya respeto e igualdad."
+   ],
+   "citas": [
+    {
+     "d": "144",
+     "u": "Lineamiento Segundo"
+    },
+    {
+     "d": "144",
+     "u": "Lineamiento Cuarto"
+    },
+    {
+     "d": "144",
+     "u": "Lineamiento Quinto",
+     "det": "eje I"
+    }
+   ]
+  },
+  {
+   "id": "protocolo_cero",
+   "cat": "uig",
+   "modo": "ambos",
+   "q": "¿Qué es el Protocolo Cero?",
+   "kw": "protocolo cero acoso hostigamiento sexual administracion publica gobierno jalisco protocolo",
+   "v": [
+    "protocolo contra el acoso sexual en el gobierno",
+    "que dice el protocolo cero"
+   ],
+   "intro": "Es el Protocolo para prevenir, atender, sancionar y erradicar el hostigamiento sexual y acoso sexual en la Administración Pública del Estado de Jalisco, publicado en el Periódico Oficial el 11 de junio de 2019.",
+   "lista": [
+    "Las UIG deben difundirlo y canalizar los casos a las instancias competentes conforme a él."
+   ],
+   "cierre": "El texto del Protocolo Cero todavía no forma parte de esta base; por eso aquí no se detalla su procedimiento.",
+   "facil": [
+    "Son las reglas del gobierno contra el acoso sexual en el trabajo.",
+    "La UIG de tu oficina te explica cómo usarlo."
+   ],
+   "citas": [
+    {
+     "d": "144",
+     "u": "Lineamiento Quinto",
+     "det": "eje II"
+    },
+    {
+     "d": "145",
+     "u": "Pág. 1"
+    }
+   ]
+  },
+  {
+   "id": "uig_fundamento",
+   "cat": "uig",
+   "modo": "servidora",
+   "q": "¿Cuál es el fundamento legal de las UIG en Jalisco?",
+   "kw": "fundamento legal uig acuerdo dielag 084 2020 lineamientos base juridica creacion",
+   "v": [
+    "acuerdo de creacion de las uig",
+    "en que ley se basan las uig"
+   ],
+   "intro": "Las UIG se sustentan en:",
+   "lista": [
+    "El Acuerdo DIELAG ACU 084/2020 y sus Lineamientos, publicados en el Periódico Oficial \"El Estado de Jalisco\" el 31 de diciembre de 2020.",
+    "El artículo 25, fracción X, de la Ley Orgánica del Poder Ejecutivo del Estado de Jalisco.",
+    "La reforma al reglamento interno de cada dependencia.",
+    "El Reglamento de la Ley de Acceso de Jalisco prevé promover Unidades de Género como acción contra la violencia institucional."
+   ],
+   "cierre": "",
+   "facil": [
+    "Hay un acuerdo del Gobernador que ordena que cada oficina tenga su UIG."
+   ],
+   "citas": [
+    {
+     "d": "144",
+     "u": "Acuerdo y transitorios"
+    },
+    {
+     "d": "144",
+     "u": "Lineamiento Primero"
+    },
+    {
+     "d": "135",
+     "u": "Artículo 58",
+     "det": "fracción III"
+    }
+   ]
+  },
+  {
+   "id": "perspectiva",
+   "cat": "uig",
+   "modo": "ambos",
+   "q": "¿Qué es la perspectiva de género?",
+   "kw": "perspectiva de genero que es definicion enfoque de genero",
+   "v": [
+    "que significa perspectiva de genero",
+    "definicion de perspectiva de genero"
+   ],
+   "intro": "Es una visión científica, analítica y política sobre las mujeres y los hombres que busca eliminar las causas de la opresión de género, como la desigualdad, la injusticia y la jerarquización de las personas basada en el género.",
+   "lista": [
+    "Promueve la igualdad sustantiva, el derecho a una vida libre de violencias y el bienestar de las mujeres.",
+    "La ley de igualdad la describe como la metodología para identificar, cuestionar y valorar la discriminación, desigualdad y exclusión de las mujeres."
+   ],
+   "cierre": "",
+   "facil": [
+    "Es una forma de mirar las cosas para notar dónde las mujeres reciben un trato injusto.",
+    "Sirve para corregir esa desigualdad."
+   ],
+   "citas": [
+    {
+     "d": "080",
+     "u": "Artículo 5",
+     "det": "fracción IX"
+    },
+    {
+     "d": "091",
+     "u": "Artículo 5",
+     "det": "fracción VI"
+    }
+   ]
+  },
+  {
+   "id": "transversalidad",
+   "cat": "uig",
+   "modo": "servidora",
+   "q": "¿Qué es la transversalización de la perspectiva de género?",
+   "kw": "transversalizacion transversalidad perspectiva de genero politicas publicas que es",
+   "v": [
+    "que significa transversalizar",
+    "transversalidad de genero"
+   ],
+   "intro": "Es el proceso que garantiza incorporar la perspectiva de género para valorar las implicaciones que tiene para mujeres y hombres cualquier acción que se programe: legislación, políticas públicas, actividades administrativas, económicas y culturales.",
+   "lista": [
+    "Es el centro del trabajo de las UIG: llevar la perspectiva de género a reglamentos, planes, programas, presupuestos e indicadores de su dependencia."
+   ],
+   "cierre": "",
+   "facil": [
+    "Es revisar que todo lo que hace el gobierno tome en cuenta a mujeres y hombres por igual."
+   ],
+   "citas": [
+    {
+     "d": "091",
+     "u": "Artículo 5",
+     "det": "fracción VII"
+    },
+    {
+     "d": "144",
+     "u": "Lineamiento Quinto",
+     "det": "eje IV"
+    }
+   ]
+  },
+  {
+   "id": "igualdad_sust",
+   "cat": "uig",
+   "modo": "ambos",
+   "q": "¿Qué es la igualdad sustantiva?",
+   "kw": "igualdad sustantiva que es igualdad de genero igualdad real",
+   "v": [
+    "diferencia entre igualdad de genero e igualdad sustantiva",
+    "que significa igualdad sustantiva"
+   ],
+   "intro": "La igualdad sustantiva es el acceso al mismo trato y oportunidades para el reconocimiento, goce o ejercicio de los derechos humanos y las libertades fundamentales.",
+   "lista": [
+    "La igualdad de género es la situación en la que mujeres y hombres acceden con las mismas posibilidades y oportunidades a bienes, servicios, recursos y a la toma de decisiones."
+   ],
+   "cierre": "",
+   "facil": [
+    "Es que mujeres y hombres tengan, en los hechos, las mismas oportunidades y el mismo trato."
+   ],
+   "citas": [
+    {
+     "d": "091",
+     "u": "Artículo 5",
+     "det": "fracciones IV y V"
+    }
+   ]
+  },
+  {
+   "id": "hostig_oblig",
+   "cat": "uig",
+   "modo": "servidora",
+   "q": "¿Qué obligaciones tiene el gobierno frente al hostigamiento y el acoso sexual?",
+   "kw": "obligaciones gobierno hostigamiento acoso sexual dependencias centros laborales sancionar procedimiento queja",
+   "v": [
+    "que debe hacer una dependencia ante el acoso sexual",
+    "obligaciones ante el hostigamiento"
+   ],
+   "intro": "La ley obliga a los tres órdenes de gobierno a:",
+   "lista": [
+    "Establecer mecanismos para erradicar el hostigamiento y el acoso sexual en escuelas y centros laborales.",
+    "Crear procedimientos administrativos claros y precisos para sancionarlos.",
+    "No hacer público el nombre de la víctima y sumar las quejas anteriores contra el mismo hostigador, guardando el anonimato.",
+    "Dar atención psicológica y legal, especializada y gratuita, a la víctima.",
+    "Sancionar a los superiores que sean omisos en recibir o dar curso a una queja."
+   ],
+   "cierre": "En el Gobierno de Jalisco, las UIG difunden el Protocolo Cero y canalizan los casos.",
+   "facil": [
+    "El gobierno debe prevenir y castigar el acoso.",
+    "Debe proteger el nombre de la víctima.",
+    "Debe darle apoyo gratis."
+   ],
+   "citas": [
+    {
+     "d": "080",
+     "u": "Artículo 15"
+    },
+    {
+     "d": "144",
+     "u": "Lineamiento Quinto",
+     "det": "eje II"
+    }
+   ]
+  },
+  {
+   "id": "capacitacion",
+   "cat": "uig",
+   "modo": "servidora",
+   "q": "¿Qué capacitación debe tener el personal que atiende a víctimas?",
+   "kw": "capacitacion personal servidores publicos atienden victimas formacion perspectiva de genero",
+   "v": [
+    "que capacitacion necesito para atender victimas",
+    "formacion del personal de atencion"
+   ],
+   "intro": "Varias normas exigen capacitación especializada:",
+   "lista": [
+    "El personal de los Centros de Justicia para las Mujeres debe tener formación en perspectiva de género y derechos humanos de las mujeres, y capacitación permanente.",
+    "El personal de salud debe recibir capacitación sobre violencia contra las mujeres.",
+    "En Jalisco, el Reglamento de la Ley de Acceso prevé capacitar al funcionariado en derechos humanos de las mujeres para prevenir la violencia institucional.",
+    "Las y los integrantes de las UIG reciben capacitación de la SISEMH."
+   ],
+   "cierre": "",
+   "facil": [
+    "Quien atiende a víctimas debe estar capacitado en derechos de las mujeres."
+   ],
+   "citas": [
+    {
+     "d": "080",
+     "u": "Artículo 59 Octies"
+    },
+    {
+     "d": "080",
+     "u": "Artículo 46",
+     "det": "fracción III"
+    },
+    {
+     "d": "135",
+     "u": "Artículo 58"
+    },
+    {
+     "d": "144",
+     "u": "Lineamiento Decimotercero"
+    }
+   ]
+  },
+  {
+   "id": "adonde",
+   "cat": "adonde",
+   "modo": "ambos",
+   "q": "¿A dónde me debo dirigir si vivo violencia?",
+   "kw": "a donde voy a donde acudo donde pido ayuda a quien acudo donde me dirijo que hago vivo violencia necesito ayuda pedir ayuda",
+   "v": [
+    "donde puedo pedir ayuda",
+    "a donde voy si mi pareja me maltrata"
+   ],
+   "intro": "Según lo que necesites:",
+   "lista": [
+    "Si estás en peligro ahora: llama al 911.",
+    "Atención integral gratuita (médica, psicológica, jurídica, trabajo social, Ministerio Público especializado): un Centro de Justicia para las Mujeres. Atienden las 24 horas, todos los días.",
+    "Para denunciar: el Ministerio Público.",
+    "Para la ayuda, asistencia y reparación como víctima: la Comisión Ejecutiva Estatal de Atención a Víctimas."
+   ],
+   "cierre": "",
+   "facil": [
+    "Si estás en peligro, llama al 911.",
+    "Ve a un Centro de Justicia para las Mujeres.",
+    "Ahí te atienden gratis, todos los días."
+   ],
+   "citas": [
+    {
+     "d": "080",
+     "u": "Artículo 59 Ter"
+    },
+    {
+     "d": "026",
+     "u": "Artículo 221"
+    },
+    {
+     "d": "054",
+     "u": "Artículo 62"
+    }
+   ],
+   "directorio": true
+  },
+  {
+   "id": "cjm_sedes",
+   "cat": "adonde",
+   "modo": "ambos",
+   "q": "¿Dónde hay Centros de Justicia para las Mujeres en Jalisco?",
+   "kw": "donde hay centro de justicia para las mujeres cjm sedes direccion telefono guadalajara puerto vallarta colotlan tlajomulco tlaquepaque",
+   "v": [
+    "direccion del centro de justicia para las mujeres",
+    "cuantos cjm hay en jalisco"
+   ],
+   "intro": "Según el Catálogo de Programas y Servicios de la Red de Centros de Justicia para las Mujeres del Estado de Jalisco (2025), hay 5 sedes:",
+   "lista": [
+    "Guadalajara: C. Álvaro Alcázar #5869, Jardines Alcalde, C.P. 44298.",
+    "Puerto Vallarta: Av. Las Palmas #315, Parque Las Palmas, C.P. 48317.",
+    "Colotlán: Blvd. Salvador Lutteroth González #215, C.P. 46200.",
+    "Tlajomulco de Zúñiga: Blvd. Distrito Federal #175, Fracc. Chulavista, C.P. 45653.",
+    "San Pedro Tlaquepaque: C. Benjamín Cerda #778, Fracc. Parques de la Victoria, C.P. 45638."
+   ],
+   "cierre": "El catálogo indica el teléfono 33 3668 1880 para todas las sedes. Verifica horarios y servicios antes de acudir.",
+   "facil": [
+    "Hay 5 Centros de Justicia para las Mujeres en Jalisco.",
+    "Están en Guadalajara, Puerto Vallarta, Colotlán, Tlajomulco y Tlaquepaque.",
+    "El teléfono es 33 3668 1880."
+   ],
+   "citas": [
+    {
+     "d": "002",
+     "u": "Pág. 6"
+    }
+   ],
+   "tel": "3336681880"
+  },
+  {
+   "id": "peligro",
+   "cat": "adonde",
+   "modo": "ambos",
+   "q": "¿Qué hago si estoy en peligro ahora mismo?",
+   "kw": "estoy en peligro ahora urgente emergencia auxilio ayuda rapido que hago ya",
+   "v": [
+    "necesito ayuda urgente",
+    "estoy en peligro que hago"
+   ],
+   "intro": "Llama al 911. Tienes derecho a protección inmediata y efectiva de las autoridades.",
+   "lista": [
+    "Las órdenes de protección son de urgente aplicación y deben expedirse de inmediato o, a más tardar, dentro de las 4 horas siguientes a que la autoridad conoce los hechos.",
+    "Si puedes hacerlo sin riesgo, ve a un lugar seguro o con una persona de confianza.",
+    "Si necesitas cerrar esta página rápido, usa el botón Salir."
+   ],
+   "cierre": "",
+   "facil": [
+    "Llama al 911.",
+    "Ve a un lugar seguro si puedes.",
+    "La autoridad te debe proteger rápido."
+   ],
+   "citas": [
+    {
+     "d": "080",
+     "u": "Artículo 52",
+     "det": "fracción II"
+    },
+    {
+     "d": "080",
+     "u": "Artículo 27"
+    },
+    {
+     "d": "080",
+     "u": "Artículo 28"
+    }
+   ],
+   "urgente": true
+  },
+  {
+   "id": "ayudar",
+   "cat": "adonde",
+   "modo": "ambos",
+   "q": "¿Cómo ayudo a una amiga o familiar que vive violencia?",
+   "kw": "como ayudo a una amiga familiar hermana mama vecina vive violencia quiero ayudar a alguien mi amiga sufre",
+   "v": [
+    "mi amiga sufre violencia que hago",
+    "como ayudar a mi hermana que la golpean"
+   ],
+   "intro": "Puedes orientarla y acompañarla:",
+   "lista": [
+    "Comparte con ella que existen los Centros de Justicia para las Mujeres, con atención gratuita y las 24 horas.",
+    "Ella puede ir acompañada de una persona de su confianza, por ejemplo para recuperar sus pertenencias con apoyo de la autoridad.",
+    "Si sabes que se cometió un delito, puedes denunciarlo: la ley dice que toda persona a quien le conste un hecho probablemente delictivo debe denunciarlo; en caso de urgencia, ante cualquier policía.",
+    "Si está en peligro inmediato, llama al 911."
+   ],
+   "cierre": "Respeta sus decisiones y su ritmo; nadie puede obligarla a conciliar con su agresor.",
+   "facil": [
+    "Escúchala y no la juzgues.",
+    "Dile que puede ir a un Centro de Justicia para las Mujeres.",
+    "Si está en peligro, llama al 911."
+   ],
+   "citas": [
+    {
+     "d": "026",
+     "u": "Artículo 222"
+    },
+    {
+     "d": "080",
+     "u": "Artículo 59 Ter"
+    },
+    {
+     "d": "080",
+     "u": "Artículo 34 Ter"
+    },
+    {
+     "d": "080",
+     "u": "Artículo 52",
+     "det": "fracción IX"
+    }
+   ],
+   "directorio": true
+  },
+  {
+   "id": "no_atienden",
+   "cat": "adonde",
+   "modo": "ambos",
+   "q": "¿Qué hago si una autoridad no me atiende o me trata mal?",
+   "kw": "no me atendieron me trataron mal autoridad no me hizo caso ministerio publico no quiso policia no me ayudo queja contra servidor",
+   "v": [
+    "el ministerio publico no me quiso tomar la denuncia",
+    "la policia no me hizo caso"
+   ],
+   "intro": "Que una persona servidora pública dilate, obstaculice o impida tus derechos, o use estereotipos de género, es violencia institucional.",
+   "lista": [
+    "El Ministerio Público y la policía deben proceder sin mayores requisitos a investigar una denuncia.",
+    "Las autoridades deben evitar todo trato que implique victimización secundaria y darte información clara sobre tus derechos.",
+    "Los organismos públicos de protección de los derechos humanos, como la Comisión Estatal de Derechos Humanos, pueden reconocer tu calidad de víctima."
+   ],
+   "cierre": "Puedes pedir orientación jurídica gratuita en un Centro de Justicia para las Mujeres.",
+   "facil": [
+    "Si no te atienden bien, eso también es violencia.",
+    "La autoridad debe recibir tu denuncia.",
+    "Pide apoyo en un Centro de Justicia para las Mujeres."
+   ],
+   "citas": [
+    {
+     "d": "080",
+     "u": "Artículo 18"
+    },
+    {
+     "d": "026",
+     "u": "Artículo 221"
+    },
+    {
+     "d": "088",
+     "u": "Artículo 120",
+     "det": "fracciones VI y VII"
+    },
+    {
+     "d": "088",
+     "u": "Artículo 110",
+     "det": "fracción IV"
+    }
+   ],
+   "directorio": true
+  },
+  {
+   "id": "ceeav",
+   "cat": "adonde",
+   "modo": "ambos",
+   "q": "¿Qué es la Comisión Ejecutiva Estatal de Atención a Víctimas?",
+   "kw": "comision ejecutiva estatal de atencion a victimas ceeav que hace ayuda victimas jalisco fondo",
+   "v": [
+    "que hace la comision de victimas",
+    "ceeav jalisco"
+   ],
+   "intro": "Es el órgano operativo del Sistema Estatal de Atención a Víctimas de Jalisco. Coordina los instrumentos, políticas, servicios y acciones para garantizar los derechos de las víctimas.",
+   "lista": [
+    "Otorga ayuda provisional, oportuna y rápida para necesidades inmediatas relacionadas con el hecho victimizante.",
+    "Las víctimas pueden acceder de forma subsidiaria a un Fondo para la ayuda, asistencia y reparación integral.",
+    "Brinda asesoría jurídica gratuita a las víctimas que la soliciten."
+   ],
+   "cierre": "",
+   "facil": [
+    "Es una oficina del gobierno que ayuda a las víctimas.",
+    "Puede darte apoyo rápido y asesoría gratis."
+   ],
+   "citas": [
+    {
+     "d": "054",
+     "u": "Artículo 62"
+    },
+    {
+     "d": "054",
+     "u": "Artículo 8"
+    },
+    {
+     "d": "054",
+     "u": "Artículo 95"
+    },
+    {
+     "d": "054",
+     "u": "Artículo 119"
+    }
+   ]
+  },
+  {
+   "id": "psico",
+   "cat": "adonde",
+   "modo": "ambos",
+   "q": "¿Puedo recibir atención psicológica gratuita?",
+   "kw": "atencion psicologica gratis psicologa terapia apoyo emocional contencion gratuita",
+   "v": [
+    "donde me dan terapia gratis",
+    "necesito una psicologa"
+   ],
+   "intro": "Sí. Los Centros de Justicia para las Mujeres deben ofrecer gratuitamente atención médica y psicológica, incluida la contención emocional.",
+   "lista": [
+    "Los refugios también brindan apoyo psicológico especializado y gratuito.",
+    "Si vives hostigamiento o acoso sexual, el gobierno debe darte atención psicológica y legal gratuita."
+   ],
+   "cierre": "",
+   "facil": [
+    "Puedes recibir apoyo de una psicóloga gratis.",
+    "Pídelo en un Centro de Justicia para las Mujeres."
+   ],
+   "citas": [
+    {
+     "d": "080",
+     "u": "Artículo 59 Ter",
+     "det": "fracción I"
+    },
+    {
+     "d": "080",
+     "u": "Artículo 56"
+    },
+    {
+     "d": "080",
+     "u": "Artículo 15",
+     "det": "fracción VI"
+    }
+   ],
+   "directorio": true
+  },
+  {
+   "id": "medica",
+   "cat": "adonde",
+   "modo": "ambos",
+   "q": "¿Puedo recibir atención médica?",
+   "kw": "atencion medica doctora hospital lesiones me lastimo heridas salud urgencia medica",
+   "v": [
+    "necesito un medico",
+    "me lastimaron necesito atencion medica"
+   ],
+   "intro": "Sí. Como víctima tienes derecho a recibir atención médica y psicológica de urgencia desde que ocurrió el delito.",
+   "lista": [
+    "Los Centros de Justicia para las Mujeres ofrecen atención médica gratuita.",
+    "Puedes pedir que te atienda personal del sexo que elijas."
+   ],
+   "cierre": "Si tienes una lesión grave o estás en peligro, llama al 911.",
+   "facil": [
+    "Tienes derecho a que un médico te atienda.",
+    "Puedes pedir que te atienda una mujer.",
+    "Si es urgente, llama al 911."
+   ],
+   "citas": [
+    {
+     "d": "026",
+     "u": "Artículo 109",
+     "det": "fracción III"
+    },
+    {
+     "d": "080",
+     "u": "Artículo 59 Ter",
+     "det": "fracción I"
+    }
+   ],
+   "directorio": true
+  },
+  {
+   "id": "requisitos",
+   "cat": "adonde",
+   "modo": "ciudadania",
+   "q": "¿Necesito llevar documentos o pruebas para pedir ayuda o denunciar?",
+   "kw": "necesito pruebas documentos requisitos identificacion que llevo para denunciar sin pruebas no tengo pruebas",
+   "v": [
+    "puedo denunciar sin pruebas",
+    "que necesito llevar para denunciar"
+   ],
+   "intro": "No necesitas pruebas para pedir ayuda. El Ministerio Público y la policía deben investigar sin pedirte requisitos adicionales.",
+   "lista": [
+    "Puedes denunciar de forma oral; la autoridad debe registrarla.",
+    "Si los tienes, ayuda llevar: una identificación, tu relato de qué pasó, cuándo y dónde, y cualquier prueba (mensajes, fotos, testigos), según la Guía de Denuncia.",
+    "Una orden de protección de naturaleza administrativa no requiere denuncia."
+   ],
+   "cierre": "",
+   "facil": [
+    "No necesitas pruebas para pedir ayuda.",
+    "Puedes contarlo hablando.",
+    "Si tienes mensajes o fotos, llévalos."
+   ],
+   "citas": [
+    {
+     "d": "026",
+     "u": "Artículo 221"
+    },
+    {
+     "d": "026",
+     "u": "Artículo 223"
+    },
+    {
+     "d": "045",
+     "u": "Pág. 1"
+    },
+    {
+     "d": "116",
+     "u": "Pág. 67"
+    }
+   ]
+  },
+  {
+   "id": "fisica",
+   "cat": "tipos",
+   "modo": "ambos",
+   "q": "¿Qué es la violencia física?",
+   "kw": "violencia fisica golpes me pega empujones patadas lesiones arma acido quemaduras empujo empujon cachetada bofetada pateo jalo cabello moreton",
+   "v": [
+    "me golpea es violencia fisica",
+    "que se considera violencia fisica"
+   ],
+   "intro": "Es cualquier acto que inflige daño no accidental usando la fuerza física o algún tipo de arma, objeto, ácido o sustancia corrosiva, tóxica o inflamable, que pueda provocar o no lesiones, internas, externas o ambas.",
+   "lista": [],
+   "cierre": "No necesitas tener marcas visibles para que sea violencia. Si estás en peligro, llama al 911.",
+   "facil": [
+    "Golpear, empujar o lastimar es violencia física.",
+    "Aunque no queden marcas.",
+    "Si estás en peligro, llama al 911."
+   ],
+   "citas": [
+    {
+     "d": "080",
+     "u": "Artículo 6",
+     "det": "fracción II"
+    },
+    {
+     "d": "050",
+     "u": "Artículo 10"
+    }
+   ]
+  },
+  {
+   "id": "sexual",
+   "cat": "tipos",
+   "modo": "ambos",
+   "q": "¿Qué es la violencia sexual?",
+   "kw": "violencia sexual abuso sexual violacion me obliga relaciones tocamientos sexualidad obligo sexo relaciones tocamientos forzo",
+   "v": [
+    "me obliga a tener relaciones es violencia",
+    "que es la violencia sexual"
+   ],
+   "intro": "Es cualquier acto que degrada o daña el cuerpo y/o la sexualidad de la víctima y atenta contra su libertad, dignidad e integridad física.",
+   "lista": [
+    "La ley la reconoce como una expresión de abuso de poder que puede darse en el espacio público o privado, incluso dentro de una relación de pareja."
+   ],
+   "cierre": "Puedes recibir atención médica y psicológica de urgencia. Si estás en peligro, llama al 911.",
+   "facil": [
+    "Nadie puede obligarte a nada sexual.",
+    "Tampoco tu pareja.",
+    "Puedes pedir ayuda médica y psicológica."
+   ],
+   "citas": [
+    {
+     "d": "080",
+     "u": "Artículo 6",
+     "det": "fracción V"
+    },
+    {
+     "d": "026",
+     "u": "Artículo 109",
+     "det": "fracción III"
+    }
+   ]
+  },
+  {
+   "id": "vicaria",
+   "cat": "tipos",
+   "modo": "ambos",
+   "q": "¿Qué es la violencia vicaria o a través de mis hijas e hijos?",
+   "kw": "violencia vicaria interposita persona hijos hijas lastima a mis hijos me quita a mis hijos amenaza con mis hijos",
+   "v": [
+    "usa a mis hijos para lastimarme",
+    "violencia vicaria jalisco"
+   ],
+   "intro": "Es cuando, para dañar a una mujer, el agresor lastima o amenaza a sus hijas, hijos, familiares, personas cercanas o incluso a sus mascotas.",
+   "lista": [
+    "La ley general la llama violencia a través de interpósita persona.",
+    "La ley de Jalisco la llama violencia vicaria e incluye a los seres sintientes.",
+    "Aplica aunque ya no vivan juntos."
+   ],
+   "cierre": "Si tus hijas o hijos están en riesgo, llama al 911.",
+   "facil": [
+    "Si alguien lastima a tus hijos para dañarte, es violencia.",
+    "También si lastima a tu mascota.",
+    "Pide ayuda."
+   ],
+   "citas": [
+    {
+     "d": "080",
+     "u": "Artículo 6",
+     "det": "fracción VI"
+    },
+    {
+     "d": "050",
+     "u": "Artículo 10",
+     "det": "fracción VII"
+    }
+   ]
+  },
+  {
+   "id": "obstetrica",
+   "cat": "tipos",
+   "modo": "ambos",
+   "q": "¿Qué es la violencia obstétrica?",
+   "kw": "violencia obstetrica parto embarazo hospital cesarea sin consentimiento puerperio doctor maltrato hospital parto dar luz embarazo trataron mal clinica",
+   "v": [
+    "me maltrataron en el parto",
+    "me hicieron cesarea sin preguntarme"
+   ],
+   "intro": "Es toda acción u omisión del personal de salud, durante el embarazo, el parto o el puerperio, que cause daño físico o psicológico, limite tu autonomía o tu decisión informada, o implique trato denigrante o negligente. Por ejemplo:",
+   "lista": [
+    "Comentarios ofensivos o humillantes por tu embarazo.",
+    "Procedimientos, incluida la cesárea, sin tu consentimiento informado, salvo urgencia médica justificada.",
+    "Obligarte a parir acostada o inmovilizada.",
+    "No atender a tiempo una emergencia obstétrica.",
+    "Impedirte cargar y amamantar a tu bebé sin causa médica.",
+    "Esterilizarte sin tu consentimiento."
+   ],
+   "cierre": "",
+   "facil": [
+    "Si te maltratan en el embarazo o el parto, es violencia.",
+    "Te deben preguntar antes de cualquier procedimiento."
+   ],
+   "citas": [
+    {
+     "d": "050",
+     "u": "Artículo 11",
+     "det": "fracción IX"
+    }
+   ]
+  },
+  {
+   "id": "mediatica",
+   "cat": "tipos",
+   "modo": "ambos",
+   "q": "¿Qué es la violencia mediática?",
+   "kw": "violencia mediatica medios de comunicacion estereotipos publicidad discurso de odio television",
+   "v": [
+    "que es violencia mediatica",
+    "violencia en medios"
+   ],
+   "intro": "Es todo acto, a través de cualquier medio de comunicación, que promueva estereotipos sexistas, haga apología de la violencia contra las mujeres y las niñas, o difunda discurso de odio sexista o discriminación, y que les cause daño.",
+   "lista": [],
+   "cierre": "",
+   "facil": [
+    "Es cuando un medio de comunicación promueve la violencia o el desprecio contra las mujeres."
+   ],
+   "citas": [
+    {
+     "d": "080",
+     "u": "Artículo 20 Quinquies"
+    }
+   ]
+  },
+  {
+   "id": "noviazgo",
+   "cat": "tipos",
+   "modo": "ambos",
+   "q": "¿Qué es la violencia en el noviazgo?",
+   "kw": "violencia en el noviazgo novio me controla me cela relacion de pareja enamorados",
+   "v": [
+    "mi novio me controla",
+    "violencia de pareja en el noviazgo"
+   ],
+   "intro": "La ley de Jalisco la define como las acciones o conductas intencionales que generan daño sexual, físico o psíquico a la otra persona con quien se tiene una relación afectiva, de enamoramiento o noviazgo, para presionarla, manipularla o maltratarla.",
+   "lista": [],
+   "cierre": "Revisar tu celular, controlarte o celarte también pueden ser formas de violencia psicológica.",
+   "facil": [
+    "Si tu novio te presiona, te manipula o te maltrata, es violencia."
+   ],
+   "citas": [
+    {
+     "d": "050",
+     "u": "Artículo 11",
+     "det": "fracción VIII"
+    },
+    {
+     "d": "080",
+     "u": "Artículo 6",
+     "det": "fracción I"
+    }
+   ]
+  },
+  {
+   "id": "familiar",
+   "cat": "tipos",
+   "modo": "ambos",
+   "q": "¿Qué es la violencia familiar?",
+   "kw": "violencia familiar en casa esposo marido pareja familia domestica intrafamiliar",
+   "v": [
+    "mi esposo me maltrata en la casa",
+    "que es violencia intrafamiliar"
+   ],
+   "intro": "Es el acto abusivo de poder u omisión intencional para dominar, someter, controlar o agredir a las mujeres de forma física, verbal, psicológica, patrimonial, económica o sexual, dentro o fuera del domicilio.",
+   "lista": [
+    "La comete una persona con quien tienes o tuviste parentesco, matrimonio, concubinato o una relación de hecho."
+   ],
+   "cierre": "Puedes pedir una orden de protección, incluso para que el agresor salga del domicilio.",
+   "facil": [
+    "Si alguien de tu familia o tu pareja te maltrata, es violencia familiar.",
+    "También si ya no viven juntos."
+   ],
+   "citas": [
+    {
+     "d": "080",
+     "u": "Artículo 7"
+    },
+    {
+     "d": "050",
+     "u": "Artículo 11",
+     "det": "fracción I"
+    }
+   ]
+  },
+  {
+   "id": "comunidad",
+   "cat": "tipos",
+   "modo": "ambos",
+   "q": "¿Qué es la violencia en la comunidad y el acoso en la calle?",
+   "kw": "acoso callejero en la calle transporte publico piropos me tocaron en el camion acoso en espacios publicos comunidad",
+   "v": [
+    "me acosaron en el camion",
+    "acoso en la calle es violencia"
+   ],
+   "intro": "La violencia en la comunidad son los actos que transgreden los derechos de las mujeres y propician su denigración, discriminación o exclusión en el ámbito público.",
+   "lista": [
+    "El acoso sexual en espacios públicos es una conducta física o verbal de connotación sexual no consentida, en la calle o en el transporte público, aunque no conozcas a la persona agresora."
+   ],
+   "cierre": "",
+   "facil": [
+    "Si te tocan o te dicen cosas sexuales en la calle o el camión sin tu permiso, es violencia."
+   ],
+   "citas": [
+    {
+     "d": "080",
+     "u": "Artículo 16"
+    },
+    {
+     "d": "080",
+     "u": "Artículo 16 Bis"
+    },
+    {
+     "d": "050",
+     "u": "Artículo 11",
+     "det": "fracción IV"
+    }
+   ]
+  },
+  {
+   "id": "feminicida",
+   "cat": "tipos",
+   "modo": "ambos",
+   "q": "¿Qué es la violencia feminicida?",
+   "kw": "violencia feminicida feminicidio que es asesinato de mujeres",
+   "v": [
+    "que es el feminicidio",
+    "definicion de violencia feminicida"
+   ],
+   "intro": "Es la forma extrema de violencia de género contra las mujeres, que de manera sistemática lesiona sus derechos humanos en el ámbito público o privado y puede llegar al homicidio.",
+   "lista": [
+    "La ley de Jalisco señala que se da en un ambiente adverso a las mujeres, con ausencia o deficiente aplicación de normas y políticas de protección."
+   ],
+   "cierre": "Si temes por tu vida, llama al 911.",
+   "facil": [
+    "Es la violencia más grave contra las mujeres.",
+    "Puede llegar a quitarles la vida.",
+    "Si tienes miedo por tu vida, llama al 911."
+   ],
+   "citas": [
+    {
+     "d": "080",
+     "u": "Artículo 21"
+    },
+    {
+     "d": "050",
+     "u": "Artículo 11",
+     "det": "fracción VI"
+    }
+   ]
+  },
+  {
+   "id": "docente",
+   "cat": "tipos",
+   "modo": "ambos",
+   "q": "¿Qué es la violencia docente?",
+   "kw": "violencia docente escuela maestro profesor alumna universidad discriminacion escolar profesor maestro clase humilla escuela",
+   "v": [
+    "mi maestro me discrimina",
+    "violencia en la escuela de un profesor"
+   ],
+   "intro": "Son las conductas de maestras o maestros que dañan la autoestima de las alumnas con actos de discriminación por su sexo, edad, condición social, académica o características físicas.",
+   "lista": [
+    "La ley obliga a los tres órdenes de gobierno a crear procedimientos claros en las escuelas para sancionar el hostigamiento y el acoso sexual."
+   ],
+   "cierre": "",
+   "facil": [
+    "Si un maestro te humilla o te discrimina por ser mujer, es violencia."
+   ],
+   "citas": [
+    {
+     "d": "080",
+     "u": "Artículo 12"
+    },
+    {
+     "d": "050",
+     "u": "Artículo 11",
+     "det": "fracción III"
+    },
+    {
+     "d": "080",
+     "u": "Artículo 15",
+     "det": "fracciones II y III"
+    }
+   ]
+  },
+  {
+   "id": "hostig_acoso",
+   "cat": "tipos",
+   "modo": "ambos",
+   "q": "¿Qué diferencia hay entre hostigamiento y acoso sexual?",
+   "kw": "diferencia hostigamiento acoso sexual que es hostigamiento que es acoso",
+   "v": [
+    "hostigamiento o acoso cual es la diferencia",
+    "que es hostigamiento sexual"
+   ],
+   "intro": "La diferencia está en la relación de poder:",
+   "lista": [
+    "Hostigamiento sexual: hay subordinación real con la persona agresora (por ejemplo, tu jefe o tu maestro) y conductas de connotación sexual.",
+    "Acoso sexual: no hay subordinación, pero sí un abuso de poder que te deja en indefensión o en riesgo; puede ser un solo evento o varios."
+   ],
+   "cierre": "Los dos son violencia y los dos se pueden atender y sancionar.",
+   "facil": [
+    "Si quien te acosa es tu jefe o maestro, es hostigamiento.",
+    "Si no es tu jefe, es acoso.",
+    "Los dos son violencia."
+   ],
+   "citas": [
+    {
+     "d": "080",
+     "u": "Artículo 13"
+    },
+    {
+     "d": "077",
+     "u": "Artículo 3 Bis"
+    }
+   ]
+  },
+  {
+   "id": "discriminacion",
+   "cat": "tipos",
+   "modo": "ambos",
+   "q": "¿Qué es la discriminación contra la mujer?",
+   "kw": "discriminacion contra la mujer cedaw definicion me discriminan por ser mujer",
+   "v": [
+    "me discriminan por ser mujer",
+    "que es discriminacion de genero"
+   ],
+   "intro": "Es toda distinción, exclusión o restricción basada en el sexo que tenga por objeto o resultado menoscabar o anular el reconocimiento, goce o ejercicio de los derechos humanos de la mujer, en cualquier esfera.",
+   "lista": [
+    "Esta definición viene de la CEDAW y la retoma la ley de igualdad."
+   ],
+   "cierre": "",
+   "facil": [
+    "Es tratarte peor o quitarte derechos por ser mujer."
+   ],
+   "citas": [
+    {
+     "d": "009",
+     "u": "Artículo 1"
+    },
+    {
+     "d": "091",
+     "u": "Artículo 5",
+     "det": "fracción III"
+    }
+   ]
+  },
+  {
+   "id": "ordenes_tipos",
+   "cat": "proteccion",
+   "modo": "ambos",
+   "q": "¿Qué tipos de órdenes de protección existen?",
+   "kw": "tipos de ordenes de proteccion administrativas jurisdiccionales clases de ordenes",
+   "v": [
+    "que ordenes de proteccion hay",
+    "orden de proteccion administrativa o judicial"
+   ],
+   "intro": "Las órdenes de protección son personales e intransferibles y pueden ser:",
+   "lista": [
+    "Administrativas: las dan el Ministerio Público, las autoridades administrativas y también cualquier autoridad policial. Pueden incluir traslados, custodia personal o domiciliaria y alojamiento temporal en espacios seguros.",
+    "Jurisdiccionales: las dan juezas y jueces. Pueden incluir reservar tu domicilio, dispositivos para impedir el contacto, la entrega de tus documentos, la desocupación del domicilio por el agresor y el embargo de bienes para garantizar alimentos."
+   ],
+   "cierre": "",
+   "facil": [
+    "Hay órdenes que da el Ministerio Público o la policía.",
+    "Y otras que da una jueza o juez.",
+    "Todas sirven para protegerte."
+   ],
+   "citas": [
+    {
+     "d": "080",
+     "u": "Artículo 28"
+    },
+    {
+     "d": "080",
+     "u": "Artículo 34 Ter"
+    },
+    {
+     "d": "080",
+     "u": "Artículo 34 Quáter"
+    }
+   ]
+  },
+  {
+   "id": "ordenes_dura",
+   "cat": "proteccion",
+   "modo": "ambos",
+   "q": "¿Cuánto dura una orden de protección?",
+   "kw": "cuanto dura orden de proteccion duracion vigencia dias prorroga se vence",
+   "v": [
+    "cuanto tiempo dura la orden",
+    "se puede ampliar la orden de proteccion"
+   ],
+   "intro": "Hasta 60 días, prorrogables por 30 días más, o por el tiempo que dure la investigación, o hasta que cese la situación de riesgo.",
+   "lista": [
+    "Deben expedirse de inmediato o, a más tardar, dentro de las 4 horas siguientes a que la autoridad conoce los hechos."
+   ],
+   "cierre": "",
+   "facil": [
+    "Dura hasta 60 días.",
+    "Se puede alargar si sigues en riesgo."
+   ],
+   "citas": [
+    {
+     "d": "080",
+     "u": "Artículo 28"
+    }
+   ]
+  },
+  {
+   "id": "orden_incumple",
+   "cat": "proteccion",
+   "modo": "ambos",
+   "q": "¿Qué pasa si el agresor no respeta la orden de protección?",
+   "kw": "no respeta la orden incumple la orden violo la orden se acerco aunque tiene orden desobedece",
+   "v": [
+    "el agresor no cumple la orden de proteccion",
+    "se acerco aunque tiene orden"
+   ],
+   "intro": "Si la persona agresora incumple la orden, se emiten medidas de apremio conforme a la ley y se refuerzan las acciones de protección.",
+   "lista": [
+    "Avisa de inmediato a la autoridad que dictó la orden o llama al 911."
+   ],
+   "cierre": "",
+   "facil": [
+    "Si no respeta la orden, avisa a la autoridad.",
+    "Si estás en peligro, llama al 911."
+   ],
+   "citas": [
+    {
+     "d": "080",
+     "u": "Artículo 34 Quaterdecies"
+    }
+   ],
+   "urgente": true
+  },
+  {
+   "id": "orden_sin_denuncia",
+   "cat": "proteccion",
+   "modo": "ambos",
+   "q": "¿Necesito denunciar para pedir una orden de protección?",
+   "kw": "orden de proteccion sin denuncia necesito denunciar para pedir orden sin demandar",
+   "v": [
+    "puedo pedir orden sin denunciar",
+    "orden de proteccion sin denuncia"
+   ],
+   "intro": "No siempre. Los Lineamientos de Jalisco señalan que la orden de protección de naturaleza administrativa no requiere denuncia.",
+   "lista": [
+    "La emiten el Juzgado de Justicia Cívica o Municipal, la Sindicatura y la autoridad ministerial.",
+    "Las órdenes se otorgan de oficio o a petición de la víctima."
+   ],
+   "cierre": "",
+   "facil": [
+    "Puedes pedir protección aunque no hayas denunciado."
+   ],
+   "citas": [
+    {
+     "d": "116",
+     "u": "Pág. 67"
+    },
+    {
+     "d": "080",
+     "u": "Artículo 27"
+    },
+    {
+     "d": "050",
+     "u": "Artículo 57 C"
+    }
+   ]
+  },
+  {
+   "id": "salir_casa",
+   "cat": "proteccion",
+   "modo": "ambos",
+   "q": "¿Puedo pedir que el agresor salga de la casa?",
+   "kw": "sacar al agresor de la casa desocupacion domicilio que se vaya de la casa separacion del domicilio",
+   "v": [
+    "quiero que se salga de la casa",
+    "la casa es de el puede sacarlo"
+   ],
+   "intro": "Sí. Una orden de protección jurisdiccional puede ordenar que la persona agresora desocupe el domicilio conyugal o de pareja, independientemente de quién acredite la propiedad.",
+   "lista": [
+    "En el proceso penal, el Ministerio Público también puede ordenar la separación inmediata del domicilio."
+   ],
+   "cierre": "",
+   "facil": [
+    "Una jueza puede ordenar que el agresor salga de la casa.",
+    "Aunque la casa esté a su nombre."
+   ],
+   "citas": [
+    {
+     "d": "080",
+     "u": "Artículo 34 Quáter",
+     "det": "fracción VII"
+    },
+    {
+     "d": "026",
+     "u": "Artículo 137",
+     "det": "fracción III"
+    }
+   ]
+  },
+  {
+   "id": "pertenencias",
+   "cat": "proteccion",
+   "modo": "ambos",
+   "q": "¿La autoridad me puede acompañar a recoger mis cosas?",
+   "kw": "recoger mis cosas pertenencias ropa documentos acompanamiento policia sacar mis cosas",
+   "v": [
+    "quiero sacar mis cosas de la casa",
+    "me ayudan a recoger mis papeles"
+   ],
+   "intro": "Sí. Como orden de protección se garantiza el acompañamiento del Ministerio Público y la policía ministerial para que entres al domicilio, lugar de trabajo u otro y recuperes tus pertenencias y las de tus hijas e hijos.",
+   "lista": [
+    "Puedes ir acompañada de una persona de tu confianza.",
+    "También se puede ordenar la entrega inmediata de tus objetos personales y documentos de identidad."
+   ],
+   "cierre": "",
+   "facil": [
+    "La autoridad te puede acompañar a recoger tus cosas.",
+    "Puedes llevar a una persona de confianza."
+   ],
+   "citas": [
+    {
+     "d": "080",
+     "u": "Artículo 34 Ter"
+    },
+    {
+     "d": "080",
+     "u": "Artículo 34 Quáter",
+     "det": "fracción III"
+    },
+    {
+     "d": "050",
+     "u": "Artículo 57 B"
+    }
+   ]
+  },
+  {
+   "id": "refugio_serv",
+   "cat": "proteccion",
+   "modo": "ambos",
+   "q": "¿Qué servicios dan los refugios?",
+   "kw": "servicios refugio que dan en el refugio comida hospedaje atencion refugio para mujeres",
+   "v": [
+    "que hay en un refugio",
+    "que me dan en el refugio"
+   ],
+   "intro": "Los refugios deben dar, de forma gratuita, a ti y a tus hijas e hijos:",
+   "lista": [
+    "Hospedaje, alimentación, vestido y calzado.",
+    "Servicio médico, apoyo psicológico y asesoría jurídica.",
+    "Capacitación y, si lo pides, bolsa de trabajo."
+   ],
+   "cierre": "Nadie puede mantenerte en un refugio contra tu voluntad.",
+   "facil": [
+    "En el refugio te dan casa, comida y ropa.",
+    "También médico, psicóloga y abogada.",
+    "Es gratis."
+   ],
+   "citas": [
+    {
+     "d": "080",
+     "u": "Artículo 56"
+    },
+    {
+     "d": "080",
+     "u": "Artículo 59"
+    }
+   ],
+   "directorio": true
+  },
+  {
+   "id": "refugio_tiempo",
+   "cat": "proteccion",
+   "modo": "ambos",
+   "q": "¿Cuánto tiempo puedo quedarme en un refugio?",
+   "kw": "cuanto tiempo refugio permanencia meses cuanto me puedo quedar",
+   "v": [
+    "cuantos meses en el refugio",
+    "tiempo maximo en refugio"
+   ],
+   "intro": "La permanencia no puede ser mayor a tres meses, salvo que persista tu inestabilidad física o psicológica o tu situación de riesgo.",
+   "lista": [
+    "El personal médico, psicológico y jurídico del refugio evalúa tu condición."
+   ],
+   "cierre": "",
+   "facil": [
+    "Puedes quedarte hasta 3 meses.",
+    "Más tiempo si sigues en riesgo."
+   ],
+   "citas": [
+    {
+     "d": "080",
+     "u": "Artículo 57"
+    },
+    {
+     "d": "080",
+     "u": "Artículo 58"
+    }
+   ]
+  },
+  {
+   "id": "refugio_secreto",
+   "cat": "proteccion",
+   "modo": "ambos",
+   "q": "¿La ubicación del refugio es secreta?",
+   "kw": "ubicacion refugio secreta confidencial el agresor sabra donde estoy direccion del refugio",
+   "v": [
+    "el agresor puede encontrarme en el refugio",
+    "donde queda el refugio"
+   ],
+   "intro": "Sí. La ley ordena que la información sobre la ubicación de los refugios sea secreta.",
+   "lista": [
+    "Además, una orden de protección puede reservar tu domicilio, lugar de trabajo o cualquier dato que permita ubicarte."
+   ],
+   "cierre": "",
+   "facil": [
+    "Nadie debe saber dónde está el refugio.",
+    "Así estás segura."
+   ],
+   "citas": [
+    {
+     "d": "080",
+     "u": "Artículo 8",
+     "det": "fracción VI"
+    },
+    {
+     "d": "080",
+     "u": "Artículo 34 Quáter",
+     "det": "fracción I"
+    }
+   ]
+  },
+  {
+   "id": "pulso",
+   "cat": "proteccion",
+   "modo": "ambos",
+   "q": "¿Qué es Pulso de Vida?",
+   "kw": "pulso de vida boton de panico zapopan alerta tecnologia",
+   "v": [
+    "boton de panico para mujeres",
+    "pulso de vida zapopan"
+   ],
+   "intro": "Es un programa del Gobierno Municipal de Zapopan que usa herramientas tecnológicas, con un botón de pánico, para atender casos de violencia en contra de la familia.",
+   "lista": [
+    "Su población objetivo son niñas, niños, jóvenes y mujeres que cuentan con medidas de protección dictadas por un agente del Ministerio Público ante una situación de riesgo denunciada."
+   ],
+   "cierre": "Consulta en Zapopan los requisitos vigentes del programa.",
+   "facil": [
+    "Es un botón de pánico para mujeres en riesgo en Zapopan."
+   ],
+   "citas": [
+    {
+     "d": "134",
+     "u": "Pág. 1"
+    }
+   ]
+  },
+  {
+   "id": "riesgo",
+   "cat": "proteccion",
+   "modo": "servidora",
+   "q": "¿Qué es el análisis de riesgo en la atención a víctimas?",
+   "kw": "valoracion de riesgo analisis de riesgo nivel de riesgo plan de seguridad medir riesgo",
+   "v": [
+    "como se mide el riesgo de una victima",
+    "nivel de riesgo protocolo"
+   ],
+   "intro": "En la segunda etapa del Protocolo Unificado (determinar prioridades), personal calificado hace un análisis del caso considerando el nivel de riesgo o peligro que representa la persona agresora para la víctima y sus hijas e hijos.",
+   "lista": [
+    "Según la gravedad se determinan las medidas de seguridad o de protección.",
+    "La medición la hace personal de trabajo social y sirve también para que la víctima genere su plan de seguridad.",
+    "Con riesgo alto se prevé canalizar a un refugio temporal."
+   ],
+   "cierre": "",
+   "facil": [
+    "Se mide qué tan peligroso es el agresor.",
+    "Así se decide cómo proteger a la mujer."
+   ],
+   "citas": [
+    {
+     "d": "131",
+     "u": "Pág. 25"
+    },
+    {
+     "d": "131",
+     "u": "Pág. 26"
+    },
+    {
+     "d": "131",
+     "u": "Pág. 28"
+    },
+    {
+     "d": "131",
+     "u": "Pág. 30"
+    }
+   ]
+  },
+  {
+   "id": "como_denunciar",
+   "cat": "denuncia",
+   "modo": "ciudadania",
+   "q": "¿Cómo presento una denuncia?",
+   "kw": "como denuncio como presento una denuncia pasos para denunciar levantar denuncia poner denuncia como le hago expareja",
+   "v": [
+    "como levanto una denuncia",
+    "pasos para denunciar violencia"
+   ],
+   "intro": "Acude al Ministerio Público (Fiscalía) o a un Centro de Justicia para las Mujeres, que tiene agencias del Ministerio Público especializadas.",
+   "lista": [
+    "Puedes denunciar por cualquier medio, incluso hablando; la autoridad debe registrar tu denuncia.",
+    "El Ministerio Público y la policía deben investigar sin pedirte requisitos adicionales.",
+    "Si los tienes, ayuda llevar una identificación, tu relato de qué pasó, cuándo y dónde, y las pruebas que tengas.",
+    "Tienes derecho a una asesora o asesor jurídico gratuito desde el inicio."
+   ],
+   "cierre": "",
+   "facil": [
+    "Ve al Ministerio Público o a un Centro de Justicia para las Mujeres.",
+    "Cuenta lo que pasó.",
+    "Te deben atender sin pedirte más requisitos."
+   ],
+   "citas": [
+    {
+     "d": "026",
+     "u": "Artículo 221"
+    },
+    {
+     "d": "026",
+     "u": "Artículo 223"
+    },
+    {
+     "d": "045",
+     "u": "Pág. 1"
+    },
+    {
+     "d": "026",
+     "u": "Artículo 109",
+     "det": "fracción VII"
+    }
+   ],
+   "directorio": true
+  },
+  {
+   "id": "denunciar_otra",
+   "cat": "denuncia",
+   "modo": "ambos",
+   "q": "¿Puedo denunciar por otra persona?",
+   "kw": "denunciar por otra persona tercero denunciar lo que le pasa a mi vecina amiga puedo denunciar yo",
+   "v": [
+    "puedo denunciar lo que le pasa a mi vecina",
+    "denuncia de un tercero"
+   ],
+   "intro": "Sí. Toda persona a quien le conste un hecho probablemente constitutivo de delito está obligada a denunciarlo ante el Ministerio Público y, en caso de urgencia, ante cualquier policía.",
+   "lista": [
+    "Las personas servidoras públicas que conozcan un probable delito en sus funciones deben denunciarlo de inmediato.",
+    "Algunos delitos solo se investigan si la víctima presenta querella."
+   ],
+   "cierre": "",
+   "facil": [
+    "Sí, puedes denunciar lo que le pasa a otra persona.",
+    "Si es urgente, avisa a la policía."
+   ],
+   "citas": [
+    {
+     "d": "026",
+     "u": "Artículo 222"
+    },
+    {
+     "d": "026",
+     "u": "Artículo 225"
+    }
+   ]
+  },
+  {
+   "id": "querella",
+   "cat": "denuncia",
+   "modo": "ambos",
+   "q": "¿Qué diferencia hay entre denuncia y querella?",
+   "kw": "diferencia denuncia querella que es una querella requisito de procedibilidad",
+   "v": [
+    "que es una querella",
+    "denuncia o querella"
+   ],
+   "intro": "La querella es la expresión de la voluntad de la víctima (o de quien legalmente la represente) ante el Ministerio Público para que se investiguen hechos que la ley exige perseguir solo a petición de parte.",
+   "lista": [
+    "La denuncia puede presentarla cualquier persona que conozca el hecho.",
+    "La querella debe contener, en lo conducente, los mismos requisitos que la denuncia."
+   ],
+   "cierre": "",
+   "facil": [
+    "La denuncia la puede hacer cualquiera.",
+    "La querella la tiene que hacer la víctima."
+   ],
+   "citas": [
+    {
+     "d": "026",
+     "u": "Artículo 225"
+    },
+    {
+     "d": "026",
+     "u": "Artículo 222"
+    }
+   ]
+  },
+  {
+   "id": "asesor",
+   "cat": "denuncia",
+   "modo": "ambos",
+   "q": "¿Qué hace la asesora o asesor jurídico de la víctima?",
+   "kw": "asesor juridico asesora abogado de la victima que hace defensor de victimas",
+   "v": [
+    "para que sirve el asesor juridico",
+    "abogado de oficio para la victima"
+   ],
+   "intro": "Te orienta, asesora e interviene legalmente en el procedimiento penal en representación de tus intereses.",
+   "lista": [
+    "Puedes designarlo en cualquier etapa; debe ser abogada o abogado con cédula profesional.",
+    "Si no puedes pagar uno particular, tienes derecho a uno de oficio.",
+    "Si perteneces a un pueblo indígena, debe conocer tu lengua y cultura o actuar con intérprete."
+   ],
+   "cierre": "",
+   "facil": [
+    "Es una abogada o abogado que te defiende a ti.",
+    "Si no puedes pagar, el gobierno te da uno gratis."
+   ],
+   "citas": [
+    {
+     "d": "026",
+     "u": "Artículo 110"
+    },
+    {
+     "d": "026",
+     "u": "Artículo 109",
+     "det": "fracción VII"
+    }
+   ]
+  },
+  {
+   "id": "medidas_penales",
+   "cat": "denuncia",
+   "modo": "ambos",
+   "q": "¿Qué medidas de protección puede dictar el Ministerio Público?",
+   "kw": "medidas de proteccion ministerio publico proceso penal prohibicion acercarse separacion domicilio",
+   "v": [
+    "que puede ordenar el ministerio publico para protegerme",
+    "medidas de proteccion codigo nacional"
+   ],
+   "intro": "Cuando la persona imputada representa un riesgo inminente para tu seguridad, el Ministerio Público puede ordenar, entre otras:",
+   "lista": [
+    "Prohibición de acercarse o comunicarse contigo.",
+    "Limitación para acercarse a tu domicilio o al lugar donde te encuentres.",
+    "Separación inmediata del domicilio.",
+    "Entrega inmediata de tus objetos personales y documentos de identidad."
+   ],
+   "cierre": "",
+   "facil": [
+    "El Ministerio Público puede prohibir que el agresor se acerque.",
+    "Puede sacarlo de la casa."
+   ],
+   "citas": [
+    {
+     "d": "026",
+     "u": "Artículo 137"
+    }
+   ]
+  },
+  {
+   "id": "interprete",
+   "cat": "denuncia",
+   "modo": "ambos",
+   "q": "¿Tengo derecho a una intérprete?",
+   "kw": "interprete traductor lengua indigena no hablo espanol sorda lengua de senas",
+   "v": [
+    "no hablo bien español",
+    "necesito traductora de mi lengua"
+   ],
+   "intro": "Sí. Tienes derecho a recibir gratis la asistencia de una intérprete o traductora desde la denuncia hasta el final del procedimiento si perteneces a un pueblo indígena o no comprendes el español.",
+   "lista": [
+    "Las mujeres indígenas tienen derecho a intérpretes gratuitas y las mujeres sordas a interpretación en lengua de señas mexicana.",
+    "Si tienes alguna discapacidad, deben hacerse los ajustes necesarios al procedimiento."
+   ],
+   "cierre": "",
+   "facil": [
+    "Si no hablas bien español, te deben dar una intérprete gratis.",
+    "También en lengua de señas."
+   ],
+   "citas": [
+    {
+     "d": "026",
+     "u": "Artículo 109",
+     "det": "fracciones XI y XII"
+    },
+    {
+     "d": "080",
+     "u": "Artículo 52"
+    }
+   ]
+  },
+  {
+   "id": "mp",
+   "cat": "denuncia",
+   "modo": "ambos",
+   "q": "¿Qué hace el Ministerio Público?",
+   "kw": "ministerio publico que hace fiscal fiscalia agente del ministerio publico funcion",
+   "v": [
+    "para que sirve el ministerio publico",
+    "que hace la fiscalia"
+   ],
+   "intro": "El Ministerio Público conduce la investigación de los delitos: coordina a las policías y a los servicios periciales, ordena las diligencias para demostrar si existió el delito y quién lo cometió, y decide sobre el ejercicio de la acción penal.",
+   "lista": [
+    "También puede dictar medidas de protección para la víctima."
+   ],
+   "cierre": "",
+   "facil": [
+    "El Ministerio Público investiga los delitos.",
+    "También te puede proteger."
+   ],
+   "citas": [
+    {
+     "d": "026",
+     "u": "Artículo 127"
+    },
+    {
+     "d": "026",
+     "u": "Artículo 137"
+    }
+   ]
+  },
+  {
+   "id": "revictimizacion",
+   "cat": "denuncia",
+   "modo": "ambos",
+   "q": "¿Qué es la revictimización?",
+   "kw": "revictimizacion victimizacion secundaria me hicieron repetir me culparon me trataron mal otra vez",
+   "v": [
+    "me hicieron sentir culpable en la fiscalia",
+    "que es victimizacion secundaria"
+   ],
+   "intro": "La ley la llama victimización secundaria: las características de la víctima no pueden ser motivo para negarle su calidad, y el Estado no puede exigir procedimientos que agraven su condición ni la expongan a sufrir un nuevo daño por la conducta de las personas servidoras públicas.",
+   "lista": [
+    "Las autoridades deben evitar todo trato que implique victimización secundaria o incriminación de la víctima.",
+    "La ley general de acceso también ordena evitar que a la víctima y a la persona agresora las atienda la misma persona."
+   ],
+   "cierre": "",
+   "facil": [
+    "Es cuando la autoridad te vuelve a lastimar con su trato.",
+    "Eso está prohibido."
+   ],
+   "citas": [
+    {
+     "d": "088",
+     "u": "Artículo 5"
+    },
+    {
+     "d": "088",
+     "u": "Artículo 120",
+     "det": "fracción VI"
+    },
+    {
+     "d": "080",
+     "u": "Artículo 8",
+     "det": "fracción III"
+    }
+   ]
+  },
+  {
+   "id": "identidad",
+   "cat": "denuncia",
+   "modo": "ambos",
+   "q": "¿Pueden proteger mi identidad durante el proceso?",
+   "kw": "proteger mi identidad mis datos anonimo confidencial que no sepan mi nombre resguardo de identidad",
+   "v": [
+    "pueden ocultar mi nombre",
+    "mis datos seran publicos"
+   ],
+   "intro": "Sí, en varios casos. Tienes derecho al resguardo de tu identidad y datos personales cuando eres menor de edad, en delitos de violación, violencia familiar, secuestro o trata, o cuando la autoridad judicial lo considere necesario.",
+   "lista": [
+    "También puede ordenarse que no se capten ni difundan imágenes tuyas que permitan identificarte a ti o a tu familia."
+   ],
+   "cierre": "",
+   "facil": [
+    "Tu nombre y tus datos se pueden proteger.",
+    "Pídelo a la autoridad."
+   ],
+   "citas": [
+    {
+     "d": "026",
+     "u": "Artículo 109",
+     "det": "fracción XXVI"
+    },
+    {
+     "d": "080",
+     "u": "Artículo 34 Quáter",
+     "det": "fracción IV"
+    }
+   ]
+  },
+  {
+   "id": "victima_tipos",
+   "cat": "derechos",
+   "modo": "ambos",
+   "q": "¿Qué es una víctima directa y una víctima indirecta?",
+   "kw": "victima directa indirecta potencial familiares tambien son victimas quien es victima",
+   "v": [
+    "mis familiares tambien son victimas",
+    "que es una victima indirecta"
+   ],
+   "intro": "Según la Ley General de Víctimas:",
+   "lista": [
+    "Víctima directa: la persona que sufrió un daño o menoscabo por un delito o por una violación de derechos humanos.",
+    "Víctima indirecta: familiares o personas a cargo de la víctima directa con una relación inmediata con ella.",
+    "Víctima potencial: quien corre peligro por ayudar a la víctima."
+   ],
+   "cierre": "La calidad de víctima se adquiere al acreditar el daño, aunque no se identifique o condene al responsable.",
+   "facil": [
+    "Tú eres víctima directa.",
+    "Tu familia puede ser víctima indirecta."
+   ],
+   "citas": [
+    {
+     "d": "088",
+     "u": "Artículo 4"
+    }
+   ]
+  },
+  {
+   "id": "calidad_victima",
+   "cat": "derechos",
+   "modo": "ambos",
+   "q": "¿Cómo se reconoce la calidad de víctima?",
+   "kw": "calidad de victima reconocimiento como me reconocen como victima constancia",
+   "v": [
+    "como obtengo la calidad de victima",
+    "quien me reconoce como victima"
+   ],
+   "intro": "La calidad de víctima se adquiere con la acreditación del daño, sin importar que se identifique, aprehenda o condene al responsable, ni que participes en un procedimiento.",
+   "lista": [
+    "La pueden reconocer: el juez penal, de amparo, civil o familiar; los organismos de derechos humanos; la autoridad responsable de la violación; la Comisión Ejecutiva de Atención a Víctimas; y el Ministerio Público."
+   ],
+   "cierre": "",
+   "facil": [
+    "Eres víctima aunque no detengan al agresor.",
+    "Varias autoridades te pueden reconocer."
+   ],
+   "citas": [
+    {
+     "d": "088",
+     "u": "Artículo 4"
+    },
+    {
+     "d": "088",
+     "u": "Artículo 110"
+    }
+   ]
+  },
+  {
+   "id": "compensacion",
+   "cat": "derechos",
+   "modo": "ambos",
+   "q": "¿Qué es la compensación a víctimas?",
+   "kw": "compensacion pago indemnizacion dinero dano moral me tienen que pagar",
+   "v": [
+    "me pueden pagar por el dano",
+    "que es la compensacion"
+   ],
+   "intro": "Es una de las medidas de reparación: se otorga por los perjuicios, sufrimientos y pérdidas que se pueden valorar económicamente.",
+   "lista": [
+    "Incluye, como mínimo, la reparación del daño a la integridad física y del daño moral, entre otros conceptos que señala la ley.",
+    "En Jalisco, la Ley de Atención a Víctimas define la compensación como la erogación económica a que la víctima tiene derecho."
+   ],
+   "cierre": "",
+   "facil": [
+    "Es un pago por el daño que sufriste."
+   ],
+   "citas": [
+    {
+     "d": "088",
+     "u": "Artículo 64"
+    },
+    {
+     "d": "054",
+     "u": "Artículo 6",
+     "det": "fracción II"
+    }
+   ]
+  },
+  {
+   "id": "registro",
+   "cat": "derechos",
+   "modo": "ambos",
+   "q": "¿Qué es el Registro de Víctimas?",
+   "kw": "registro de victimas registro estatal registro nacional inscribirme como victima renavi",
+   "v": [
+    "como me registro como victima",
+    "para que sirve el registro de victimas"
+   ],
+   "intro": "Es el mecanismo administrativo y técnico para el ingreso y registro de las víctimas al sistema de atención.",
+   "lista": [
+    "A nivel nacional, garantiza el acceso oportuno a las medidas de ayuda, asistencia, atención, acceso a la justicia y reparación integral.",
+    "En Jalisco existe el Registro Estatal de Atención a Víctimas."
+   ],
+   "cierre": "",
+   "facil": [
+    "Es una lista oficial para que recibas apoyos como víctima."
+   ],
+   "citas": [
+    {
+     "d": "088",
+     "u": "Artículo 96"
+    },
+    {
+     "d": "054",
+     "u": "Artículo 70"
+    }
+   ]
+  },
+  {
+   "id": "hijos_victimas",
+   "cat": "derechos",
+   "modo": "ambos",
+   "q": "¿Mis hijas e hijos también son víctimas?",
+   "kw": "mis hijos son victimas hijas hijos vieron la violencia tambien son victimas ninos",
+   "v": [
+    "mis hijos vieron todo",
+    "mis hijos tambien sufren"
+   ],
+   "intro": "Pueden serlo. La Ley General de Víctimas reconoce como víctimas indirectas a los familiares o personas a cargo de la víctima directa.",
+   "lista": [
+    "Si el agresor los usa o los daña para lastimarte, es violencia a través de interpósita persona (violencia vicaria en Jalisco).",
+    "Niñas, niños y adolescentes tienen derecho a una vida libre de toda forma de violencia.",
+    "Los Centros de Justicia para las Mujeres atienden también a tus hijas e hijos."
+   ],
+   "cierre": "",
+   "facil": [
+    "Tus hijos también pueden recibir ayuda.",
+    "Tienen derecho a vivir sin violencia."
+   ],
+   "citas": [
+    {
+     "d": "088",
+     "u": "Artículo 4"
+    },
+    {
+     "d": "080",
+     "u": "Artículo 6",
+     "det": "fracción VI"
+    },
+    {
+     "d": "084",
+     "u": "Artículo 46"
+    },
+    {
+     "d": "080",
+     "u": "Artículo 5",
+     "det": "fracción XVII"
+    }
+   ]
+  },
+  {
+   "id": "nna",
+   "cat": "derechos",
+   "modo": "ambos",
+   "q": "¿Qué derechos tienen niñas, niños y adolescentes frente a la violencia?",
+   "kw": "ninas ninos adolescentes derechos violencia menores de edad maltrato infantil abuso",
+   "v": [
+    "derechos de los ninos contra la violencia",
+    "maltrato infantil que hago"
+   ],
+   "intro": "Tienen derecho a vivir una vida libre de toda forma de violencia y a que se resguarde su integridad personal.",
+   "lista": [
+    "Las autoridades deben prevenir, atender y sancionar, entre otros: el descuido, negligencia, abandono o abuso físico, psicológico o sexual; la trata y explotación; y el castigo corporal y humillante."
+   ],
+   "cierre": "Si una niña, niño o adolescente está en peligro, llama al 911.",
+   "facil": [
+    "Los niños tienen derecho a vivir sin violencia.",
+    "Nadie puede pegarles ni humillarlos."
+   ],
+   "citas": [
+    {
+     "d": "084",
+     "u": "Artículo 46"
+    },
+    {
+     "d": "084",
+     "u": "Artículo 47"
+    }
+   ]
+  },
+  {
+   "id": "amnistia",
+   "cat": "derechos",
+   "modo": "servidora",
+   "q": "¿Qué es la Ley de Amnistía para mujeres víctimas de violencia en Jalisco?",
+   "kw": "ley de amnistia mujeres victimas de violencia sentenciadas homicidio lesiones parricidio liberacion",
+   "v": [
+    "amnistia para mujeres en jalisco",
+    "mujer presa por defenderse de su pareja"
+   ],
+   "intro": "Extingue la acción y la responsabilidad penal de mujeres sentenciadas por lesiones, homicidio o parricidio, cuando se cumplen requisitos como:",
+   "lista": [
+    "Acreditar violencia sistemática por parte de la persona agredida, que fuera su cónyuge o pareja, y que esa violencia motivó el hecho.",
+    "No tener antecedentes por delitos dolosos ni otro proceso penal por delito doloso.",
+    "Haber cubierto o garantizado la reparación del daño.",
+    "Que el delito se haya cometido antes del 16 de junio de 2016."
+   ],
+   "cierre": "La sentenciada, su defensa o el Ministerio Público pueden promoverla ante el Juez de Ejecución en cualquier momento.",
+   "facil": [
+    "Es una ley que puede liberar a mujeres presas que se defendieron de la violencia de su pareja."
+   ],
+   "citas": [
+    {
+     "d": "051",
+     "u": "Artículo 1"
+    },
+    {
+     "d": "051",
+     "u": "Artículo 2"
+    },
+    {
+     "d": "051",
+     "u": "Artículo 3"
+    }
+   ]
+  },
+  {
+   "id": "desap_vs_noloc",
+   "cat": "desaparicion",
+   "modo": "ambos",
+   "q": "¿Qué diferencia hay entre persona desaparecida y no localizada?",
+   "kw": "diferencia persona desaparecida no localizada definicion desaparecida no localizada",
+   "v": [
+    "que es una persona no localizada",
+    "desaparecida o no localizada"
+   ],
+   "intro": "Depende de si su ausencia se relaciona con un delito:",
+   "lista": [
+    "Persona desaparecida: se desconoce su paradero y se presume, por cualquier indicio, que su ausencia se relaciona con la comisión de un delito.",
+    "Persona no localizada: se desconoce su ubicación y, según la información reportada, su ausencia no se relaciona con un probable delito."
+   ],
+   "cierre": "En ambos casos la búsqueda debe iniciar de inmediato.",
+   "facil": [
+    "Si se cree que hubo un delito, la persona está desaparecida.",
+    "Si no, está no localizada.",
+    "En los dos casos se busca de inmediato."
+   ],
+   "citas": [
+    {
+     "d": "090",
+     "u": "Artículo 4",
+     "det": "fracciones XVI y XVII"
+    },
+    {
+     "d": "090",
+     "u": "Artículo 80"
+    }
+   ]
+  },
+  {
+   "id": "busqueda_inm",
+   "cat": "desaparicion",
+   "modo": "ambos",
+   "q": "¿Qué es la búsqueda inmediata?",
+   "kw": "busqueda inmediata buscar de inmediato primeras horas 72 horas sin dilacion",
+   "v": [
+    "tengo que esperar 72 horas",
+    "cuando empieza la busqueda"
+   ],
+   "intro": "En Jalisco, la búsqueda inmediata significa que la autoridad inicia de oficio, sin dilación y con celeridad.",
+   "lista": [
+    "La Ley General prohíbe que cualquier protocolo establezca plazos de espera.",
+    "La Corte Interamericana, en el caso Campo Algodonero, estableció un deber de debida diligencia estricta frente a la desaparición de mujeres, sobre todo en las primeras horas y los primeros días."
+   ],
+   "cierre": "",
+   "facil": [
+    "No tienes que esperar 72 horas.",
+    "La búsqueda empieza de inmediato."
+   ],
+   "citas": [
+    {
+     "d": "060",
+     "u": "Artículo 4",
+     "det": "fracción V"
+    },
+    {
+     "d": "090",
+     "u": "Artículo 80"
+    },
+    {
+     "d": "143",
+     "u": "Pág. 74"
+    }
+   ],
+   "urgente": true
+  },
+  {
+   "id": "ausencia",
+   "cat": "desaparicion",
+   "modo": "ambos",
+   "q": "¿Qué es la Declaración Especial de Ausencia?",
+   "kw": "declaracion especial de ausencia ausencia por desaparicion juzgado derechos de la persona desaparecida tramite",
+   "v": [
+    "para que sirve la declaracion de ausencia",
+    "cuando puedo pedir la declaracion especial de ausencia"
+   ],
+   "intro": "Es una resolución judicial que reconoce, protege y garantiza la continuidad de la personalidad jurídica y los derechos de la persona desaparecida, y da certeza jurídica a sus familiares.",
+   "lista": [
+    "En Jalisco la emite un Juzgado de Primera Instancia.",
+    "Se puede solicitar a partir de 30 días naturales desde la denuncia, queja o reporte de desaparición.",
+    "Las autoridades deben informar a las familias del procedimiento y sus efectos."
+   ],
+   "cierre": "",
+   "facil": [
+    "Es un trámite ante un juez para proteger los derechos de la persona desaparecida y de su familia."
+   ],
+   "citas": [
+    {
+     "d": "105",
+     "u": "Artículo 1"
+    },
+    {
+     "d": "105",
+     "u": "Artículo 7"
+    },
+    {
+     "d": "105",
+     "u": "Artículo 8"
+    }
+   ]
+  },
+  {
+   "id": "familias",
+   "cat": "desaparicion",
+   "modo": "ambos",
+   "q": "¿Qué derechos tienen las familias de personas desaparecidas?",
+   "kw": "derechos de las familias familiares de personas desaparecidas participar busqueda expediente",
+   "v": [
+    "que derechos tengo si mi hijo esta desaparecido",
+    "puedo ver el expediente de busqueda"
+   ],
+   "intro": "Entre otros, las familias tienen derecho a:",
+   "lista": [
+    "Participar dando acompañamiento y ser informadas oportunamente de las acciones de búsqueda.",
+    "Proponer diligencias y opinar sobre las que planeen las autoridades.",
+    "Acceder a los expedientes de búsqueda e investigación y obtener copia simple gratuita.",
+    "Recibir medidas de ayuda, asistencia y atención, incluido apoyo psicosocial.",
+    "Solicitar la intervención de expertos o peritos independientes.",
+    "Ser informadas de forma diligente sobre la identificación o localización de restos."
+   ],
+   "cierre": "",
+   "facil": [
+    "Puedes participar en la búsqueda.",
+    "Puedes ver el expediente.",
+    "Tienes derecho a apoyo."
+   ],
+   "citas": [
+    {
+     "d": "090",
+     "u": "Artículo 138"
+    }
+   ]
+  },
+  {
+   "id": "comision_busq",
+   "cat": "desaparicion",
+   "modo": "ambos",
+   "q": "¿Qué hace la Comisión de Búsqueda de Personas?",
+   "kw": "comision de busqueda de personas jalisco nacional que hace busqueda",
+   "v": [
+    "que hace la comision de busqueda",
+    "comision de busqueda jalisco"
+   ],
+   "intro": "En Jalisco, la Comisión de Búsqueda de Personas es un órgano desconcentrado de la Secretaría General de Gobierno, con autonomía técnica y de gestión, que determina, ejecuta y da seguimiento a las acciones de búsqueda.",
+   "lista": [
+    "A nivel nacional, la Comisión Nacional de Búsqueda, de la Secretaría de Gobernación, determina, ejecuta y da seguimiento a la búsqueda en todo el país, en vida y también la búsqueda forense."
+   ],
+   "cierre": "",
+   "facil": [
+    "Es la oficina que busca a las personas desaparecidas."
+   ],
+   "citas": [
+    {
+     "d": "060",
+     "u": "Artículo 26"
+    },
+    {
+     "d": "090",
+     "u": "Artículo 50"
+    }
+   ]
+  },
+  {
+   "id": "protocolo_unif",
+   "cat": "servidoras",
+   "modo": "servidora",
+   "q": "¿Qué es el Protocolo Unificado de Atención?",
+   "kw": "protocolo unificado de atencion mujeres victimas de violencia jalisco ruta funcionariado",
+   "v": [
+    "para que sirve el protocolo unificado",
+    "protocolo unificado jalisco"
+   ],
+   "intro": "Su objetivo general es dar al funcionariado público una ruta clara para atender y dar seguimiento a los casos, que garantice el derecho de las mujeres, adolescentes y niñas a una vida libre de violencia mediante la debida diligencia.",
+   "lista": [
+    "Organiza la atención en cuatro etapas: identificación, determinación de prioridades, orientación y canalización, y seguimiento."
+   ],
+   "cierre": "Esta versión se cita con la marca \"vigencia por confirmar\" hasta que confirmes su versión vigente.",
+   "facil": [
+    "Es una guía para atender bien a las mujeres víctimas.",
+    "Tiene cuatro pasos."
+   ],
+   "citas": [
+    {
+     "d": "131",
+     "u": "Pág. 4"
+    },
+    {
+     "d": "131",
+     "u": "Pág. 14"
+    }
+   ],
+   "infografia": "ruta"
+  },
+  {
+   "id": "lineam_ordenes",
+   "cat": "servidoras",
+   "modo": "servidora",
+   "q": "¿Qué establecen los Lineamientos de órdenes y medidas de protección de Jalisco?",
+   "kw": "lineamientos de coordinacion ordenes y medidas de proteccion tramitacion emision seguimiento jalisco",
+   "v": [
+    "lineamientos de ordenes de proteccion jalisco",
+    "quien emite ordenes de proteccion en jalisco"
+   ],
+   "intro": "Son los Lineamientos de Coordinación en la Tramitación, Emisión y Seguimiento de Órdenes y Medidas de Protección dirigidas a Víctimas de Violencia por Razón de Género en el Estado de Jalisco.",
+   "lista": [
+    "Señalan que la orden de protección administrativa no requiere denuncia, e implica asesoría, apoyo especial con enfoque interseccional y representación jurídica gratuita.",
+    "Su emisión corresponde al Juzgado de Justicia Cívica o Municipal, a la Sindicatura y a la autoridad ministerial."
+   ],
+   "cierre": "",
+   "facil": [
+    "Son las reglas de Jalisco para dar órdenes de protección."
+   ],
+   "citas": [
+    {
+     "d": "116",
+     "u": "Págs. 1-2"
+    },
+    {
+     "d": "116",
+     "u": "Pág. 67"
+    }
+   ]
+  },
+  {
+   "id": "diligencia",
+   "cat": "servidoras",
+   "modo": "servidora",
+   "q": "¿Qué es la debida diligencia reforzada?",
+   "kw": "debida diligencia reforzada estricta obligacion servidores publicos prevenir investigar sancionar",
+   "v": [
+    "que significa debida diligencia",
+    "debida diligencia estricta campo algodonero"
+   ],
+   "intro": "La debida diligencia es la obligación de las personas servidoras públicas de prevenir, atender, investigar y sancionar la violencia contra las mujeres de manera oficiosa, oportuna, competente, independiente, imparcial y exhaustiva.",
+   "lista": [
+    "La Corte Interamericana señaló que, frente a la violencia contra las mujeres, las obligaciones generales se refuerzan a partir de la Convención de Belém do Pará.",
+    "Ante la desaparición de mujeres en un contexto de violencia, surge un deber de debida diligencia estricta en las primeras horas y días."
+   ],
+   "cierre": "",
+   "facil": [
+    "Las autoridades deben actuar rápido y bien en casos de violencia contra mujeres."
+   ],
+   "citas": [
+    {
+     "d": "080",
+     "u": "Artículo 5",
+     "det": "fracción XVI"
+    },
+    {
+     "d": "143",
+     "u": "Pág. 69"
+    },
+    {
+     "d": "143",
+     "u": "Pág. 74"
+    }
+   ]
+  },
+  {
+   "id": "prot_feminicidio",
+   "cat": "servidoras",
+   "modo": "servidora",
+   "q": "¿Qué es el Protocolo de Investigación del Feminicidio de Jalisco?",
+   "kw": "protocolo de investigacion del delito de feminicidio perspectiva de genero jalisco ijcf fiscalia",
+   "v": [
+    "protocolo de feminicidio jalisco",
+    "como se investiga un feminicidio"
+   ],
+   "intro": "Es el Protocolo de Investigación del Delito de Feminicidio con Perspectiva de Género para el Estado de Jalisco, emitido mediante acuerdo conjunto de la entonces Procuraduría General de Justicia del Estado y del Instituto Jalisciense de Ciencias Forenses.",
+   "lista": [],
+   "cierre": "Esta versión se cita con la marca de vigencia por confirmar; verifica si existe una actualización de la Fiscalía del Estado.",
+   "facil": [
+    "Es la guía de Jalisco para investigar los feminicidios."
+   ],
+   "citas": [
+    {
+     "d": "125",
+     "u": "Pág. 1"
+    }
+   ]
+  },
+  {
+   "id": "primer_resp",
+   "cat": "servidoras",
+   "modo": "servidora",
+   "q": "¿Quién es la policía primer respondiente?",
+   "kw": "primer respondiente policia protocolo nacional que es primer respondiente",
+   "v": [
+    "que es el primer respondiente",
+    "protocolo de primer respondiente"
+   ],
+   "intro": "El Protocolo Nacional de Actuación del Primer Respondiente considera primer respondiente a todo policía perteneciente a las instituciones de seguridad pública.",
+   "lista": [
+    "El protocolo establece las directrices de su actuación, por ejemplo al recibir a una persona detenida y registrar la detención en el Informe Policial Homologado."
+   ],
+   "cierre": "",
+   "facil": [
+    "Es la policía que llega primero a atender un caso."
+   ],
+   "citas": [
+    {
+     "d": "130",
+     "u": "Pág. 4"
+    },
+    {
+     "d": "130",
+     "u": "Pág. 26"
+    }
+   ]
+  },
+  {
+   "id": "policia",
+   "cat": "servidoras",
+   "modo": "servidora",
+   "q": "¿Qué obligaciones tiene la policía ante la violencia contra las mujeres?",
+   "kw": "obligaciones de la policia violencia de genero actuacion policial ordenes de proteccion policia debe",
+   "v": [
+    "que debe hacer la policia en violencia familiar",
+    "protocolo de actuacion policial violencia de genero"
+   ],
+   "intro": "La policía tiene obligaciones concretas:",
+   "lista": [
+    "El Protocolo Nacional de Actuación Policial busca dotar a las policías de un procedimiento idóneo y efectivo ante la violencia contra las mujeres en el ámbito familiar.",
+    "Cualquier autoridad policial puede dictar de forma directa medidas u órdenes de protección administrativas.",
+    "En Jalisco, la policía debe solicitar de inmediato las órdenes de protección cuando se requieran.",
+    "En caso de urgencia, cualquier policía puede recibir una denuncia."
+   ],
+   "cierre": "",
+   "facil": [
+    "La policía debe proteger a las mujeres.",
+    "Puede dar órdenes de protección."
+   ],
+   "citas": [
+    {
+     "d": "039",
+     "u": "Pág. 4"
+    },
+    {
+     "d": "080",
+     "u": "Artículo 28",
+     "det": "fracción I"
+    },
+    {
+     "d": "050",
+     "u": "Artículo 57"
+    },
+    {
+     "d": "026",
+     "u": "Artículo 222"
+    }
+   ]
+  },
+  {
+   "id": "sistema_estatal",
+   "cat": "servidoras",
+   "modo": "servidora",
+   "q": "¿Qué es el Sistema Estatal para Prevenir, Atender, Sancionar y Erradicar la Violencia contra las Mujeres?",
+   "kw": "sistema estatal prevenir atender sancionar erradicar violencia contra las mujeres jalisco",
+   "v": [
+    "que es el sistema estatal de violencia",
+    "sistema estatal jalisco mujeres"
+   ],
+   "intro": "Es el conjunto de elementos ordenados, acciones congruentes, uniformes y transversales encaminados a detectar, prevenir, atender, sancionar y erradicar la violencia contra las mujeres en Jalisco.",
+   "lista": [],
+   "cierre": "",
+   "facil": [
+    "Es la forma en que las instituciones de Jalisco se coordinan contra la violencia hacia las mujeres."
+   ],
+   "citas": [
+    {
+     "d": "050",
+     "u": "Artículo 14"
+    }
+   ]
+  },
+  {
+   "id": "banco_datos",
+   "cat": "servidoras",
+   "modo": "servidora",
+   "q": "¿Qué es el Banco Nacional de Datos sobre violencia contra las mujeres?",
+   "kw": "banco nacional de datos banavim informacion casos de violencia registro estadistica",
+   "v": [
+    "que es banavim",
+    "registro de casos de violencia contra mujeres"
+   ],
+   "intro": "Es el Banco Nacional de Datos e Información sobre Casos de Violencia contra las Mujeres, que integra la información de los casos para analizar tendencias e identificar áreas críticas.",
+   "lista": [
+    "Las órdenes de protección se registran para su incorporación al Banco Nacional.",
+    "Se establecen mecanismos de coordinación y captura de información entre autoridades."
+   ],
+   "cierre": "",
+   "facil": [
+    "Es una base de datos nacional sobre los casos de violencia contra mujeres."
+   ],
+   "citas": [
+    {
+     "d": "080",
+     "u": "Artículo 38"
+    },
+    {
+     "d": "080",
+     "u": "Artículo 42",
+     "det": "fracción XIII"
+    },
+    {
+     "d": "080",
+     "u": "Artículo 34 Duodecies"
+    }
+   ]
+  },
+  {
+   "id": "cedaw",
+   "cat": "servidoras",
+   "modo": "ambos",
+   "q": "¿Qué es la CEDAW?",
+   "kw": "cedaw convencion eliminacion de todas las formas de discriminacion contra la mujer tratado onu",
+   "v": [
+    "que dice la cedaw",
+    "convencion sobre discriminacion contra la mujer"
+   ],
+   "intro": "Es la Convención sobre la Eliminación de Todas las Formas de Discriminación contra la Mujer, tratado de la ONU del que México es parte.",
+   "lista": [
+    "Define la discriminación contra la mujer como toda distinción, exclusión o restricción basada en el sexo que menoscabe o anule sus derechos humanos.",
+    "La ley general de acceso reconoce los derechos de la CEDAW como parte de los derechos humanos de las mujeres."
+   ],
+   "cierre": "",
+   "facil": [
+    "Es un tratado internacional que protege a las mujeres contra la discriminación."
+   ],
+   "citas": [
+    {
+     "d": "009",
+     "u": "Artículo 1"
+    },
+    {
+     "d": "080",
+     "u": "Artículo 5",
+     "det": "fracción VIII"
+    }
+   ]
+  },
+  {
+   "id": "belem",
+   "cat": "servidoras",
+   "modo": "ambos",
+   "q": "¿Qué es la Convención de Belém do Pará?",
+   "kw": "belem do para convencion interamericana prevenir sancionar erradicar violencia contra la mujer oea",
+   "v": [
+    "que dice belem do para",
+    "convencion interamericana violencia contra la mujer"
+   ],
+   "intro": "Es la Convención Interamericana para Prevenir, Sancionar y Erradicar la Violencia contra la Mujer (OEA).",
+   "lista": [
+    "Define la violencia contra la mujer como cualquier acción o conducta, basada en su género, que cause muerte, daño o sufrimiento físico, sexual o psicológico, en el ámbito público o privado.",
+    "Reconoce que toda mujer tiene derecho a una vida libre de violencia."
+   ],
+   "cierre": "",
+   "facil": [
+    "Es un tratado de las Américas que dice que toda mujer tiene derecho a vivir sin violencia."
+   ],
+   "citas": [
+    {
+     "d": "013",
+     "u": "Artículo 1"
+    },
+    {
+     "d": "013",
+     "u": "Artículo 3"
+    }
+   ]
+  },
+  {
+   "id": "campo_alg",
+   "cat": "servidoras",
+   "modo": "servidora",
+   "q": "¿Qué es el caso Campo Algodonero y por qué importa?",
+   "kw": "campo algodonero corte interamericana ciudad juarez sentencia mexico feminicidio 2009",
+   "v": [
+    "sentencia campo algodonero",
+    "gonzalez y otras vs mexico"
+   ],
+   "intro": "Es la sentencia de la Corte Interamericana de Derechos Humanos en el caso González y otras (\"Campo Algodonero\") vs. México, de 16 de noviembre de 2009, por la desaparición y muerte de mujeres en Ciudad Juárez.",
+   "lista": [
+    "La Corte declaró que el Estado violó los derechos a la vida, integridad y libertad personal, y el deber de no discriminación, y reconoció la violencia contra la mujer como una forma de discriminación.",
+    "Estableció un deber de debida diligencia estricta frente a la desaparición de mujeres, en las primeras horas y días."
+   ],
+   "cierre": "Es un referente obligado para investigar y atender la violencia contra las mujeres en México.",
+   "facil": [
+    "Es una sentencia internacional contra México por no proteger a mujeres en Ciudad Juárez.",
+    "Obliga a las autoridades a buscar e investigar de inmediato."
+   ],
+   "citas": [
+    {
+     "d": "143",
+     "u": "Pág. 75"
+    },
+    {
+     "d": "143",
+     "u": "Pág. 102"
+    },
+    {
+     "d": "143",
+     "u": "Pág. 74"
+    }
+   ]
+  },
+  {
+   "id": "modelo",
+   "cat": "servidoras",
+   "modo": "servidora",
+   "q": "¿Qué es el Modelo de Atención Integral de Jalisco?",
+   "kw": "modelo de atencion integral mujeres adolescencias ninez victimas violencia jalisco modelo ecologico",
+   "v": [
+    "modelo de atencion integral jalisco",
+    "en que se basa el modelo de atencion"
+   ],
+   "intro": "Es el Modelo de Atención Integral a Mujeres, Adolescencias y Niñez Víctimas de Violencia por Razón de Género en Jalisco.",
+   "lista": [
+    "Tiene como sustento teórico el Modelo Ecológico para una vida libre de violencia de género (CONAVIM, 2011).",
+    "Define a las Unidades de Igualdad de Género como órganos especializados dentro de las Coordinaciones Generales Estratégicas."
+   ],
+   "cierre": "",
+   "facil": [
+    "Es la guía de Jalisco para atender de forma completa a las víctimas."
+   ],
+   "citas": [
+    {
+     "d": "120",
+     "u": "Pág. 15"
+    },
+    {
+     "d": "120",
+     "u": "Pág. 182"
     }
    ]
   }

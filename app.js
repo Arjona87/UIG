@@ -5,7 +5,8 @@
 'use strict';
 
 const CONFIG = {
-  version: '2.0',
+  version: '3.0',
+  inactividadMin: 10,         // la conversación se borra tras 10 minutos sin uso
   ia: false,                 // Fase 2: activar con intermediario (Cloudflare Worker) y API de Anthropic
   estadisticas: null,        // Fase 2: URL del contador anónimo (solo tema, perfil y fecha)
   salida: 'https://www.google.com/',
@@ -16,7 +17,7 @@ const CONFIG = {
 const SALUDO = '¡Hola! Soy Asistente UIG, tu compañera digital para orientarte en las funciones de las Unidades de Igualdad de Género y brindarte la información confiable que requieres.';
 
 const $ = (s, el = document) => el.querySelector(s);
-const E = { docs: [], docMap: {}, faq: [], riesgo: [], dir: null, corte: '', modo: null, facil: false, esc: 1,
+const E = { docs: [], docMap: {}, faq: [], riesgo: [], dir: null, glosario: [], corte: '', modo: null, facil: false, esc: 1,
   idx: null, idxN3: null, shards: new Map(), instalarEvt: null, instaladoMostrado: false };
 
 /* ---------- Normalización (idéntica a construir_base.py) ---------- */
@@ -152,24 +153,34 @@ function evaluarRiesgo(texto) {
 
 /* ---------- Preguntas frecuentes ---------- */
 const GENERICOS = new Map([['violenc', 0.2], ['mujer', 0.3], ['victim', 0.5], ['jalisco', 0.4], ['ley', 0.2], ['derecho', 0.6]]);
-function buscarFAQ(texto) {
+function rankFAQ(texto) {
   const qn = norm(texto);
   const base = [...new Set(tokens(texto))].filter(t => !QSTOP.has(t));
-  if (!base.length) return null;
+  if (!base.length) return [];
   const ext = new Set(tokens(expandir(qn)));
   const peso = t => GENERICOS.get(t) ?? 1;
   const total = base.reduce((a, t) => a + peso(t), 0);
-  let mejor = null, mejorS = 0;
+  const out = [];
   for (const f of E.faq) {
     if (E.modo === 'ciudadania' && f.modo === 'servidora') continue;
-    if (!f._k) { f._k = new Set(tokens(f.q + ' ' + f.kw)); f._q = new Set(tokens(f.q)); }
-    let m = 0, enQ = 0, nx = 0;
-    for (const t of base) if (f._k.has(t)) { m += peso(t); if (f._q.has(t)) enQ++; }
+    if (!f._k) { f._k = new Set(tokens(f.q + ' ' + f.kw + ' ' + (f.v || []).join(' '))); f._q = new Set(tokens(f.q + ' ' + (f.v || []).join(' '))); f._f = [f.q, ...(f.v || [])].map(norm); }
+    let m = 0, enQ = 0, nx = 0, n = 0;
+    for (const t of base) if (f._k.has(t)) { m += peso(t); n++; if (f._q.has(t)) enQ++; }
     for (const t of ext) if (f._k.has(t)) nx++;
-    const s = m / total + enQ * 0.1 + nx * 0.05;
-    if (m > 0 && s > mejorS) { mejorS = s; mejor = f; }
+    const exacta = f._f.includes(qn) ? 0.3 : 0;      // la frase coincide con una forma registrada de la pregunta
+    if (m > 0) out.push({ f, n, nb: base.length, s: m / total + enQ * 0.1 + nx * 0.05 + exacta });
   }
-  return mejorS >= 0.55 ? mejor : null;
+  return out.sort((a, b) => b.s - a.s);
+}
+function buscarFAQ(texto) {
+  const r = rankFAQ(texto);
+  return r.length && r[0].s >= 0.55 ? r[0].f : null;
+}
+function sugerenciasHTML(texto, n = 3) {
+  // solo sugerencias con fundamento: al menos dos palabras en común (o la única palabra de la consulta)
+  const r = rankFAQ(texto).filter(x => x.s >= 0.45 && (x.n >= 2 || x.nb === 1)).slice(0, n);
+  if (!r.length) return '';
+  return `<p><b>¿Te refieres a…?</b></p><div class="te-refieres">${r.map(x => `<button type="button" class="sug" data-faq="${x.f.id}">${esc(x.f.q)}</button>`).join('')}</div>`;
 }
 
 /* ---------- Búsqueda BM25 en la base ---------- */
@@ -298,6 +309,27 @@ function fragmento(texto, terms, largo = 320) {
   return (ini > 0 ? '… ' : '') + h + (fin < texto.length ? ' …' : '');
 }
 
+/* ---------- Glosario tocable ---------- */
+function glosar(html, usados) {
+  if (!E.glosario.length) return html;
+  const ph = [];
+  for (const [i, g] of E.glosario.entries()) {
+    if (usados.has(g.t.toLowerCase())) continue;
+    const re = new RegExp('(^|[^\\wáéíóúñÁÉÍÓÚÑ])(' + g.t.replace(/[.*+?^${}()|[\]\\]/g, '\\$&') + ')(?![\\wáéíóúñ])', 'i');
+    const m = re.exec(html);
+    if (!m) continue;
+    usados.add(g.t.toLowerCase());
+    ph.push(`<button type="button" class="term" data-g="${i}" aria-expanded="false">${m[2]}</button>`);
+    html = html.slice(0, m.index + m[1].length) + `\u0000${ph.length - 1}\u0000` + html.slice(m.index + m[0].length);
+  }
+  return html.replace(/\u0000(\d+)\u0000/g, (_, k) => ph[+k]);
+}
+function definicionHTML(g) {
+  const d = E.docMap[g.c.d];
+  const cita = d ? `${etiquetaUnidad(g.c.u)}${g.c.det ? ', ' + g.c.det : ''} · ${d.nombre} · ${fechaTxt(d)}` : '';
+  return `<div class="def" role="note"><b>${esc(g.t)}:</b> ${esc(g.d)} <span class="nota-ref">(${esc(cita)})</span></div>`;
+}
+
 /* ---------- Respuestas ---------- */
 function infografia(tipo) {
   if (tipo === 'tipos') {
@@ -318,18 +350,23 @@ function infografia(tipo) {
 function directorioHTML() {
   if (!E.dir || !E.dir.validado || !E.dir.instituciones.length)
     return '<div class="directorio"><b>¿A dónde acudir?</b> Si estás en peligro, llama al <a href="tel:911">911</a>. El directorio de instituciones de Jalisco está en proceso de validación y se publicará aquí.</div>';
-  return '<div class="directorio"><b>¿A dónde acudir?</b>' + E.dir.instituciones.map(i =>
-    `<div class="inst"><b>${esc(i.nombre)}</b> · ${esc(i.servicio || '')}<br>${i.telefono ? `<a href="tel:${esc(i.telefono)}">${esc(i.telefono)}</a> · ` : ''}${esc(i.direccion || '')} ${i.horario ? '· ' + esc(i.horario) : ''}</div>`).join('') + '</div>';
+  const inst = E.dir.instituciones;
+  const muns = [...new Set(inst.map(i => i.municipio).filter(Boolean))].sort((a, b) => a.localeCompare(b, 'es'));
+  const sel = muns.length > 1 ? `<label class="sel-mun">Tu municipio: <select data-acc="municipio"><option value="">Todos</option>${muns.map(m => `<option>${esc(m)}</option>`).join('')}</select></label>` : '';
+  return '<div class="directorio"><b>¿A dónde acudir?</b>' + sel + inst.map(i =>
+    `<div class="inst" data-mun="${esc(i.municipio || '')}"><b>${esc(i.nombre)}</b> · ${esc(i.servicio || '')}<br>${i.telefono ? `<a href="tel:${esc(i.telefono)}">${esc(i.telefono)}</a> · ` : ''}${esc(i.direccion || '')} ${i.horario ? '· ' + esc(i.horario) : ''}${i.municipio ? ' · ' + esc(i.municipio) : ''}</div>`).join('') + '</div>';
 }
 function acciones() {
-  return `<div class="acciones"><button type="button" data-acc="pdf">Descargar PDF</button></div>`;
+  const voz = 'speechSynthesis' in window ? '<button type="button" data-acc="voz">Escuchar</button>' : '';
+  return `<div class="acciones">${voz}<button type="button" data-acc="pdf">Descargar PDF</button></div>`;
 }
 async function responderFAQ(f, { naranja = [], urgente = false } = {}) {
   const alerta = naranja.length ? `<div class="alerta-naranja"><b>Lo que describes puede ser una señal de riesgo.</b> Tienes derecho a protección inmediata. Si en algún momento estás en peligro, llama al <a href="tel:911">911</a>.</div>` : '';
   const urg = urgente ? `<a class="btn911" href="tel:911">Llamar al 911</a>` : '';
   const html = `${alerta}${urg}<span class="etq">Respuesta orientativa</span><h2>${esc(f.q)}</h2>
     <div class="facil"><b>Lectura fácil</b><ul>${f.facil.map(x => `<li>${esc(x)}</li>`).join('')}</ul></div>
-    <div class="detalle"><p>${esc(f.intro)}</p>${f.lista.length ? `<ul>${f.lista.map(x => `<li>${esc(x)}</li>`).join('')}</ul>` : ''}${f.cierre ? `<p>${esc(f.cierre)}</p>` : ''}</div>
+    <div class="detalle">${(() => { const u = new Set(); return `<p>${glosar(esc(f.intro), u)}</p>${f.lista.length ? `<ul>${f.lista.map(x => `<li>${glosar(esc(x), u)}</li>`).join('')}</ul>` : ''}${f.cierre ? `<p>${glosar(esc(f.cierre), u)}</p>` : ''}`; })()}</div>
+    ${f.tel ? `<a class="btnlinea" href="tel:${esc(f.tel)}">Llamar a la Red de Centros de Justicia · ${esc(f.tel.replace(/(\d{2})(\d{4})(\d{4})/, '$1 $2 $3'))}</a>` : ''}
     ${f.infografia ? infografia(f.infografia) : ''}
     ${f.directorio || urgente || naranja.length ? directorioHTML() : ''}
     <div class="citas"><h3>Fundamento</h3>${f.citas.map(citaHTML).join('')}</div>
@@ -342,10 +379,10 @@ async function responderBusqueda(texto, naranja) {
   const espera = E.idx ? null : escribiendo();
   let r;
   try { r = await buscarNormas(texto); } finally { if (espera) espera.remove(); }
-  if (!r.length) return noEncontrado(naranja);
+  if (!r.length) return noEncontrado(naranja, texto);
   const alerta = naranja.length ? `<div class="alerta-naranja"><b>Lo que describes puede ser una señal de riesgo.</b> Tienes derecho a protección inmediata. Si estás en peligro, llama al <a href="tel:911">911</a>.</div>` : '';
   const trans = r.some(x => x.d.id === '065') ? `<p class="alerta-naranja">La Ley de Transparencia de Jalisco está <b>en transición</b> por la nueva Ley General de Transparencia (DOF 20/03/2025). Se muestra primero la ley general; verifica con la Unidad de Transparencia correspondiente.</p>` : '';
-  const html = `${alerta}<span class="etq">Lo que dice la normativa</span><p>Encontré estos fragmentos relacionados con tu pregunta. Abre el texto completo para leer el artículo íntegro.</p>${trans}
+  const html = `${alerta}<span class="etq">Lo que dice la normativa</span>${E.modo === 'servidora' ? sugerenciasHTML(texto) : ''}<p>Encontré estos fragmentos relacionados con tu pregunta. Abre el texto completo para leer el artículo íntegro.</p>${trans}
     ${r.map(x => `<div class="resultado"><div class="ref">${esc(etiquetaUnidad(x.et))}${x.fr ? ', fracción ' + esc(x.fr) : ''} · ${esc(x.d.nombre)} ${marcas(x.d)}</div>
       <div class="meta">${esc(x.d.ambito)} · ${esc(fechaTxt(x.d))}${x.d.url ? ` · <a href="${esc(x.d.url)}" target="_blank" rel="noopener noreferrer">Fuente oficial</a>` : ''}</div>
       <div class="frag">${fragmento(x.fr ? fraccionTexto(x.texto, x.fr) : x.texto, x.terms)}</div>
@@ -355,10 +392,22 @@ async function responderBusqueda(texto, naranja) {
   burbuja(html);
   contar('busqueda');
 }
-function noEncontrado(naranja = []) {
+function noEncontrado(naranja = [], texto = '') {
   burbuja(`<span class="etq">Sin coincidencias</span><p>No encontré información sobre eso en la base normativa. Para no darte un dato equivocado, prefiero no responder algo que no está en las leyes cargadas.</p>
-    <p>Puedes intentar con otras palabras o elegir una de las preguntas sugeridas abajo.</p>${naranja.length ? directorioHTML() : ''}${aclaracion()}`);
+    ${sugerenciasHTML(texto)}<p>Puedes intentar con otras palabras o ver <button type="button" class="sug" data-acc="todas">todas las preguntas</button>.</p>${naranja.length ? directorioHTML() : ''}${aclaracion()}`);
   contar('sin_resultado');
+}
+/* Ciudadanía: nunca fragmentos de ley si ella no los pide. */
+function responderOrientacion(texto, naranja) {
+  const alerta = naranja.length ? `<div class="alerta-naranja"><b>Lo que describes puede ser una señal de riesgo.</b> Tienes derecho a protección inmediata. Si estás en peligro, llama al <a href="tel:911">911</a>.</div>` : '';
+  const sug = sugerenciasHTML(texto);
+  const m = burbuja(`${alerta}<span class="etq">Te oriento</span>
+    <p>${sug ? 'No tengo una respuesta exacta para eso, pero estas preguntas se parecen a lo que buscas:' : 'No tengo una respuesta preparada para eso.'}</p>${sug.replace('<p><b>¿Te refieres a…?</b></p>', '')}
+    <p>También puedes elegir <button type="button" class="sug" data-acc="ruta">¿Qué te pasó?</button> o ver <button type="button" class="sug" data-acc="todas">todas las preguntas</button>.</p>
+    ${directorioHTML()}
+    <p><button type="button" class="btn-ley" data-acc="ley">Ver qué dice la ley</button></p>${aclaracion()}`);
+  m.querySelector('[data-acc="ley"]').dataset.q = texto;
+  contar('orientacion');
 }
 function responderCrisis(r) {
   const sui = r.suicidio;
@@ -386,7 +435,32 @@ async function responder(texto) {
   if (r.desaparicion) { await responderFAQ(E.faq.find(f => f.id === 'desaparicion'), { urgente: true }); return; }
   const f = buscarFAQ(texto);
   if (f) await responderFAQ(f, { naranja: r.naranja });
+  else if (E.modo === 'ciudadania') responderOrientacion(texto, r.naranja);
   else await responderBusqueda(texto, r.naranja);
+}
+
+/* ---------- Ruta guiada «¿Qué te pasó?» ---------- */
+const RUTA = [
+  ['Estoy en peligro ahora', 'crisis'], ['Me golpean, me insultan o me controlan', 'tipos'], ['Quiero que el agresor no se me acerque', 'orden'],
+  ['Necesito un lugar seguro', 'refugio_serv'], ['Quiero denunciar', 'como_denunciar'], ['Difundieron o amenazan con difundir mis fotos', 'digital'],
+  ['Me acosan en el trabajo o en la escuela', 'laboral'], ['Una persona desapareció', 'desaparicion'], ['No sé a dónde ir', 'adonde'],
+  ['Quiero ayudar a alguien', 'ayudar']];
+function mostrarRuta() {
+  const m = burbuja(`<span class="etq">Sin escribir</span><h2>¿Qué te pasó?</h2><p>Toca la opción que más se parezca a lo que vives.</p>
+    <div class="ruta-btns">${RUTA.map(([t, id], i) => `<button type="button" data-ruta="${i}"${id === 'crisis' ? ' class="r-urg"' : ''}>${esc(t)}</button>`).join('')}</div>`);
+  m.querySelectorAll('[data-ruta]').forEach(b => b.onclick = () => {
+    const [t, id] = RUTA[+b.dataset.ruta];
+    burbuja(esc(t), { usuario: true });
+    if (id === 'crisis') return responderCrisis({ rojo: [{}], naranja: [], suicidio: false });
+    const f = E.faq.find(x => x.id === id); if (f) responderFAQ(f, { urgente: id === 'desaparicion' });
+  });
+}
+const CATS = [['uig', 'Unidades de Igualdad de Género'], ['adonde', 'A dónde dirigirme'], ['tipos', 'Tipos y modalidades de violencia'], ['proteccion', 'Protección y seguridad'],
+  ['denuncia', 'Denuncia y proceso'], ['derechos', 'Derechos y reparación'], ['desaparicion', 'Desaparición de personas'], ['servidoras', 'Para servidoras y servidores públicos']];
+function mostrarTodas() {
+  const lista = E.faq.filter(f => !(E.modo === 'ciudadania' && f.modo === 'servidora'));
+  burbuja(`<span class="etq">Preguntas frecuentes</span><h2>${lista.length} preguntas por tema</h2>
+    ${CATS.map(([c, t]) => { const fs = lista.filter(f => f.cat === c); return fs.length ? `<details class="cat"><summary>${esc(t)} (${fs.length})</summary>${fs.map(f => `<button type="button" class="sug" data-faq="${f.id}">${esc(f.q)}</button>`).join('')}</details>` : ''; }).join('')}`);
 }
 
 /* Fase 2: conteo anónimo (tema, perfil y fecha). En fase 1 no envía ni guarda nada. */
@@ -399,13 +473,17 @@ function contar(tema) {
 const CHIPS = { tipos:'Tipos de violencia', psicologica:'¿Es violencia psicológica?', patrimonial:'Me quita dinero o papeles', digital:'Difundieron mis fotos',
   orden:'Orden de protección', denunciar:'¿Dónde denuncio?', abogada:'Abogada gratuita', derechos:'Mis derechos', cjm:'Centro de Justicia para las Mujeres',
   refugio:'Refugio con mis hijos', laboral:'Acoso en el trabajo', mediacion:'¿Me obligan a conciliar?', desaparicion:'Persona desaparecida',
-  uig:'¿Qué hace la UIG?', ruta:'Ruta de atención', institucional:'Violencia institucional', canalizar:'¿Cómo canalizo?', alerta:'Alerta de Violencia de Género',
+  uig:'¿Qué hace la UIG?', uig_ayuda:'¿La UIG me puede ayudar?', uig_servidora:'Acoso en mi dependencia', adonde:'¿A dónde voy?', cjm_sedes:'¿Dónde hay CJM?',
+  como_denunciar:'¿Cómo denuncio?', protocolo_unif:'Protocolo Unificado', lineam_ordenes:'Lineamientos de órdenes', riesgo:'Análisis de riesgo', diligencia:'Debida diligencia', ruta:'Ruta de atención', institucional:'Violencia institucional', canalizar:'¿Cómo canalizo?', alerta:'Alerta de Violencia de Género',
   politica:'Violencia política', reparacion:'Reparación del daño' };
 function pintarSugerencias() {
   const caja = $('#sugerencias'); caja.innerHTML = '';
+  const extra = (t, fn) => { const b = document.createElement('button'); b.type = 'button'; b.className = 'chip-fijo'; b.textContent = t; b.onclick = fn; caja.appendChild(b); };
+  if (E.modo !== 'servidora') extra('¿Qué te pasó?', () => mostrarRuta());
+  extra('Todas las preguntas', () => mostrarTodas());
   const orden = E.modo === 'servidora'
-    ? ['uig','ruta','canalizar','institucional','orden','tipos','derechos','alerta','politica','reparacion','mediacion','cjm','desaparicion','digital','laboral']
-    : ['uig','tipos','orden','denunciar','psicologica','patrimonial','digital','abogada','refugio','derechos','cjm','mediacion','laboral','desaparicion','reparacion'];
+    ? ['uig','uig_servidora','ruta','canalizar','protocolo_unif','institucional','orden','lineam_ordenes','riesgo','diligencia','tipos','derechos','alerta','politica','reparacion']
+    : ['uig','uig_ayuda','adonde','cjm_sedes','tipos','orden','como_denunciar','psicologica','patrimonial','digital','abogada','refugio','derechos','mediacion','desaparicion'];
   for (const id of orden) {
     const f = E.faq.find(x => x.id === id); if (!f) continue;
     const b = document.createElement('button'); b.type = 'button'; b.textContent = CHIPS[id] || f.q;
@@ -422,6 +500,7 @@ function elegirModo(m) {
   burbuja(m === 'servidora'
     ? '<p>Perfil de <b>servidora o servidor público</b>. Puedo orientarte sobre rutas de atención, canalización, protocolos y el fundamento de cada paso, con artículo, ordenamiento y fecha de última reforma.</p><p>¿Qué necesitas consultar?</p>'
     : '<p>Gracias por escribir. Puedo explicarte qué dicen las leyes y a dónde acudir. Escribe con tus palabras lo que necesitas saber, o elige una pregunta de abajo.</p><p>Si en algún momento necesitas cerrar esta página rápido, usa el botón <b>Salir</b>.</p>');
+  if (m === 'ciudadania') mostrarRuta();
   sugerirInstalar();
   $('#entrada').focus();
 }
@@ -448,8 +527,57 @@ document.addEventListener('click', async ev => {
     return;
   }
   const a = ev.target.closest('[data-acc="pdf"]');
-  if (a) imprimir(a.closest('.burbuja'));
+  if (a) { imprimir(a.closest('.burbuja')); return; }
+  const sug = ev.target.closest('[data-faq]');
+  if (sug) { const f = E.faq.find(x => x.id === sug.dataset.faq); if (f) { burbuja(esc(f.q), { usuario: true }); responderFAQ(f, { urgente: f.urgente }); } return; }
+  const term = ev.target.closest('.term');
+  if (term) {
+    const cont = term.closest('p, li'); const sig = cont.nextElementSibling;
+    if (sig && sig.classList.contains('def') && sig.dataset.g === term.dataset.g) { sig.remove(); term.setAttribute('aria-expanded', 'false'); return; }
+    cont.insertAdjacentHTML('afterend', definicionHTML(E.glosario[+term.dataset.g])); cont.nextElementSibling.dataset.g = term.dataset.g; term.setAttribute('aria-expanded', 'true');
+    return;
+  }
+  const accion = ev.target.closest('[data-acc]'); if (!accion) return;
+  const tipo = accion.dataset.acc;
+  if (tipo === 'voz') return leer(accion);
+  if (tipo === 'ley') { accion.disabled = true; return responderBusqueda(accion.dataset.q || '', []); }
+  if (tipo === 'todas') return mostrarTodas();
+  if (tipo === 'ruta') return mostrarRuta();
 });
+document.addEventListener('change', ev => {
+  const s = ev.target.closest('[data-acc="municipio"]'); if (!s) return;
+  s.closest('.directorio').querySelectorAll('.inst').forEach(i => { i.hidden = !!s.value && i.dataset.mun !== s.value; });
+});
+
+/* ---------- Leer en voz alta (voz del propio dispositivo; funciona sin internet si el teléfono la tiene) ---------- */
+let leyendo = null;
+function leer(btn) {
+  const sintesis = window.speechSynthesis;
+  if (leyendo === btn) { sintesis.cancel(); btn.textContent = 'Escuchar'; leyendo = null; return; }
+  sintesis.cancel(); if (leyendo) leyendo.textContent = 'Escuchar';
+  const b = btn.closest('.burbuja');
+  const partes = [b.querySelector('h2')?.innerText || ''];
+  partes.push((E.facil ? b.querySelector('.facil') : b.querySelector('.detalle') || b.querySelector('.frag'))?.innerText || '');
+  const u = new SpeechSynthesisUtterance(partes.join('. ').replace(/\s+/g, ' '));
+  u.lang = 'es-MX'; u.rate = 0.95;
+  const voz = sintesis.getVoices().find(v => v.lang && v.lang.startsWith('es'));
+  if (voz) u.voice = voz;
+  u.onend = u.onerror = () => { btn.textContent = 'Escuchar'; leyendo = null; };
+  leyendo = btn; btn.textContent = 'Detener'; sintesis.speak(u);
+}
+
+/* ---------- Cierre por inactividad: borra la conversación ---------- */
+let reloj = null;
+function reiniciarReloj() {
+  clearTimeout(reloj);
+  reloj = setTimeout(() => {
+    if (chat().children.length <= 1) return;
+    try { window.speechSynthesis && speechSynthesis.cancel(); } catch (e) {}
+    chat().innerHTML = ''; E.modo = null; pintarModo(); saludo();
+    burbuja('<p class="aclara">La conversación anterior se borró por inactividad, para proteger tu privacidad.</p>');
+  }, CONFIG.inactividadMin * 60000);
+}
+['click', 'keydown', 'touchstart'].forEach(t => document.addEventListener(t, reiniciarReloj, { passive: true }));
 function imprimir(b) {
   const z = $('#zonaImpresion');
   const hoy = new Date().toLocaleDateString('es-MX', { day: '2-digit', month: '2-digit', year: 'numeric' });
@@ -508,8 +636,10 @@ async function iniciar() {
   $('#formEntrada').onsubmit = e => { e.preventDefault(); const t = ta.value; ta.value = ''; ta.style.height = 'auto'; responder(t); };
   estadoRed();
   try {
-    const [docs, faq, riesgo, dir] = await Promise.all([json('data/docs.json'), json('data/faq.json'), json('data/riesgo.json'), json('data/directorio.json').catch(() => null)]);
+    const [docs, faq, riesgo, dir, glo] = await Promise.all([json('data/docs.json'), json('data/faq.json'), json('data/riesgo.json'),
+      json('data/directorio.json').catch(() => null), json('data/glosario.json').catch(() => ({ terminos: [] }))]);
     E.docs = docs.docs; E.corte = docs.corte; E.faq = faq.faq; E.riesgo = riesgo.expresiones; E.dir = dir;
+    E.glosario = glo.terminos.sort((a, b) => b.t.length - a.t.length);
     for (const d of E.docs) E.docMap[d.id] = d;
     E.docsMain = E.docs.filter(d => d.nivel !== 3); E.docsN3 = E.docs.filter(d => d.nivel === 3);
     E.idxPromise = json('data/indice.json');
@@ -520,6 +650,7 @@ async function iniciar() {
   }
   saludo();
   pintarSugerencias();
+  reiniciarReloj();
   if ('serviceWorker' in navigator) {
     try {
       const reg = await navigator.serviceWorker.register('sw.js');
