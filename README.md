@@ -1,4 +1,4 @@
-# Asistente UIG · v3.0
+# Asistente UIG · v3.1
 
 App web instalable (PWA) de orientación normativa para Unidades de Igualdad de Género y ciudadanía en Jalisco.
 Cada respuesta cita **artículo, ordenamiento y fecha de última reforma**, y funciona **sin conexión** después de la primera visita.
@@ -6,8 +6,8 @@ Elaborada por CGES/DGAPP/AA.
 
 ## Despliegue desde cero (GitHub Pages, desde el navegador)
 1. En github.com: **+ → New repository**. Nombre: `UIG` (o el que prefieras). Visibilidad: **Public**. Crear.
-2. Descomprime `AsistenteUIG_v3.0.zip` en tu computadora. Entra a la carpeta `AsistenteUIG`.
-3. En el repositorio nuevo, toca **uploading an existing file**. Selecciona **todo el contenido** de la carpeta (archivos y carpetas: `assets`, `data`, `fuentes`, `herramientas` y los archivos sueltos) y arrástralo. Son unos 40 archivos: entran en **una sola carga**.
+2. Descomprime `AsistenteUIG_v3.1.zip` en tu computadora. Entra a la carpeta `AsistenteUIG`.
+3. En el repositorio nuevo, toca **uploading an existing file**. Selecciona **todo el contenido** de la carpeta (archivos y carpetas: `assets`, `data`, `descargas`, `herramientas` y los archivos sueltos) y arrástralo. Son unos 40 archivos: entran en **una sola carga**.
 4. Presiona **Commit changes** y espera a que termine de subir (los archivos de `data` pesan unos 30 MB en total).
 5. Revisa que `index.html` quede en la **raíz** del repositorio, no dentro de una subcarpeta.
 6. **Settings → Pages → Build and deployment → Source: Deploy from a branch → Branch: main / (root) → Save.**
@@ -16,8 +16,13 @@ Elaborada por CGES/DGAPP/AA.
 > El archivo `.gitignore` empieza con punto y algunas computadoras lo ocultan. Si no se sube, no pasa nada.
 > Para probar en tu computadora antes de publicar: dentro de la carpeta, `python -m http.server 8000` y abre `http://localhost:8000`.
 
+## Qué trae la v3.1
+- **Documento núcleo de las UIG:** el Plan de Trabajo de las Unidades de Igualdad de Género (SISEMH, 2021) y el texto oficial del Acuerdo DIELAG ACU 084/2020 (Periódico Oficial, 31/12/2020) entran a la base y sustituyen a la ficha y al resumen que se habían elaborado (#144 y #145).
+- **20 respuestas sobre las UIG** reescritas desde esas fuentes, con la frase «dos líneas estratégicas y cuatro ejes de trabajo rectores del quehacer de las unidades:». Nuevas: crear una UIG desde cero, cargos, sesiones, temas de cada sesión, actividades del plan, informe anual, capacitación y la UIG de la CGES (Acuerdo DIELAG ACU 43/2021).
+- **Descargas:** guía «Cómo crear una UIG desde cero» en Word y PDF, Plan de Trabajo (PDF oficial) y Acuerdo 084/2020 (PDF del Periódico Oficial), también sin conexión.
+
 ## Qué trae la v3.0
-- **100 preguntas frecuentes** con 268 citas verificadas, agrupadas en 8 temas (botón *Todas las preguntas*).
+- **100 preguntas frecuentes** (107 en la v3.1) con 268 citas verificadas, agrupadas en 8 temas (botón *Todas las preguntas*).
 - **Respuesta según el perfil.** Ciudadanía: nunca recibe fragmentos de ley sin pedirlos; si su pregunta no está en las frecuentes, recibe orientación, preguntas parecidas y a dónde acudir, y puede tocar *Ver qué dice la ley*. Servidoras y servidores públicos: reciben preguntas parecidas y los fragmentos normativos.
 - **«¿Te refieres a…?»**: hasta 3 preguntas frecuentes parecidas cuando la consulta no coincide exactamente.
 - **Ruta guiada «¿Qué te pasó?»** (ciudadanía): 10 botones para orientarse sin escribir.
@@ -43,7 +48,9 @@ Elaborada por CGES/DGAPP/AA.
 | `herramientas/construir_base.py` | Reconstruye `data/` desde el Excel y la carpeta de documentos |
 | `herramientas/probar_base.py` | Prueba automática: citas, reconocimiento de las 100 preguntas y sus variantes, frases de riesgo |
 | `herramientas/verificar_vigencia.py` | Compara la fecha de última reforma impresa en cada PDF con la del Excel |
-| `fuentes/` | PDF de los documentos elaborados para la base (144 y 145) |
+| `descargas/` | Guía para crear una UIG (Word y PDF), Plan de Trabajo y Acuerdo 084/2020 (PDF oficiales) |
+| `herramientas/correcciones/` | Correcciones documentadas: tablas transcritas fila por fila y numeración de páginas de recortes del Periódico Oficial |
+| `herramientas/guia/guia.js` | Genera la guía en Word (`node guia.js`, requiere el paquete `docx` de npm) |
 
 ## Fase 2 (pendiente)
 En `app.js`, `CONFIG.ia` y `CONFIG.estadisticas` están apagados. Se activan cuando exista la cuenta del API de Anthropic y el intermediario (Cloudflare Worker).

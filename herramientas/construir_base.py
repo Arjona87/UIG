@@ -50,7 +50,7 @@ def tokens(s):
     return out
 
 # ---------------------------------------------------------------- extracción
-def extraer(pdf, destino):
+def extraer(pdf, destino, layout=False):
     if pdf.lower().endswith('.doc') or pdf.lower().endswith('.docx'):
         tmp = os.path.dirname(destino)
         subprocess.run(['soffice', '--headless', '--convert-to', 'txt:Text (encoded):UTF8', '--outdir', tmp, pdf],
@@ -60,7 +60,7 @@ def extraer(pdf, destino):
             shutil.move(os.path.join(tmp, base), destino)
         return
     if shutil.which('pdftotext'):
-        subprocess.run(['pdftotext', '-enc', 'UTF-8', pdf, destino], capture_output=True)
+        subprocess.run(['pdftotext', '-enc', 'UTF-8'] + (['-layout'] if layout else []) + [pdf, destino], capture_output=True)
     else:
         from pypdf import PdfReader
         r = PdfReader(pdf)
@@ -101,7 +101,7 @@ def parrafos(t):
     t = re.sub(r'(\w)-\n(\w)', r'\1\2', t)
     t = re.sub(r'[ \t]+', ' ', t)
     # conserva saltos antes de fracciones, incisos y numerales; une el resto
-    t = re.sub(r'\n(?!\s*(?:[IVXLC]+\.|[IVXLC]+\s*\.-|[a-zñ]\)|\d+\.\s|\d+\)|[A-ZÁÉÍÓÚÑ][A-ZÁÉÍÓÚÑ ]{6,}$))', ' ', t)
+    t = re.sub(r'\n(?!\s*(?:[IVXLC]+\.|[IVXLC]+\s*\.-|[a-zñ]\)|[ivx]{2,4}\)|\d+\.\s|\d+\)|[A-ZÁÉÍÓÚÑ][A-ZÁÉÍÓÚÑ ]{6,}$))', ' ', t)
     t = re.sub(r'\n\s*\n+', '\n', t)
     return re.sub(r' {2,}', ' ', t).strip()
 
@@ -143,13 +143,67 @@ def por_lineamientos(todo):
         units.append([m.group(1), parrafos(cuerpo)])
     return [u for u in units if len(u[1]) > 3]
 
+ORD_L = ['Primero', 'Segundo', 'Tercero', 'Cuarto', 'Quinto', 'Sexto', 'Séptimo', 'Octavo', 'Noveno', 'Décimo', 'Undécimo',
+         'Duodécimo', 'Decimotercero', 'Decimocuarto', 'Decimoquinto', 'Decimosexto']
+ORD_U = {o.upper(): o for o in ORD_L}
+
+def por_ordinales(todo):
+    """Texto oficial publicado en el Periódico Oficial: puntos de acuerdo (PRIMERO., SEGUNDO., …), un encabezado
+    LINEAMIENTOS … y lineamientos numerados otra vez desde PRIMERO. Una unidad por punto y por lineamiento."""
+    ms = list(re.finditer(r'(?m)^[ \t]*(' + '|'.join(ORD_U) + r')\.[ \t]', todo))
+    if not ms:
+        return None
+    # el encabezado LINEAMIENTOS que cuenta es el que aparece después del primer punto de acuerdo (no el del título)
+    m_lin = re.compile(r'(?m)^[ \t]*LINEAMIENTOS\b[^\n]*$').search(todo, ms[0].end())
+    if not m_lin:
+        return None
+    m_tr = TRANS.search(todo, m_lin.end())
+    fin_lin = m_tr.start() if m_tr else len(todo)
+    pre = [m for m in ms if m.start() < m_lin.start()]
+    post = [m for m in ms if m_lin.start() < m.start() < fin_lin]
+    if len(post) < 5:
+        return None
+    units = [['Considerandos', parrafos(todo[:pre[0].start() if pre else m_lin.start()])]]
+    for i, m in enumerate(pre):
+        fin = pre[i + 1].start() if i + 1 < len(pre) else m_lin.start()
+        units.append(['Acuerdo ' + ORD_U[m.group(1)], parrafos(todo[m.start():fin])])
+    for i, m in enumerate(post):
+        fin = post[i + 1].start() if i + 1 < len(post) else fin_lin
+        units.append(['Lineamiento ' + ORD_U[m.group(1)], parrafos(todo[m.start():fin])])
+    if m_tr:
+        units.append(['Transitorios', parrafos(todo[m_tr.start():])])
+    return [u for u in units if len(u[1]) > 3]
+
+NUMERAL = re.compile(r'(?m)^[ \t]*(\d{1,2}(?:\.\d{1,2}){0,2})\.[ \t]*\n?(?:[ \t]*\n)?[ \t]*([A-ZÁÉÍÓÚÑ][^\n]{2,70})$')
+
+def por_numerales(todo):
+    """Planes y programas con apartados numerados (1., 2., 5.1., 6.1.1.): una unidad por apartado."""
+    ms, prev = [], None
+    for m in NUMERAL.finditer(todo):
+        n = tuple(int(x) for x in m.group(1).split('.'))
+        if prev is None and n != (1,):
+            continue
+        if prev is None or n > prev:
+            ms.append(m); prev = n
+    if len(ms) < 5:
+        return None
+    units = []
+    for i, m in enumerate(ms):
+        fin = ms[i + 1].start() if i + 1 < len(ms) else len(todo)
+        units.append([f'Numeral {m.group(1)} ({m.group(2).strip().rstrip(".")})', parrafos(todo[m.end():fin])])
+    return [u for u in units if len(u[1]) > 3]
+
 def segmentar(texto, tipo):
     pags = limpiar_paginas(texto)
     todo = '\n'.join(pags)
     if tipo.startswith(('Acuerdo', 'Lineamientos')):
-        lin = por_lineamientos(todo)
+        lin = por_lineamientos(todo) or por_ordinales(todo)
         if lin:
             return 'lin', lin
+    if tipo.startswith(('Plan', 'Programa de trabajo')):
+        num = por_numerales(todo)
+        if num:
+            return 'num', num
     if any(tipo.startswith(t) for t in TIPOS_ART):
         ms = list(HEAD.finditer(todo))
         ini = next((i for i, m in enumerate(ms) if int(m.group(1)) == 1), None)
@@ -236,11 +290,25 @@ def main():
             avisos.append(f'#{nid}: está en el Excel pero no hay archivo'); continue
         txt = os.path.join(textos, nid + '.txt')
         if not os.path.exists(txt) or nid in solo:
-            print('extrayendo', nid); extraer(archivos[nid], txt)
+            print('extrayendo', nid); extraer(archivos[nid], txt, layout=f['tipo'].startswith(('Plan', 'Programa de trabajo')))
         texto = open(txt, encoding='utf-8', errors='ignore').read()
         modo, units = segmentar(texto, f['tipo'])
         if not units:
             avisos.append(f'#{nid}: sin texto utilizable'); continue
+        # Correcciones documentadas: tablas que la extracción del PDF desordena, transcritas fila por fila
+        corr = os.path.join(os.path.dirname(os.path.abspath(__file__)), 'correcciones', nid + '.json')
+        if os.path.exists(corr):
+            cj = json.load(open(corr, encoding='utf-8'))
+            off = cj.get('pagina_inicial', 1) - 1     # recortes de un Periódico Oficial: citar la página del ejemplar
+            if off and modo == 'pag':
+                for u in units:
+                    u[0] = re.sub(r'\d+', lambda m: str(int(m.group()) + off), u[0])
+            cambios = cj.get('unidades', {})
+            for u in units:
+                if u[0] in cambios:
+                    u[1] = cambios.pop(u[0])
+            for et in cambios:
+                avisos.append(f'#{nid}: la corrección «{et}» no encontró su apartado')
         nivel = int(float(f['nivel']))
         nombre = f['nombre']
         if f['n'] == 76:  # el archivo es la ley nueva (ver auditoría del Excel v7)

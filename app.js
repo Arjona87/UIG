@@ -5,7 +5,7 @@
 'use strict';
 
 const CONFIG = {
-  version: '3.0',
+  version: '3.1',
   inactividadMin: 10,         // la conversación se borra tras 10 minutos sin uso
   ia: false,                 // Fase 2: activar con intermediario (Cloudflare Worker) y API de Anthropic
   estadisticas: null,        // Fase 2: URL del contador anónimo (solo tema, perfil y fecha)
@@ -309,6 +309,19 @@ function fragmento(texto, terms, largo = 320) {
   return (ini > 0 ? '… ' : '') + h + (fin < texto.length ? ' …' : '');
 }
 
+/* ---------- Documentos descargables (carpeta descargas/, disponibles sin conexión) ---------- */
+const DESCARGAS = {
+  guia_docx: { t: 'Guía: cómo crear una UIG desde cero', f: 'Word', url: 'descargas/Guia_crear_UIG_desde_cero.docx' },
+  guia_pdf: { t: 'Guía: cómo crear una UIG desde cero', f: 'PDF', url: 'descargas/Guia_crear_UIG_desde_cero.pdf' },
+  plan_pdf: { t: 'Plan de Trabajo de las UIG (SISEMH, 2021)', f: 'PDF oficial', url: 'descargas/Plan_de_Trabajo_UIG_SISEMH_2021.pdf' },
+  acuerdo_pdf: { t: 'Acuerdo DIELAG ACU 084/2020 (Periódico Oficial)', f: 'PDF oficial', url: 'descargas/Acuerdo_DIELAG_ACU_084_2020_POEJ_31-12-2020.pdf' }
+};
+function descargasHTML(f) {
+  const ds = (f.descargas || []).map(k => DESCARGAS[k]).filter(Boolean);
+  if (!ds.length) return '';
+  return `<div class="descargas"><h3>Descargar</h3>${ds.map(d => `<a class="btn-desc" href="${d.url}" download><span class="d-fmt">${esc(d.f)}</span>${esc(d.t)}</a>`).join('')}</div>`;
+}
+
 /* ---------- Glosario tocable ---------- */
 function glosar(html, usados) {
   if (!E.glosario.length) return html;
@@ -368,6 +381,7 @@ async function responderFAQ(f, { naranja = [], urgente = false } = {}) {
     <div class="detalle">${(() => { const u = new Set(); return `<p>${glosar(esc(f.intro), u)}</p>${f.lista.length ? `<ul>${f.lista.map(x => `<li>${glosar(esc(x), u)}</li>`).join('')}</ul>` : ''}${f.cierre ? `<p>${glosar(esc(f.cierre), u)}</p>` : ''}`; })()}</div>
     ${f.tel ? `<a class="btnlinea" href="tel:${esc(f.tel)}">Llamar a la Red de Centros de Justicia · ${esc(f.tel.replace(/(\d{2})(\d{4})(\d{4})/, '$1 $2 $3'))}</a>` : ''}
     ${f.infografia ? infografia(f.infografia) : ''}
+    ${descargasHTML(f)}
     ${f.directorio || urgente || naranja.length ? directorioHTML() : ''}
     <div class="citas"><h3>Fundamento</h3>${f.citas.map(citaHTML).join('')}</div>
     ${acciones()}${aclaracion()}`;
@@ -473,7 +487,7 @@ function contar(tema) {
 const CHIPS = { tipos:'Tipos de violencia', psicologica:'¿Es violencia psicológica?', patrimonial:'Me quita dinero o papeles', digital:'Difundieron mis fotos',
   orden:'Orden de protección', denunciar:'¿Dónde denuncio?', abogada:'Abogada gratuita', derechos:'Mis derechos', cjm:'Centro de Justicia para las Mujeres',
   refugio:'Refugio con mis hijos', laboral:'Acoso en el trabajo', mediacion:'¿Me obligan a conciliar?', desaparicion:'Persona desaparecida',
-  uig:'¿Qué hace la UIG?', uig_ayuda:'¿La UIG me puede ayudar?', uig_servidora:'Acoso en mi dependencia', adonde:'¿A dónde voy?', cjm_sedes:'¿Dónde hay CJM?',
+  uig:'¿Qué hace la UIG?', uig_ayuda:'¿La UIG me puede ayudar?', uig_servidora:'Acoso en mi dependencia', uig_crear:'Crear una UIG desde cero', adonde:'¿A dónde voy?', cjm_sedes:'¿Dónde hay CJM?',
   como_denunciar:'¿Cómo denuncio?', protocolo_unif:'Protocolo Unificado', lineam_ordenes:'Lineamientos de órdenes', riesgo:'Análisis de riesgo', diligencia:'Debida diligencia', ruta:'Ruta de atención', institucional:'Violencia institucional', canalizar:'¿Cómo canalizo?', alerta:'Alerta de Violencia de Género',
   politica:'Violencia política', reparacion:'Reparación del daño' };
 function pintarSugerencias() {
@@ -482,7 +496,7 @@ function pintarSugerencias() {
   if (E.modo !== 'servidora') extra('¿Qué te pasó?', () => mostrarRuta());
   extra('Todas las preguntas', () => mostrarTodas());
   const orden = E.modo === 'servidora'
-    ? ['uig','uig_servidora','ruta','canalizar','protocolo_unif','institucional','orden','lineam_ordenes','riesgo','diligencia','tipos','derechos','alerta','politica','reparacion']
+    ? ['uig','uig_crear','uig_servidora','ruta','canalizar','protocolo_unif','institucional','orden','lineam_ordenes','riesgo','diligencia','tipos','derechos','alerta','politica','reparacion']
     : ['uig','uig_ayuda','adonde','cjm_sedes','tipos','orden','como_denunciar','psicologica','patrimonial','digital','abogada','refugio','derechos','mediacion','desaparicion'];
   for (const id of orden) {
     const f = E.faq.find(x => x.id === id); if (!f) continue;
@@ -655,7 +669,7 @@ async function iniciar() {
     try {
       const reg = await navigator.serviceWorker.register('sw.js');
       const listo = await navigator.serviceWorker.ready;
-      const urls = ['data/textos-n1.json', 'data/textos-n2.json'];
+      const urls = ['data/textos-n1.json', 'data/textos-n2.json', ...Object.values(DESCARGAS).map(d => d.url)];
       (listo.active || reg.active)?.postMessage({ tipo: 'precargar', urls });
     } catch (e) {}
   }

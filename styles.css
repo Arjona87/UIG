@@ -201,3 +201,12 @@ details.cat button.sug{display:block;width:100%}
 .sel-mun{display:block;margin:6px 0;font-size:.92em}
 .sel-mun select{font:inherit;padding:3px 6px;border-radius:6px;border:1px solid var(--linea)}
 @media print{button.term{text-decoration:none}.def{break-inside:avoid}.ruta-btns,.te-refieres{display:none}}
+
+/* ---------- v3.1: documentos descargables ---------- */
+.descargas{margin:10px 0 6px;padding:10px 12px;border:1px solid var(--lila);border-radius:10px;background:var(--lila-50)}
+.descargas h3{margin:0 0 6px;font-size:.95em;color:var(--violeta-900)}
+.btn-desc{display:flex;align-items:center;gap:8px;text-decoration:none;color:var(--violeta-900);font-weight:600;padding:7px 4px;border-top:1px solid var(--linea);font-size:.92em}
+.btn-desc:first-of-type{border-top:0}
+.btn-desc:hover,.btn-desc:focus-visible{background:#fff}
+.d-fmt{flex:0 0 auto;min-width:74px;text-align:center;font-size:.78em;font-weight:700;color:#fff;background:var(--violeta);border-radius:6px;padding:2px 6px}
+@media print{.descargas{display:none}}

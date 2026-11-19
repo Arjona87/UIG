@@ -1,6 +1,6 @@
 /* Asistente UIG · Service worker: funciona sin conexión después de la primera visita.
    construir_base.py actualiza VERSION en cada reconstrucción para que los teléfonos descarguen la base nueva. */
-const VERSION = '202611190911';
+const VERSION = '202611191142';
 const CASCARA = 'uig-cascara-' + VERSION;
 const DATOS = 'uig-datos-' + VERSION;
 const ESENCIALES = ['./', 'index.html', 'styles.css', 'app.js', 'manifest.webmanifest', 'aviso-privacidad.html',
@@ -15,7 +15,7 @@ self.addEventListener('activate', e => {
   e.waitUntil(caches.keys().then(ks => Promise.all(ks.filter(k => k !== CASCARA && k !== DATOS).map(k => caches.delete(k))))
     .then(() => self.clients.claim()));
 });
-// Precarga en segundo plano de los textos de nivel 1 y 2 (dos archivos, enviados por la página)
+// Precarga en segundo plano de los textos de nivel 1 y 2 y de los documentos descargables (lista enviada por la página)
 self.addEventListener('message', e => {
   if (e.data && e.data.tipo === 'precargar') {
     e.waitUntil(caches.open(DATOS).then(async c => {
@@ -26,8 +26,8 @@ self.addEventListener('message', e => {
 self.addEventListener('fetch', e => {
   const url = new URL(e.request.url);
   if (e.request.method !== 'GET' || url.origin !== location.origin) return;
-  if (url.pathname.includes('/data/textos-') || url.pathname.endsWith('indice-n3.json')) {
-    // textos: primero caché; si no está, red y se guarda para usar sin conexión
+  if (url.pathname.includes('/data/textos-') || url.pathname.endsWith('indice-n3.json') || url.pathname.includes('/descargas/')) {
+    // textos y documentos descargables: primero caché; si no está, red y se guarda para usar sin conexión
     e.respondWith(caches.open(DATOS).then(async c => (await c.match(e.request)) ||
       fetch(e.request).then(r => { if (r.ok) c.put(e.request, r.clone()); return r; })));
     return;
