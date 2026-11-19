@@ -522,35 +522,55 @@
   },
   {
    "id": "uig",
-   "modo": "servidora",
-   "q": "¿Cuáles son las funciones de una Unidad de Igualdad de Género?",
-   "kw": "unidad de igualdad de genero uig funciones que hace atribuciones objetivo transversalizacion perspectiva de genero",
-   "intro": "El Modelo de Atención Integral de Jalisco define las Unidades de Igualdad de Género como órganos especializados, con enfoque integral, de largo plazo, interseccional y transversal, dentro de las Coordinaciones Generales Estratégicas (entre ellas la de Seguridad), la Jefatura de Gabinete y la Secretaría de Planeación y Participación Ciudadana.",
+   "modo": "ambos",
+   "q": "¿Qué es y qué hace una Unidad de Igualdad de Género?",
+   "kw": "unidad de igualdad de genero uig funciones que hace atribuciones objetivo transversalizacion perspectiva de genero que hace la uig como me ayuda la uig a donde me dirijo unidad de igualdad sirve para que",
+   "intro": "Las Unidades de Igualdad de Género (UIG) son órganos consultivos especializados en transversalización e institucionalización de la perspectiva de género y los derechos humanos. Existen dentro de cada dependencia y entidad del Gobierno de Jalisco. Trabajan en cuatro ejes:",
    "lista": [
-    "Su fin es asegurar que la transversalización e institucionalización de la perspectiva de género sean pilares en la toma de decisiones administrativas y en la ejecución de políticas públicas.",
-    "El Reglamento de la Ley de Acceso de Jalisco incluye entre las acciones para prevenir la violencia institucional promover la creación de Unidades de Género y capacitar al funcionariado público en derechos humanos de las mujeres."
+    "Política institucional: Programa de Cultura Institucional para mejorar el clima laboral y seguimiento a la política interna de igualdad.",
+    "Ambientes libres de acoso: difundir el Protocolo Cero y canalizar los casos de acoso y hostigamiento sexual laboral a las instancias competentes.",
+    "Comunicación: contenidos de igualdad y derechos humanos, y comunicación institucional incluyente y no sexista.",
+    "Planeación y evaluación: perspectiva de género en reglamentos, planes, presupuestos e indicadores, con datos desagregados al menos por sexo, edad y municipio."
    ],
-   "cierre": "Nota: los lineamientos específicos de las UIG no forman parte de esta base; esta respuesta se limita a lo que dicen los documentos citados.",
+   "cierre": "Importante: las UIG no son ventanillas de atención al público ni reciben denuncias. Si eres servidora pública y vives acoso u hostigamiento sexual en tu trabajo, la UIG de tu dependencia te orienta y te canaliza. Si vives violencia y necesitas atención, acude a un Centro de Justicia para las Mujeres o al Ministerio Público; si estás en peligro, llama al 911.",
    "facil": [
-    "Las UIG son oficinas dentro del gobierno.",
-    "Ayudan a que las decisiones tomen en cuenta a las mujeres.",
-    "También ayudan a evitar la violencia institucional."
+    "La UIG es un equipo dentro de cada oficina de gobierno.",
+    "Cuida que esa oficina trate igual a mujeres y hombres.",
+    "Si te acosan en tu trabajo de gobierno, te orienta.",
+    "La UIG no recibe denuncias.",
+    "Si necesitas ayuda, ve a un Centro de Justicia para las Mujeres.",
+    "Si estás en peligro, llama al 911."
    ],
    "citas": [
+    {
+     "d": "144",
+     "u": "Pág. 2",
+     "det": "Lineamientos Primero, Segundo y Quinto"
+    },
+    {
+     "d": "144",
+     "u": "Pág. 3",
+     "det": "Lineamiento Sexto, fracción V"
+    },
+    {
+     "d": "144",
+     "u": "Pág. 4",
+     "det": "lo que el Acuerdo no establece"
+    },
+    {
+     "d": "145",
+     "u": "Pág. 1"
+    },
     {
      "d": "120",
      "u": "Pág. 182"
     },
     {
-     "d": "120",
-     "u": "Pág. 183"
-    },
-    {
-     "d": "135",
-     "u": "Artículo 58",
-     "det": "fracciones I y III"
+     "d": "080",
+     "u": "Artículo 59 Ter"
     }
-   ]
+   ],
+   "directorio": true
   },
   {
    "id": "ruta",

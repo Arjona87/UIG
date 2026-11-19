@@ -96,6 +96,7 @@ function marcas(d) {
   const c = d.cita || '';
   if (c.startsWith('Con marca: vigencia')) return '<span class="marca conf">Vigencia por confirmar</span>';
   if (c.startsWith('Con marca: proyecto')) return '<span class="marca conf">Proyecto, no vigente</span>';
+  if (c.startsWith('Con marca: síntesis')) return '<span class="marca conf">Síntesis del texto oficial</span>';
   if (c.startsWith('Con aviso de transición')) return '<span class="marca trans">En transición</span>';
   if (c.startsWith('Doctrina')) return '<span class="marca doct">Doctrina, no es norma</span>';
   if (c.startsWith('Histórico')) return '<span class="marca hist">Abrogada (histórico)</span>';
@@ -394,13 +395,13 @@ function contar(tema) {
 const CHIPS = { tipos:'Tipos de violencia', psicologica:'¿Es violencia psicológica?', patrimonial:'Me quita dinero o papeles', digital:'Difundieron mis fotos',
   orden:'Orden de protección', denunciar:'¿Dónde denuncio?', abogada:'Abogada gratuita', derechos:'Mis derechos', cjm:'Centro de Justicia para las Mujeres',
   refugio:'Refugio con mis hijos', laboral:'Acoso en el trabajo', mediacion:'¿Me obligan a conciliar?', desaparicion:'Persona desaparecida',
-  uig:'Funciones de la UIG', ruta:'Ruta de atención', institucional:'Violencia institucional', canalizar:'¿Cómo canalizo?', alerta:'Alerta de Violencia de Género',
+  uig:'¿Qué hace la UIG?', ruta:'Ruta de atención', institucional:'Violencia institucional', canalizar:'¿Cómo canalizo?', alerta:'Alerta de Violencia de Género',
   politica:'Violencia política', reparacion:'Reparación del daño' };
 function pintarSugerencias() {
   const caja = $('#sugerencias'); caja.innerHTML = '';
   const orden = E.modo === 'servidora'
-    ? ['ruta','canalizar','institucional','uig','orden','tipos','derechos','alerta','politica','reparacion','mediacion','cjm','desaparicion','digital','laboral']
-    : ['tipos','orden','denunciar','psicologica','patrimonial','digital','abogada','refugio','derechos','cjm','mediacion','laboral','desaparicion','reparacion'];
+    ? ['uig','ruta','canalizar','institucional','orden','tipos','derechos','alerta','politica','reparacion','mediacion','cjm','desaparicion','digital','laboral']
+    : ['uig','tipos','orden','denunciar','psicologica','patrimonial','digital','abogada','refugio','derechos','cjm','mediacion','laboral','desaparicion','reparacion'];
   for (const id of orden) {
     const f = E.faq.find(x => x.id === id); if (!f) continue;
     const b = document.createElement('button'); b.type = 'button'; b.textContent = CHIPS[id] || f.q;
