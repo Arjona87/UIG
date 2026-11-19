@@ -5,7 +5,7 @@
 'use strict';
 
 const CONFIG = {
-  version: '3.1',
+  version: '3.2',
   inactividadMin: 10,         // la conversación se borra tras 10 minutos sin uso
   ia: false,                 // Fase 2: activar con intermediario (Cloudflare Worker) y API de Anthropic
   estadisticas: null,        // Fase 2: URL del contador anónimo (solo tema, perfil y fecha)
@@ -314,12 +314,19 @@ const DESCARGAS = {
   guia_docx: { t: 'Guía: cómo crear una UIG desde cero', f: 'Word', url: 'descargas/Guia_crear_UIG_desde_cero.docx' },
   guia_pdf: { t: 'Guía: cómo crear una UIG desde cero', f: 'PDF', url: 'descargas/Guia_crear_UIG_desde_cero.pdf' },
   plan_pdf: { t: 'Plan de Trabajo de las UIG (SISEMH, 2021)', f: 'PDF oficial', url: 'descargas/Plan_de_Trabajo_UIG_SISEMH_2021.pdf' },
-  acuerdo_pdf: { t: 'Acuerdo DIELAG ACU 084/2020 (Periódico Oficial)', f: 'PDF oficial', url: 'descargas/Acuerdo_DIELAG_ACU_084_2020_POEJ_31-12-2020.pdf' }
+  acuerdo_pdf: { t: 'Acuerdo DIELAG ACU 084/2020 (Periódico Oficial)', f: 'PDF oficial', url: 'descargas/Acuerdo_DIELAG_ACU_084_2020_POEJ_31-12-2020.pdf' },
+  protocolo_pdf: { t: 'Protocolo Cero (Periódico Oficial, 11/06/2019)', f: 'PDF oficial', url: 'descargas/Protocolo_Cero_POEJ_11-06-2019.pdf' },
+  guia_pc_pdf: { t: 'Guía de aplicación del Protocolo Cero', f: 'PDF', url: 'descargas/Protocolo_Cero_Guia_de_Aplicacion.pdf' },
+  programa_pdf: { t: 'Programa de Prevención del Protocolo Cero', f: 'PDF', url: 'descargas/Protocolo_Cero_Programa_de_Prevencion.pdf' },
+  protocolo_web: { t: 'Página oficial del Protocolo Cero (Secretaría de Igualdad Sustantiva)', f: 'Sitio web', url: 'https://igualdad.jalisco.gob.mx/acciones/protocolo-cero/', web: true }
 };
 function descargasHTML(f) {
   const ds = (f.descargas || []).map(k => DESCARGAS[k]).filter(Boolean);
   if (!ds.length) return '';
-  return `<div class="descargas"><h3>Descargar</h3>${ds.map(d => `<a class="btn-desc" href="${d.url}" download><span class="d-fmt">${esc(d.f)}</span>${esc(d.t)}</a>`).join('')}</div>`;
+  const titulo = ds.some(d => d.web) ? (ds.every(d => d.web) ? 'Consultar' : 'Descargar y consultar') : 'Descargar';
+  return `<div class="descargas"><h3>${titulo}</h3>${ds.map(d => d.web
+    ? `<a class="btn-desc" href="${d.url}" target="_blank" rel="noopener"><span class="d-fmt d-web">${esc(d.f)}</span><span>${esc(d.t)}<small class="d-nota">Requiere internet</small></span></a>`
+    : `<a class="btn-desc" href="${d.url}" download><span class="d-fmt">${esc(d.f)}</span>${esc(d.t)}</a>`).join('')}</div>`;
 }
 
 /* ---------- Glosario tocable ---------- */
@@ -470,7 +477,7 @@ function mostrarRuta() {
   });
 }
 const CATS = [['uig', 'Unidades de Igualdad de Género'], ['adonde', 'A dónde dirigirme'], ['tipos', 'Tipos y modalidades de violencia'], ['proteccion', 'Protección y seguridad'],
-  ['denuncia', 'Denuncia y proceso'], ['derechos', 'Derechos y reparación'], ['desaparicion', 'Desaparición de personas'], ['servidoras', 'Para servidoras y servidores públicos']];
+  ['protocolo', 'Protocolo Cero: acoso sexual en el gobierno'], ['denuncia', 'Denuncia y proceso'], ['derechos', 'Derechos y reparación'], ['desaparicion', 'Desaparición de personas'], ['servidoras', 'Para servidoras y servidores públicos']];
 function mostrarTodas() {
   const lista = E.faq.filter(f => !(E.modo === 'ciudadania' && f.modo === 'servidora'));
   burbuja(`<span class="etq">Preguntas frecuentes</span><h2>${lista.length} preguntas por tema</h2>
@@ -487,7 +494,7 @@ function contar(tema) {
 const CHIPS = { tipos:'Tipos de violencia', psicologica:'¿Es violencia psicológica?', patrimonial:'Me quita dinero o papeles', digital:'Difundieron mis fotos',
   orden:'Orden de protección', denunciar:'¿Dónde denuncio?', abogada:'Abogada gratuita', derechos:'Mis derechos', cjm:'Centro de Justicia para las Mujeres',
   refugio:'Refugio con mis hijos', laboral:'Acoso en el trabajo', mediacion:'¿Me obligan a conciliar?', desaparicion:'Persona desaparecida',
-  uig:'¿Qué hace la UIG?', uig_ayuda:'¿La UIG me puede ayudar?', uig_servidora:'Acoso en mi dependencia', uig_crear:'Crear una UIG desde cero', adonde:'¿A dónde voy?', cjm_sedes:'¿Dónde hay CJM?',
+  uig:'¿Qué hace la UIG?', uig_ayuda:'¿La UIG me puede ayudar?', uig_servidora:'Acoso en mi dependencia', uig_crear:'Crear una UIG desde cero', protocolo_cero:'Protocolo Cero', pc_denunciar:'Denunciar por Protocolo Cero', adonde:'¿A dónde voy?', cjm_sedes:'¿Dónde hay CJM?',
   como_denunciar:'¿Cómo denuncio?', protocolo_unif:'Protocolo Unificado', lineam_ordenes:'Lineamientos de órdenes', riesgo:'Análisis de riesgo', diligencia:'Debida diligencia', ruta:'Ruta de atención', institucional:'Violencia institucional', canalizar:'¿Cómo canalizo?', alerta:'Alerta de Violencia de Género',
   politica:'Violencia política', reparacion:'Reparación del daño' };
 function pintarSugerencias() {
@@ -496,7 +503,7 @@ function pintarSugerencias() {
   if (E.modo !== 'servidora') extra('¿Qué te pasó?', () => mostrarRuta());
   extra('Todas las preguntas', () => mostrarTodas());
   const orden = E.modo === 'servidora'
-    ? ['uig','uig_crear','uig_servidora','ruta','canalizar','protocolo_unif','institucional','orden','lineam_ordenes','riesgo','diligencia','tipos','derechos','alerta','politica','reparacion']
+    ? ['uig','uig_crear','protocolo_cero','pc_denunciar','uig_servidora','ruta','canalizar','protocolo_unif','institucional','orden','lineam_ordenes','riesgo','diligencia','tipos','derechos','alerta','politica','reparacion']
     : ['uig','uig_ayuda','adonde','cjm_sedes','tipos','orden','como_denunciar','psicologica','patrimonial','digital','abogada','refugio','derechos','mediacion','desaparicion'];
   for (const id of orden) {
     const f = E.faq.find(x => x.id === id); if (!f) continue;
@@ -669,7 +676,7 @@ async function iniciar() {
     try {
       const reg = await navigator.serviceWorker.register('sw.js');
       const listo = await navigator.serviceWorker.ready;
-      const urls = ['data/textos-n1.json', 'data/textos-n2.json', ...Object.values(DESCARGAS).map(d => d.url)];
+      const urls = ['data/textos-n1.json', 'data/textos-n2.json', ...Object.values(DESCARGAS).filter(d => !d.web).map(d => d.url)];
       (listo.active || reg.active)?.postMessage({ tipo: 'precargar', urls });
     } catch (e) {}
   }

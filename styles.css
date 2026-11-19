@@ -210,3 +210,6 @@ details.cat button.sug{display:block;width:100%}
 .btn-desc:hover,.btn-desc:focus-visible{background:#fff}
 .d-fmt{flex:0 0 auto;min-width:74px;text-align:center;font-size:.78em;font-weight:700;color:#fff;background:var(--violeta);border-radius:6px;padding:2px 6px}
 @media print{.descargas{display:none}}
+/* v3.2: enlace al sitio oficial dentro de «Descargar y consultar» */
+.d-fmt.d-web{background:#fff;color:var(--violeta);border:1px solid var(--violeta)}
+.d-nota{display:block;font-size:.8em;font-weight:500;color:#5c5470}

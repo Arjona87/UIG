@@ -88,7 +88,8 @@ def limpiar_paginas(texto):
             cuenta[l] += 1
     umbral = max(4, int(len(pags) * 0.25))
     repetidas = {l for l, c in cuenta.items() if c >= umbral and len(pags) >= 4 and len(l) < 160
-                 and len(l) >= 6 and not re.match(r'^([IVXLC]+|[a-zA-Z]|\d{1,3})[\.\)]?-?$', l)}
+                 and len(l) >= 6 and not re.match(r'^([IVXLC]+|[a-zA-Z]|\d{1,3})[\.\)]?-?$', l)
+                 and not l.endswith((';', ','))}      # una línea que termina en ; o , es texto que se repite, no encabezado
     out = []
     for p in pags:
         ls = [l for l in p.split('\n') if l.strip() not in repetidas
@@ -193,6 +194,29 @@ def por_numerales(todo):
         units.append([f'Numeral {m.group(1)} ({m.group(2).strip().rstrip(".")})', parrafos(todo[m.end():fin])])
     return [u for u in units if len(u[1]) > 3]
 
+def por_parrafos_numerados(todo):
+    """Protocolos publicados en el Periódico Oficial con párrafos numerados (1., 2., … 42.) agrupados en capítulos:
+    una unidad por numeral, más «Considerandos y acuerdo» y «Transitorios»."""
+    ms, prev = [], 0
+    for m in re.finditer(r'(?m)^[ \t]*(\d{1,3})\.[ \t]+(?=[A-ZÁÉÍÓÚÑ])', todo):
+        n = int(m.group(1))
+        if n == prev + 1:
+            ms.append(m); prev = n
+    if len(ms) < 10:
+        return None
+    m_tr = re.compile(r'(?m)^[ \t]*Transitorios[ \t]*$').search(todo, ms[-1].end())
+    fin = m_tr.start() if m_tr else len(todo)
+    units = [['Considerandos y acuerdo', parrafos(todo[:ms[0].start()])]]
+    for i, m in enumerate(ms):
+        f = ms[i + 1].start() if i + 1 < len(ms) else fin
+        cuerpo = todo[m.start():f]
+        # el encabezado de capítulo o sección que precede al siguiente numeral pertenece a ese numeral, no a este
+        cuerpo = re.sub(r'(?is)\n[ \t]*(Cap[íi]tulo|Secci[óo]n)\b[^\n]*(\n[^\n]*){0,3}$', '', cuerpo)
+        units.append([f'Numeral {m.group(1)}', parrafos(cuerpo)])
+    if m_tr:
+        units.append(['Transitorios', parrafos(todo[m_tr.start():])])
+    return [u for u in units if len(u[1]) > 3]
+
 def segmentar(texto, tipo):
     pags = limpiar_paginas(texto)
     todo = '\n'.join(pags)
@@ -200,6 +224,10 @@ def segmentar(texto, tipo):
         lin = por_lineamientos(todo) or por_ordinales(todo)
         if lin:
             return 'lin', lin
+    if tipo.startswith('Protocolo (párrafos numerados)'):
+        pn = por_parrafos_numerados(todo)
+        if pn:
+            return 'num', pn
     if tipo.startswith(('Plan', 'Programa de trabajo')):
         num = por_numerales(todo)
         if num:

@@ -463,7 +463,7 @@
     "Acoso sexual: aunque no haya subordinación, hay un abuso de poder que te deja en indefensión o en riesgo; puede ser un solo evento o varios.",
     "En Jalisco también es violencia laboral pagarte menos por el mismo trabajo, impedirte la lactancia, humillarte o pedirte examen de no embarazo para contratarte."
    ],
-   "cierre": "Si trabajas en el sector privado, la Ley Federal del Trabajo obliga al patrón a tener un protocolo contra el acoso y el hostigamiento, y te permite terminar la relación laboral sin responsabilidad para ti si el patrón o sus representantes te hostigan. En la conciliación laboral, si hay riesgo de revictimización, la autoridad debe evitar que te encuentres con la persona agresora. Si trabajas en el gobierno aplican otras leyes que no forman parte de esta base.",
+   "cierre": "Si trabajas en el sector privado, la Ley Federal del Trabajo obliga al patrón a tener un protocolo contra el acoso y el hostigamiento, y te permite terminar la relación laboral sin responsabilidad para ti si el patrón o sus representantes te hostigan. En la conciliación laboral, si hay riesgo de revictimización, la autoridad debe evitar que te encuentres con la persona agresora. Si trabajas en el Gobierno del Estado de Jalisco, aplica el Protocolo Cero: acude al Comité de Ética de tu dependencia o a su Órgano Interno de Control.",
    "facil": [
     "El acoso en el trabajo es violencia.",
     "No es tu culpa.",
@@ -502,12 +502,20 @@
      "d": "077",
      "u": "Artículo 684 E",
      "det": "fracción XII"
+    },
+    {
+     "d": "152",
+     "u": "Numeral 24"
     }
    ],
    "cat": "tipos",
    "v": [
     "mi jefe me acosa",
     "acoso laboral que hago"
+   ],
+   "descargas": [
+    "protocolo_web",
+    "protocolo_pdf"
    ]
   },
   {
@@ -958,7 +966,7 @@
    "intro": "Sus Lineamientos y el Plan de Trabajo le dan la función de orientar y canalizar al personal de la dependencia; no le asignan recibir denuncias.",
    "lista": [
     "Las denuncias por delitos se presentan ante el Ministerio Público.",
-    "En casos de acoso u hostigamiento sexual laboral en el gobierno, la UIG te orienta y te canaliza a las instancias competentes conforme al Protocolo Cero, que es el mecanismo de denuncia de esos casos."
+    "En casos de acoso u hostigamiento sexual laboral en el gobierno, la denuncia se presenta ante el Comité de Ética o el Órgano Interno de Control de la dependencia, conforme al Protocolo Cero; la UIG te orienta y te canaliza."
    ],
    "cierre": "",
    "facil": [
@@ -990,6 +998,14 @@
     {
      "d": "026",
      "u": "Artículo 221"
+    },
+    {
+     "d": "152",
+     "u": "Numeral 24"
+    },
+    {
+     "d": "152",
+     "u": "Numeral 34"
     }
    ]
   },
@@ -1005,7 +1021,7 @@
    ],
    "intro": "Tienes derechos y hay a dónde acudir:",
    "lista": [
-    "La UIG de tu dependencia te orienta y te canaliza con las autoridades competentes, conforme al Protocolo Cero.",
+    "Puedes denunciar ante el Comité de Ética de tu dependencia, que es el primer contacto del Protocolo Cero, o ante su Órgano Interno de Control. La UIG de tu dependencia también te orienta y te canaliza.",
     "La ley obliga al gobierno a darte atención psicológica y legal, especializada y gratuita.",
     "Tu nombre no debe hacerse público, para evitar que te presionen para dejar el trabajo.",
     "Los superiores que no reciban o no den curso a tu queja pueden ser sancionados."
@@ -1018,6 +1034,14 @@
     "Tu nombre no se hace público."
    ],
    "citas": [
+    {
+     "d": "152",
+     "u": "Numeral 24"
+    },
+    {
+     "d": "152",
+     "u": "Numeral 15"
+    },
     {
      "d": "147",
      "u": "Lineamiento Sexto",
@@ -1037,6 +1061,10 @@
      "d": "080",
      "u": "Artículo 13"
     }
+   ],
+   "descargas": [
+    "protocolo_web",
+    "protocolo_pdf"
    ]
   },
   {
@@ -1287,44 +1315,596 @@
   },
   {
    "id": "protocolo_cero",
-   "cat": "uig",
+   "cat": "protocolo",
    "modo": "ambos",
-   "q": "¿Qué es el Protocolo Cero?",
-   "kw": "protocolo cero acoso hostigamiento sexual administracion publica gobierno jalisco protocolo",
+   "q": "¿Qué es el Protocolo Cero y a quién protege?",
+   "kw": "protocolo cero que es para que sirve a quien protege hostigamiento acoso sexual administracion publica gobierno jalisco servidoras",
    "v": [
-    "protocolo contra el acoso sexual en el gobierno",
-    "que dice el protocolo cero"
+    "que es el protocolo cero",
+    "para que sirve el protocolo cero",
+    "a quien aplica el protocolo cero",
+    "que dice el protocolo cero",
+    "protocolo contra el acoso sexual en el gobierno"
    ],
-   "intro": "Es el Protocolo para Prevenir, Atender, Sancionar y Erradicar los casos de hostigamiento y/o acoso sexual en la Administración Pública del Estado de Jalisco.",
+   "intro": "Es el Protocolo para Prevenir, Atender, Sancionar y Erradicar los Casos de Hostigamiento Sexual y Acoso Sexual en la Administración Pública del Estado de Jalisco. Lo expidió el Gobernador con el Acuerdo DIELAG ACU 043/2019, publicado en el Periódico Oficial «El Estado de Jalisco» el 11 de junio de 2019.",
    "lista": [
-    "Es el mecanismo de denuncia de los casos de acoso y hostigamiento sexual laboral en el gobierno.",
-    "Las UIG deben difundirlo (en el plan de trabajo, en mayo) y canalizar los casos a las instancias competentes conforme a él."
+    "Busca prevenir el hostigamiento y el acoso sexual, orientar a la presunta víctima para denunciar, señalar qué instancias conocen, investigan y sancionan cada caso, sensibilizar al personal y llevar un registro de los casos.",
+    "Se aplica en las dependencias y entidades del Gobierno del Estado, a todas las personas servidoras públicas, sin distinción por sexo, género, edad, discapacidad, orientación sexual, estado civil, embarazo ni ningún otro motivo.",
+    "Obliga a las personas servidoras públicas a abstenerse de estas conductas y a cuidar la integridad y la dignidad de las personas, en particular de las mujeres.",
+    "Lo acompañan dos documentos de la Secretaría de Igualdad Sustantiva: el Programa de Prevención y la Guía de aplicación."
    ],
-   "cierre": "El texto del Protocolo Cero todavía no forma parte de esta base; por eso aquí no se detalla su procedimiento.",
+   "cierre": "Puedes descargar los tres documentos aquí o consultarlos en la página oficial del Protocolo Cero.",
    "facil": [
-    "Son las reglas del gobierno contra el acoso sexual en el trabajo.",
-    "La UIG de tu oficina te explica cómo usarlo."
+    "Son las reglas del Gobierno de Jalisco contra el acoso sexual en el trabajo.",
+    "Protege a todas las personas que trabajan en el gobierno.",
+    "Dice cómo denunciar y quién castiga."
    ],
    "citas": [
     {
-     "d": "146",
-     "u": "Numeral 10 (Glosario)"
+     "d": "152",
+     "u": "Considerandos y acuerdo"
     },
     {
-     "d": "146",
-     "u": "Numeral 2 (Justificación)",
-     "det": "línea a), inciso ii)"
+     "d": "152",
+     "u": "Numeral 1"
+    },
+    {
+     "d": "152",
+     "u": "Numeral 2"
+    },
+    {
+     "d": "152",
+     "u": "Numeral 4",
+     "det": "fracción VIII"
+    },
+    {
+     "d": "152",
+     "u": "Numeral 5"
+    },
+    {
+     "d": "152",
+     "u": "Numeral 6"
+    },
+    {
+     "d": "153",
+     "u": "Pág. 3"
+    }
+   ],
+   "descargas": [
+    "protocolo_pdf",
+    "guia_pc_pdf",
+    "programa_pdf",
+    "protocolo_web"
+   ]
+  },
+  {
+   "id": "pc_diferencia",
+   "cat": "protocolo",
+   "modo": "ambos",
+   "q": "¿Cuál es la diferencia entre hostigamiento sexual y acoso sexual?",
+   "kw": "diferencia entre hostigamiento sexual y acoso sexual distinguir subordinacion jefe pares compañero",
+   "v": [
+    "diferencia entre acoso y hostigamiento",
+    "que es acoso sexual en el trabajo",
+    "es acoso o hostigamiento",
+    "hostigamiento o acoso cual es la diferencia",
+    "que es hostigamiento sexual",
+    "que es el acoso sexual"
+   ],
+   "intro": "El Protocolo Cero los define así:",
+   "lista": [
+    "Hostigamiento sexual: es el ejercicio de poder en una relación de subordinación real de la víctima frente al agresor, en el ámbito laboral o escolar. Se expresa en conductas verbales, físicas o ambas, relacionadas con la sexualidad y de connotación lasciva.",
+    "Acoso sexual: es una forma de violencia con connotación lasciva en la que no hay subordinación, pero sí un ejercicio abusivo de poder que deja a la víctima en indefensión y en riesgo; puede ocurrir en uno o varios eventos.",
+    "La diferencia está en la relación: el hostigamiento viene de alguien con poder jerárquico sobre ti (por ejemplo, tu jefe); el acoso se da entre pares."
+   ],
+   "cierre": "La Ley General de Acceso de las Mujeres a una Vida Libre de Violencias usa la misma distinción y la aplica en cualquier trabajo o escuela. En el Gobierno de Jalisco, los dos se atienden por la ruta de denuncia del Protocolo Cero.",
+   "facil": [
+    "Hostigamiento: lo hace alguien que manda sobre ti, como tu jefe.",
+    "Acoso: lo hace un compañero o compañera.",
+    "Los dos se pueden denunciar."
+   ],
+   "citas": [
+    {
+     "d": "152",
+     "u": "Numeral 3",
+     "det": "fracciones I y XII"
+    },
+    {
+     "d": "154",
+     "u": "Págs. 5-6"
+    },
+    {
+     "d": "080",
+     "u": "Artículo 13"
+    }
+   ],
+   "descargas": [
+    "protocolo_web",
+    "protocolo_pdf"
+   ]
+  },
+  {
+   "id": "pc_conductas",
+   "cat": "protocolo",
+   "modo": "ambos",
+   "q": "¿Qué conductas pueden ser hostigamiento o acoso sexual en el trabajo?",
+   "kw": "conductas ejemplos que cuenta como acoso sexual hostigamiento piropos bromas mensajes fotos tocar comentarios citas favores sexuales condicionar empleo",
+   "v": [
+    "ejemplos de acoso sexual en el trabajo",
+    "un piropo es acoso",
+    "mi jefe me manda mensajes sexuales",
+    "me condicionan el trabajo a cambio de sexo",
+    "un compañero me hace bromas sexuales"
+   ],
+   "intro": "La regla de integridad de comportamiento digno del Código de Ética, que retoma la Guía de aplicación del Protocolo Cero, enlista, entre otras, estas conductas:",
+   "lista": [
+    "Señas o movimientos corporales sexualmente sugerentes, y contacto físico sexualmente sugerente.",
+    "Regalos, preferencias indebidas o expresar interés sexual por una persona; insinuaciones, invitaciones o propuestas a citas o encuentros sexuales.",
+    "Conductas dominantes, agresivas o intimidatorias para que la persona se someta a deseos sexuales.",
+    "Condicionar un empleo, su permanencia o sus condiciones, o un trámite o servicio, a cambio de conductas sexuales; o castigar a alguien por rechazarlas.",
+    "Comentarios, burlas, piropos o bromas sobre la apariencia, el cuerpo o la vida sexual, en persona o por cualquier medio.",
+    "Preguntar sobre la vida, historias o preferencias sexuales; difundir rumores sobre la vida sexual de alguien.",
+    "Enviar o exhibir mensajes, fotos u objetos de naturaleza sexual no deseados; mostrar deliberadamente partes íntimas; espiar a alguien mientras se cambia o está en el sanitario."
+   ],
+   "cierre": "La lista es enunciativa: otras conductas también pueden serlo. El Protocolo obliga a todas las personas servidoras públicas a abstenerse de ellas.",
+   "facil": [
+    "Tocarte con intención sexual.",
+    "Bromas, piropos o mensajes sexuales que no quieres.",
+    "Pedirte algo sexual a cambio de tu trabajo.",
+    "Todo eso se puede denunciar."
+   ],
+   "citas": [
+    {
+     "d": "154",
+     "u": "Pág. 13"
+    },
+    {
+     "d": "154",
+     "u": "Pág. 14"
+    },
+    {
+     "d": "154",
+     "u": "Pág. 15"
+    },
+    {
+     "d": "152",
+     "u": "Numeral 6"
+    }
+   ],
+   "descargas": [
+    "protocolo_web",
+    "protocolo_pdf"
+   ]
+  },
+  {
+   "id": "pc_denunciar",
+   "cat": "protocolo",
+   "modo": "ambos",
+   "q": "¿Cómo y ante quién presento una denuncia por el Protocolo Cero?",
+   "kw": "como denuncio a mi jefe acoso sexual gobierno dependencia protocolo cero ante quien comite de etica organo interno de control ruta de denuncia presentar queja formato primer contacto",
+   "v": [
+    "como denuncio acoso sexual en mi dependencia",
+    "ruta de denuncia del protocolo cero",
+    "donde denuncio acoso en el gobierno",
+    "quiero denunciar a mi jefe por acoso sexual",
+    "como pongo una queja por acoso en el trabajo de gobierno"
+   ],
+   "intro": "La ruta del Protocolo Cero:",
+   "lista": [
+    "1. Acude al Comité de Ética, Conducta y Prevención de Conflictos de Interés de tu dependencia. Cualquier integrante puede ser tu primer contacto: te orienta y te asesora.",
+    "2. Esa persona te ayuda a narrar los hechos. La denuncia se presenta por escrito y firmada; puedes hacerla por cualquier medio en el que te identifiques, con lo que pasó, quién lo hizo y quién lo presenció. La Guía incluye un formato de denuncia.",
+    "3. El Comité lleva tu denuncia a sesión extraordinaria y la remite al Órgano Interno de Control, que investiga. También avisa a la Unidad de Seguimiento de la Secretaría de Igualdad Sustantiva y a la Unidad Especializada en Ética de la Contraloría.",
+    "4. Las denuncias también pueden presentarse directamente ante el Órgano Interno de Control de tu dependencia."
+   ],
+   "cierre": "Presentar la denuncia ante el Comité no te impide usar otras vías legales, por ejemplo una denuncia penal ante el Ministerio Público. Correo del Protocolo Cero según la Guía: protocolocero.sisemh@jalisco.gob.mx.",
+   "facil": [
+    "Ve al Comité de Ética de tu oficina.",
+    "Te ayudan a escribir lo que pasó.",
+    "Tu denuncia va al Órgano Interno de Control.",
+    "También puedes ir al Ministerio Público."
+   ],
+   "citas": [
+    {
+     "d": "152",
+     "u": "Numeral 24"
+    },
+    {
+     "d": "152",
+     "u": "Numeral 26"
+    },
+    {
+     "d": "152",
+     "u": "Numeral 27"
+    },
+    {
+     "d": "152",
+     "u": "Numeral 28"
+    },
+    {
+     "d": "152",
+     "u": "Numeral 31"
+    },
+    {
+     "d": "152",
+     "u": "Numeral 34"
+    },
+    {
+     "d": "154",
+     "u": "Pág. 15"
+    },
+    {
+     "d": "154",
+     "u": "Pág. 16"
+    },
+    {
+     "d": "154",
+     "u": "Pág. 37"
+    },
+    {
+     "d": "154",
+     "u": "Pág. 42"
+    }
+   ],
+   "descargas": [
+    "protocolo_pdf",
+    "guia_pc_pdf",
+    "programa_pdf",
+    "protocolo_web"
+   ]
+  },
+  {
+   "id": "pc_autoridades",
+   "cat": "protocolo",
+   "modo": "ambos",
+   "q": "¿Qué autoridades intervienen en el Protocolo Cero y qué hace cada una?",
+   "kw": "quien investiga investigan las denuncias autoridades protocolo cero comite de etica organo interno de control contraloria unidad de seguimiento unidad especializada secretaria de igualdad quien investiga quien sanciona",
+   "v": [
+    "quien investiga el acoso sexual en el gobierno",
+    "que hace el organo interno de control en el protocolo cero",
+    "que es la unidad de seguimiento"
+   ],
+   "intro": "El Protocolo Cero reparte funciones entre seis autoridades:",
+   "lista": [
+    "Comité de Ética de cada dependencia: es el primer contacto, orienta a la presunta víctima, da vista a la Unidad de Seguimiento y a la Unidad Especializada, y aplica las medidas preventivas. No investiga.",
+    "Órgano Interno de Control: tramita el procedimiento de responsabilidad administrativa, dicta medidas precautorias e impone las sanciones.",
+    "Unidad de Seguimiento (Secretaría de Igualdad Sustantiva): monitorea todos los casos, coadyuva en la investigación para que tenga perspectiva de género y protección a la víctima, y opina antes de la resolución final.",
+    "Secretaría de Igualdad Sustantiva: emite el Programa de Prevención y el Plan Anual, brinda servicios integrales a la presunta víctima y canaliza a las personas agresoras al CECOVIM.",
+    "Contraloría del Estado: da seguimiento a las denuncias, emite recomendaciones y puede atraer un caso cuando su trascendencia lo amerite.",
+    "Unidad Especializada en Ética (Contraloría): vigila el procedimiento que siguen los Comités y evalúa su desempeño."
+   ],
+   "cierre": "",
+   "facil": [
+    "El Comité de Ética te escucha y te orienta.",
+    "El Órgano Interno de Control investiga y castiga.",
+    "La Secretaría de Igualdad vigila que te traten bien."
+   ],
+   "citas": [
+    {
+     "d": "152",
+     "u": "Numeral 9"
+    },
+    {
+     "d": "152",
+     "u": "Numeral 10"
+    },
+    {
+     "d": "152",
+     "u": "Numeral 11"
+    },
+    {
+     "d": "152",
+     "u": "Numeral 12"
+    },
+    {
+     "d": "152",
+     "u": "Numeral 13"
+    },
+    {
+     "d": "152",
+     "u": "Numeral 14"
+    },
+    {
+     "d": "152",
+     "u": "Numeral 15"
+    },
+    {
+     "d": "152",
+     "u": "Numeral 16"
+    },
+    {
+     "d": "154",
+     "u": "Pág. 16"
+    },
+    {
+     "d": "154",
+     "u": "Pág. 17"
+    },
+    {
+     "d": "154",
+     "u": "Pág. 18"
+    }
+   ],
+   "descargas": [
+    "protocolo_web",
+    "protocolo_pdf"
+   ]
+  },
+  {
+   "id": "pc_despues",
+   "cat": "protocolo",
+   "modo": "ambos",
+   "q": "¿Qué pasa después de que presento mi denuncia por el Protocolo Cero?",
+   "kw": "que pasa despues de denunciar investigacion organo interno de control resolucion proceso seguimiento denuncia protocolo cero",
+   "v": [
+    "que sigue despues de denunciar el acoso",
+    "cuanto tarda la denuncia del protocolo cero",
+    "como sigue mi denuncia"
+   ],
+   "intro": "Según el Protocolo Cero:",
+   "lista": [
+    "El Órgano Interno de Control inicia la investigación al recibir tu denuncia o la vista del Comité.",
+    "Toda denuncia se informa de inmediato y de forma obligatoria a la Secretaría de Igualdad Sustantiva y a la Contraloría.",
+    "La Unidad de Seguimiento coadyuva en la investigación y da su opinión antes de que el Órgano Interno de Control resuelva.",
+    "Si se determina que la persona denunciada cometió los actos, recibe las sanciones que correspondan y se da vista a la Secretaría para medidas de reeducación.",
+    "Si el Órgano Interno de Control determina que faltan elementos, el Comité interviene en la dependencia para promover la cultura de la denuncia y explicar el Protocolo."
+   ],
+   "cierre": "El Protocolo Cero no fija plazos para la investigación; se rige por las leyes de responsabilidades administrativas, que no forman parte de esta base.",
+   "facil": [
+    "El Órgano Interno de Control investiga.",
+    "La Secretaría de Igualdad vigila el caso.",
+    "Si se prueba, hay sanción."
+   ],
+   "citas": [
+    {
+     "d": "152",
+     "u": "Numeral 14",
+     "det": "fracción II"
+    },
+    {
+     "d": "152",
+     "u": "Numeral 32"
+    },
+    {
+     "d": "152",
+     "u": "Numeral 34"
+    },
+    {
+     "d": "152",
+     "u": "Numeral 35"
+    },
+    {
+     "d": "152",
+     "u": "Numeral 36"
+    },
+    {
+     "d": "152",
+     "u": "Numeral 37"
+    },
+    {
+     "d": "152",
+     "u": "Numeral 38"
+    }
+   ],
+   "descargas": [
+    "protocolo_web",
+    "protocolo_pdf"
+   ]
+  },
+  {
+   "id": "pc_medidas",
+   "cat": "protocolo",
+   "modo": "ambos",
+   "q": "¿Qué medidas de protección puedo pedir si denuncio por el Protocolo Cero?",
+   "kw": "medidas cautelares preventivas precautorias reeducacion proteccion mientras investigan riesgo integridad cambio de area protocolo cero",
+   "v": [
+    "me pueden proteger mientras investigan",
+    "medidas cautelares protocolo cero",
+    "tengo miedo de seguir trabajando con mi agresor"
+   ],
+   "intro": "El Protocolo Cero prevé tres tipos de medidas:",
+   "lista": [
+    "Medidas cautelares: las concede el Órgano Interno de Control para salvaguardar tu integridad física. El Comité, con la asesoría de la Unidad de Seguimiento, puede pedírselas cuando tu seguridad esté en riesgo.",
+    "Medidas preventivas: acciones de sensibilización, capacitación y difusión en la dependencia donde ocurrió el agravio.",
+    "Medidas de reeducación: medidas pedagógicas para la persona denunciada, que imparte la Secretaría de Igualdad Sustantiva."
+   ],
+   "cierre": "La persona titular de la dependencia debe aplicar las medidas preventivas que emita la autoridad. Si tu vida o tu integridad están en peligro, llama al 911.",
+   "facil": [
+    "Pueden protegerte mientras investigan.",
+    "Pídelo al Comité de Ética.",
+    "Si estás en peligro, llama al 911."
+   ],
+   "citas": [
+    {
+     "d": "152",
+     "u": "Numeral 3",
+     "det": "fracciones XVI, XVII y XVIII"
+    },
+    {
+     "d": "152",
+     "u": "Numeral 16",
+     "det": "fracción II"
+    },
+    {
+     "d": "152",
+     "u": "Numeral 31"
+    },
+    {
+     "d": "152",
+     "u": "Numeral 33"
+    },
+    {
+     "d": "154",
+     "u": "Pág. 16"
+    }
+   ],
+   "descargas": [
+    "protocolo_web",
+    "protocolo_pdf"
+   ]
+  },
+  {
+   "id": "pc_sanciones",
+   "cat": "protocolo",
+   "modo": "ambos",
+   "q": "¿Qué sanciones puede recibir quien hostiga o acosa sexualmente en el gobierno?",
+   "kw": "sanciones castigo que le pasa al acosador hostigador destitucion suspension responsabilidad administrativa cecovim reeducacion",
+   "v": [
+    "que castigo recibe el acosador",
+    "que le pasa al acosador si lo denuncio",
+    "como castigan el acoso sexual en el gobierno",
+    "pueden correr al acosador"
+   ],
+   "intro": "El Protocolo Cero establece:",
+   "lista": [
+    "El Órgano Interno de Control finca las responsabilidades administrativas e impone las sanciones conforme a la Ley General de Responsabilidades Administrativas y la Ley de Responsabilidades Políticas y Administrativas del Estado de Jalisco; cuando considera que la sanción es grave, remite el caso a la autoridad competente.",
+    "Además, la persona responsable es vinculada a medidas de reeducación de la Secretaría de Igualdad Sustantiva, y toda persona que cometa estas conductas debe ser canalizada al CECOVIM para tomar el curso correspondiente."
+   ],
+   "cierre": "El catálogo de sanciones está en esas dos leyes de responsabilidades, que no forman parte de esta base; puedes consultarlo en la página oficial del Protocolo Cero. Si los hechos son un delito, también puedes denunciar ante el Ministerio Público.",
+   "facil": [
+    "El Órgano Interno de Control decide la sanción.",
+    "La persona también debe tomar un curso de reeducación."
+   ],
+   "citas": [
+    {
+     "d": "152",
+     "u": "Numeral 16",
+     "det": "fracción III"
+    },
+    {
+     "d": "152",
+     "u": "Numeral 36"
+    },
+    {
+     "d": "152",
+     "u": "Numeral 38"
+    },
+    {
+     "d": "152",
+     "u": "Numeral 11",
+     "det": "fracción VIII"
+    }
+   ],
+   "descargas": [
+    "protocolo_web",
+    "protocolo_pdf"
+   ]
+  },
+  {
+   "id": "pc_principios",
+   "cat": "protocolo",
+   "modo": "ambos",
+   "q": "¿Cómo me deben tratar cuando denuncio por el Protocolo Cero?",
+   "kw": "principios trato confidencialidad no revictimizar datos personales mediacion conciliacion empatia respeto atencion psicologica gratuita",
+   "v": [
+    "es confidencial mi denuncia",
+    "me pueden obligar a conciliar con mi agresor",
+    "van a saber que yo denuncie"
+   ],
+   "intro": "Quien te atienda debe:",
+   "lista": [
+    "Atenderte con perspectiva de género y derechos humanos, con empatía, ética y confidencialidad, sin juicios de valor ni estereotipos, con lenguaje claro y sin revictimizarte.",
+    "Proteger tus documentos y pruebas conforme a la ley de protección de datos personales. La Guía indica entregar la denuncia en sobre cerrado y que tus datos solo los conozcan tu primer contacto y el Órgano Interno de Control.",
+    "Recoger tu relato completo una sola vez, para que no tengas que repetirlo, y parar la entrevista si no te sientes cómoda.",
+    "Ofrecerte, de manera segura, confidencial y gratuita, asesoría jurídica, atención psicológica y trabajo social.",
+    "No obligarte a mediar ni conciliar con la persona agresora: la ley lo prohíbe por la relación de sometimiento."
+   ],
+   "cierre": "Las autoridades también deben respetar la presunción de inocencia de la persona denunciada mientras no se demuestre su responsabilidad.",
+   "facil": [
+    "Te deben tratar con respeto y sin culparte.",
+    "Tus datos son confidenciales.",
+    "No te pueden obligar a hablar con tu agresor.",
+    "Tienes apoyo psicológico y legal gratis."
+   ],
+   "citas": [
+    {
+     "d": "152",
+     "u": "Numeral 25"
+    },
+    {
+     "d": "152",
+     "u": "Numeral 29"
+    },
+    {
+     "d": "152",
+     "u": "Numeral 30"
+    },
+    {
+     "d": "152",
+     "u": "Numeral 4",
+     "det": "fracción XII"
+    },
+    {
+     "d": "154",
+     "u": "Pág. 16"
+    },
+    {
+     "d": "154",
+     "u": "Pág. 17"
+    },
+    {
+     "d": "080",
+     "u": "Artículo 8",
+     "det": "fracción IV"
+    }
+   ],
+   "descargas": [
+    "protocolo_web",
+    "protocolo_pdf"
+   ]
+  },
+  {
+   "id": "pc_dependencia",
+   "cat": "protocolo",
+   "modo": "servidora",
+   "q": "¿Qué acciones de prevención debe realizar mi dependencia por el Protocolo Cero?",
+   "kw": "acciones de prevencion dependencia obligaciones titular pronunciamiento cero tolerancia capacitacion anual programa de prevencion difusion protocolo cero",
+   "v": [
+    "que debe hacer mi dependencia por el protocolo cero",
+    "pronunciamiento cero tolerancia",
+    "capacitacion obligatoria acoso sexual gobierno"
+   ],
+   "intro": "Cada dependencia y entidad implementa el Programa de Prevención. El Protocolo enlista, entre otras, estas acciones:",
+   "lista": [
+    "Adoptar, preferentemente por su titular, un pronunciamiento de «Cero Tolerancia» y comunicarlo al personal dejando constancia.",
+    "Garantizar que todo el personal reciba al menos una capacitación anual de sensibilización y prevención del hostigamiento y el acoso sexual.",
+    "Colocar información impresa en recepción y áreas de atención, y difundirla por medios electrónicos.",
+    "Dar facilidades para la formación de su Comité de Ética y hacer cumplir las medidas preventivas y de reeducación.",
+    "Incorporar la perspectiva de género y el lenguaje incluyente; promover redes de apoyo entre mujeres y la cultura de la denuncia difundiendo el Protocolo y sus guías.",
+    "Los hombres integrantes de los Comités y de los Órganos Internos de Control deben cursar el programa del CECOVIM en masculinidades alternativas."
+   ],
+   "cierre": "La Unidad de Igualdad de Género de cada dependencia difunde el Protocolo Cero y canaliza los casos (eje II, Ambientes libres de acoso).",
+   "facil": [
+    "La oficina debe decir «cero tolerancia» al acoso.",
+    "Todo el personal debe tomar un curso cada año."
+   ],
+   "citas": [
+    {
+     "d": "152",
+     "u": "Numeral 18"
+    },
+    {
+     "d": "152",
+     "u": "Numeral 21"
+    },
+    {
+     "d": "152",
+     "u": "Numeral 22"
+    },
+    {
+     "d": "153",
+     "u": "Pág. 4"
     },
     {
      "d": "147",
      "u": "Lineamiento Quinto",
      "det": "eje II"
-    },
-    {
-     "d": "146",
-     "u": "Numeral 9 (Planeación)",
-     "det": "objetivo II"
     }
+   ],
+   "descargas": [
+    "protocolo_pdf",
+    "guia_pc_pdf",
+    "programa_pdf",
+    "protocolo_web"
    ]
   },
   {
@@ -1494,7 +2074,7 @@
     "Dar atención psicológica y legal, especializada y gratuita, a la víctima.",
     "Sancionar a los superiores que sean omisos en recibir o dar curso a una queja."
    ],
-   "cierre": "En el Gobierno de Jalisco, las UIG difunden el Protocolo Cero y canalizan los casos (eje II, Ambientes libres de acoso).",
+   "cierre": "En el Gobierno de Jalisco, el Protocolo Cero fija la ruta: el Comité de Ética es el primer contacto y el Órgano Interno de Control investiga y sanciona. Las UIG lo difunden (eje II, Ambientes libres de acoso).",
    "facil": [
     "El gobierno debe prevenir y castigar el acoso.",
     "Debe proteger el nombre de la víctima.",
@@ -1509,6 +2089,14 @@
      "d": "147",
      "u": "Lineamiento Quinto",
      "det": "eje II"
+    },
+    {
+     "d": "152",
+     "u": "Numeral 15"
+    },
+    {
+     "d": "152",
+     "u": "Numeral 16"
     }
    ]
   },
@@ -2542,38 +3130,6 @@
      "d": "080",
      "u": "Artículo 15",
      "det": "fracciones II y III"
-    }
-   ]
-  },
-  {
-   "id": "hostig_acoso",
-   "cat": "tipos",
-   "modo": "ambos",
-   "q": "¿Qué diferencia hay entre hostigamiento y acoso sexual?",
-   "kw": "diferencia hostigamiento acoso sexual que es hostigamiento que es acoso",
-   "v": [
-    "hostigamiento o acoso cual es la diferencia",
-    "que es hostigamiento sexual"
-   ],
-   "intro": "La diferencia está en la relación de poder:",
-   "lista": [
-    "Hostigamiento sexual: hay subordinación real con la persona agresora (por ejemplo, tu jefe o tu maestro) y conductas de connotación sexual.",
-    "Acoso sexual: no hay subordinación, pero sí un abuso de poder que te deja en indefensión o en riesgo; puede ser un solo evento o varios."
-   ],
-   "cierre": "Los dos son violencia y los dos se pueden atender y sancionar.",
-   "facil": [
-    "Si quien te acosa es tu jefe o maestro, es hostigamiento.",
-    "Si no es tu jefe, es acoso.",
-    "Los dos son violencia."
-   ],
-   "citas": [
-    {
-     "d": "080",
-     "u": "Artículo 13"
-    },
-    {
-     "d": "077",
-     "u": "Artículo 3 Bis"
     }
    ]
   },
