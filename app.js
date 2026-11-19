@@ -5,6 +5,7 @@
 'use strict';
 
 const CONFIG = {
+  version: '2.0',
   ia: false,                 // Fase 2: activar con intermediario (Cloudflare Worker) y API de Anthropic
   estadisticas: null,        // Fase 2: URL del contador anónimo (solo tema, perfil y fecha)
   salida: 'https://www.google.com/',
@@ -120,9 +121,12 @@ function formatearTexto(t) {
 
 /* ---------- Carga de datos ---------- */
 async function json(url) { const r = await fetch(url); if (!r.ok) throw new Error(url); return r.json(); }
+const archivoNivel = id => `data/textos-n${(E.docMap[id] && E.docMap[id].nivel) || 1}.json`;
 async function shard(id) {
-  if (!E.shards.has(id)) E.shards.set(id, json(`data/docs/${id}.json`).then(x => x.u));
-  return E.shards.get(id);
+  const url = archivoNivel(id);
+  if (!E.shards.has(url)) E.shards.set(url, json(url));
+  const mapa = await E.shards.get(url);
+  return mapa[id] || [];
 }
 async function textoUnidad(id, etiqueta) {
   const u = await shard(id);
@@ -449,7 +453,7 @@ document.addEventListener('click', async ev => {
 function imprimir(b) {
   const z = $('#zonaImpresion');
   const hoy = new Date().toLocaleDateString('es-MX', { day: '2-digit', month: '2-digit', year: 'numeric' });
-  z.innerHTML = `<div class="imp-cab"><div><b style="font-family:var(--f-display);font-size:14pt;color:#3A1560">Asistente UIG · Respuesta orientativa</b><br>
+  z.innerHTML = `<div class="imp-cab"><div><b style="font-family:var(--f-display);font-size:14pt;color:#3A1560">Asistente UIG v${CONFIG.version} · Respuesta orientativa</b><br>
     <span style="font-size:9pt">Generado el ${hoy} · Base normativa vigente al ${esc(E.corte)}</span></div><img src="assets/logo-cges.png" alt=""></div>
     ${b.innerHTML}<div class="imp-pie">Asistente UIG no es terapeuta, abogada ni servicio de emergencia; esta información es orientativa y no constituye asesoría legal.
     Si estás en peligro, llama al 911. Verifica la vigencia en la fuente oficial de cada ordenamiento.</div>`;
@@ -494,6 +498,7 @@ addEventListener('online', estadoRed); addEventListener('offline', estadoRed);
 /* ---------- Arranque ---------- */
 async function iniciar() {
   $('#btnSalir').onclick = salir;
+  $('#btnMenu').onclick = () => { const c = $('#cab'), ab = !c.classList.contains('abierto'); c.classList.toggle('abierto', ab); $('#btnMenu').setAttribute('aria-expanded', String(ab)); };
   $('#btnModo').onclick = () => elegirModo(E.modo === 'servidora' ? 'ciudadania' : 'servidora');
   $('#btnFacil').onclick = () => { E.facil = !E.facil; document.body.classList.toggle('facil-on', E.facil); $('#btnFacil').setAttribute('aria-checked', String(E.facil)); };
   $('#btnTexto').onclick = () => { E.esc = E.esc >= 1.3 ? 1 : +(E.esc + 0.15).toFixed(2); document.documentElement.style.setProperty('--esc', E.esc); };
@@ -519,7 +524,7 @@ async function iniciar() {
     try {
       const reg = await navigator.serviceWorker.register('sw.js');
       const listo = await navigator.serviceWorker.ready;
-      const urls = E.docs.filter(d => d.nivel !== 3).map(d => `data/docs/${d.id}.json`);
+      const urls = ['data/textos-n1.json', 'data/textos-n2.json'];
       (listo.active || reg.active)?.postMessage({ tipo: 'precargar', urls });
     } catch (e) {}
   }

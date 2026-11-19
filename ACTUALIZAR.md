@@ -15,7 +15,8 @@
    python herramientas\construir_base.py --excel "C:\ruta\Base_Normativa_Chatbot_v7.xlsx" --docs "C:\ruta\Normativa_vigente" --salida data --textos _textos --solo 080
    ```
 4. Revisa el resumen que imprime (documentos, unidades y AVISOS).
-5. Sube a GitHub la carpeta `data/` y `sw.js` (el script cambia la versión de `sw.js` para que los teléfonos descarguen la base nueva).
+5. Sube a GitHub, en una sola carga, la carpeta `data/` completa (10 archivos) y `sw.js`: en el repositorio, **Add file → Upload files**, arrástralos y presiona **Commit changes**. GitHub reemplaza los archivos con el mismo nombre.
+   El script cambia la versión de `sw.js` para que los teléfonos descarguen la base nueva. **Si editas a mano** `faq.json` o `directorio.json`, cambia tú el número de `const VERSION` en la línea 3 de `sw.js` (por ejemplo, fecha y hora: `202612011030`).
 
 ## Agregar o quitar un documento
 - **Agregar:** pon el archivo con un número nuevo (`144_...pdf`), agrega su fila al Excel y llena *Nivel chatbot* (1, 2 o 3) y *Citación en chatbot* (`Normal`, `Con marca: vigencia por confirmar`, `Con aviso de transición`, `Histórico (abrogada): solo si se pide por nombre`).

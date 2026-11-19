@@ -18,27 +18,24 @@
 <body>
 <a class="saltar" href="#entrada">Ir a escribir tu pregunta</a>
 
-<div class="tope">
-<!-- Franja fija del 911: siempre visible -->
-<div class="franja911" role="region" aria-label="Emergencias">
-  <span class="f911-txt"><b>Si estás en peligro, llama al 911</b></span>
-  <a class="f911-btn" href="tel:911" aria-label="Llamar al 911">Llamar al 911</a>
-</div>
-
-<header class="cab">
-  <div class="cab-int">
+<header class="cab" id="cab">
+  <div class="cab-id">
     <img class="cab-avatar" src="assets/violeta-96.webp" alt="" width="40" height="40">
-    <div class="cab-tit"><b>Asistente UIG</b><span>Orientación normativa · Unidades de Igualdad de Género</span></div>
-    <div class="cab-acc">
-      <button class="btn-modo" id="btnModo" type="button" aria-label="Cambiar perfil" hidden></button>
-      <button class="btn-ajuste" id="btnFacil" type="button" role="switch" aria-checked="false" title="Lectura fácil">Lectura fácil</button>
-      <button class="btn-ajuste" id="btnTexto" type="button" aria-label="Aumentar tamaño de letra" title="Tamaño de letra">A+</button>
-      <button class="btn-salir" id="btnSalir" type="button" title="Salida rápida (también: tecla Esc dos veces)">Salir</button>
-    </div>
+    <div class="cab-tit"><b>Asistente UIG</b><span>Unidades de Igualdad de Género · v2.0</span></div>
   </div>
-  <img class="cab-logo" src="assets/logo-cges.png" alt="Coordinación General Estratégica de Seguridad, Gobierno de Jalisco" height="28">
+  <div class="cab-ajustes" id="cabAjustes">
+    <button class="btn-modo" id="btnModo" type="button" aria-label="Cambiar perfil" hidden></button>
+    <button class="btn-ajuste" id="btnFacil" type="button" role="switch" aria-checked="false">Lectura fácil</button>
+    <button class="btn-ajuste" id="btnTexto" type="button" aria-label="Aumentar tamaño de letra">A+</button>
+  </div>
+  <button class="btn-menu" id="btnMenu" type="button" aria-expanded="false" aria-controls="cabAjustes">Ajustes</button>
+  <div class="cab-911" role="region" aria-label="Emergencias">
+    <span>Si estás en peligro</span>
+    <a class="f911-btn" href="tel:911">Llamar al 911</a>
+  </div>
+  <button class="btn-salir" id="btnSalir" type="button" title="Salida rápida (también: tecla Esc dos veces)">Salir</button>
+  <img class="cab-logo" src="assets/logo-cges.png" alt="Coordinación General Estratégica de Seguridad, Gobierno de Jalisco" height="34">
 </header>
-</div>
 
 <div class="aviso-red" id="avisoRed" role="status" hidden></div>
 

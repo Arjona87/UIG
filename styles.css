@@ -26,28 +26,37 @@ a{color:var(--violeta)}
 .saltar:focus{left:8px;top:8px}
 @media (prefers-reduced-motion:reduce){*{transition:none!important;animation:none!important}}
 
-/* ---------- Franja 911 ---------- */
-.tope{position:sticky;top:0;z-index:60}
-.franja911{display:flex;align-items:center;justify-content:center;gap:12px;flex-wrap:wrap;
-  background:var(--rojo);color:#fff;padding:7px 12px calc(7px);padding-top:calc(7px + env(safe-area-inset-top));text-align:center;font-size:.95em}
-.f911-btn{background:#fff;color:var(--rojo);font-weight:700;text-decoration:none;border-radius:999px;padding:4px 14px;font-family:var(--f-display);white-space:nowrap}
-.f911-btn:hover{background:#FFE9E7}
-
-/* ---------- Encabezado ---------- */
-.cab{background:linear-gradient(110deg,var(--violeta-900),var(--violeta) 75%);color:#fff;border-bottom:3px solid var(--lila);
-  display:flex;align-items:center;justify-content:space-between;gap:10px;padding:6px 14px}
-.cab-int{display:flex;align-items:center;gap:10px;min-width:0;flex:1}
+/* ---------- Encabezado único: identidad, ajustes, 911 y salida ---------- */
+.cab{position:sticky;top:0;z-index:60;display:flex;align-items:center;gap:12px;flex-wrap:nowrap;
+  background:linear-gradient(110deg,var(--violeta-900),var(--violeta) 75%);color:#fff;border-bottom:3px solid var(--lila);
+  padding:8px 16px;padding-top:calc(8px + env(safe-area-inset-top))}
+.cab-id{display:flex;align-items:center;gap:10px;min-width:0;flex:1 1 auto}
 .cab-avatar{width:40px;height:40px;border-radius:50%;border:2px solid #fff;flex-shrink:0}
 .cab-tit{display:flex;flex-direction:column;line-height:1.15;min-width:0}
 .cab-tit b{font-family:var(--f-display);font-size:1.12em;font-weight:800}
-.cab-tit span{font-size:.72em;opacity:.85;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
-.cab-acc{display:flex;gap:6px;margin-left:auto;flex-wrap:wrap;justify-content:flex-end}
-.cab-acc button{border:1px solid rgba(255,255,255,.45);background:rgba(255,255,255,.1);color:#fff;border-radius:8px;padding:4px 10px;font-size:.8em;font-weight:600}
-.cab-acc button[aria-checked="true"]{background:#fff;color:var(--violeta-900)}
-.cab-acc .btn-salir{background:#fff;color:var(--violeta-900);border-color:#fff;font-weight:800}
+.cab-tit span{font-size:.74em;opacity:.88;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.cab-ajustes{display:flex;gap:6px;flex-shrink:0}
+.cab button{border:1px solid rgba(255,255,255,.45);background:rgba(255,255,255,.1);color:#fff;border-radius:8px;padding:5px 10px;font-size:.8em;font-weight:600}
+.cab button[aria-checked="true"]{background:#fff;color:var(--violeta-900)}
+.cab .btn-salir{background:#fff;color:var(--violeta-900);border-color:#fff;font-weight:800;flex-shrink:0}
+.btn-menu{display:none}
+.cab-911{display:flex;align-items:center;gap:8px;flex-shrink:0;font-size:.86em;font-weight:600}
+.f911-btn{background:var(--rojo);color:#fff;font-weight:800;text-decoration:none;border-radius:999px;padding:7px 16px;font-family:var(--f-display);
+  white-space:nowrap;box-shadow:0 0 0 2px #fff inset}
+.f911-btn:hover,.f911-btn:focus-visible{background:#8F1D17}
 .cab-logo{background:#fff;border-radius:6px;padding:3px 6px;height:34px;width:auto;flex-shrink:0}
-@media (max-width:760px){.cab-logo{display:none}.cab-tit span{display:none}}
-@media (max-width:420px){.cab-acc .btn-ajuste#btnTexto{display:none}}
+@media (max-width:1100px){.cab-logo{display:none}}
+/* Celular y tableta: dos renglones; ajustes en un menú */
+@media (max-width:860px){
+  .cab{display:grid;grid-template-columns:1fr auto auto;grid-template-areas:"id menu salir" "sos sos sos" "aj aj aj";gap:8px 8px;padding:8px 12px}
+  .cab-id{grid-area:id}.btn-menu{display:inline-block;grid-area:menu}.btn-salir{grid-area:salir}
+  .cab-911{grid-area:sos;justify-content:space-between;background:rgba(0,0,0,.18);border-radius:10px;padding:6px 6px 6px 12px}
+  .f911-btn{flex:0 1 60%;text-align:center}
+  .cab-ajustes{grid-area:aj;display:none;flex-wrap:wrap}
+  .cab.abierto .cab-ajustes{display:flex}
+}
+@media (max-width:860px){.cab-tit span{white-space:normal;overflow:visible}}
+@media (max-width:380px){.cab-tit span{font-size:.7em}.cab-911{font-size:.8em}}
 
 .aviso-red{background:var(--ambar-50);color:var(--ambar);text-align:center;font-size:.85em;padding:4px 10px;border-bottom:1px solid #F0DDB0}
 
@@ -166,8 +175,7 @@ main{flex:1;width:100%;max-width:880px;margin:0 auto;padding:16px 12px 8px}
 body.facil-on .facil{display:block}
 body.facil-on .detalle{display:none}
 p.facil-nota{font-size:.85em;color:var(--ambar)}
-.msg{scroll-margin-top:120px}
+.msg{scroll-margin-top:130px}
 .btn-ver{border:1px solid var(--violeta);background:#fff;color:var(--violeta);border-radius:6px;padding:1px 8px;font-size:.82em;font-weight:600}
 .resultado .btn-ver{margin-top:4px;padding:4px 10px}
 .btn-ver:hover{background:var(--violeta-50)}
-@media (max-width:420px){.cab-tit b{font-size:1em}.cab-acc button{padding:3px 8px}}

@@ -199,8 +199,9 @@ def main():
     solo = {s.strip().zfill(3) for s in a.solo.split(',') if s.strip()}
     archivos = {f[:3]: os.path.join(a.docs, f) for f in os.listdir(a.docs) if re.match(r'^\d{3}_', f)}
     filas = leer_excel(a.excel)
-    os.makedirs(os.path.join(a.salida, 'docs'), exist_ok=True)
+    os.makedirs(a.salida, exist_ok=True)
     docs, units_main, units_n3, avisos = [], [], [], []
+    textos_por_nivel = {1: {}, 2: {}, 3: {}}
     for f in filas:
         nid = f'{f["n"]:03d}'
         if f['cita'].startswith('Excluido') or not f['nivel'] or f['nivel'] == '—':
@@ -222,8 +223,7 @@ def main():
                     fecha=f['fecha'], estatus=f['estatus'], nivel=nivel, cita=f['cita'], url=f['url'], modo=modo,
                     alias=sorted({norm(x).strip() for x in (f['alias'].split('|') + [f['corto'] or nombre, nombre]) if norm(x).strip()}), nu=len(units))
         docs.append(meta)
-        json.dump({'id': nid, 'u': units}, open(os.path.join(a.salida, 'docs', nid + '.json'), 'w', encoding='utf-8'),
-                  ensure_ascii=False, separators=(',', ':'))
+        textos_por_nivel[nivel][nid] = units
         destino = units_n3 if nivel == 3 else units_main
         for i, (et, cuerpo) in enumerate(units):
             for fr, txt in fracciones(cuerpo) if modo == 'art' else [('', cuerpo)]:
@@ -237,6 +237,12 @@ def main():
                 post[t] += [k, c]
         idx = dict(N=len(dl), avgdl=round(sum(dl) / max(1, len(dl)), 2), dl=dl, ref=ref, fx=fx, p=post)
         json.dump(idx, open(os.path.join(a.salida, nombre), 'w', encoding='utf-8'), separators=(',', ':'))
+    # Textos en 3 archivos (uno por nivel): permite subir todo el sitio a GitHub en una sola carga
+    for nv, mapa in textos_por_nivel.items():
+        json.dump(mapa, open(os.path.join(a.salida, f'textos-n{nv}.json'), 'w', encoding='utf-8'), ensure_ascii=False, separators=(',', ':'))
+    viejo = os.path.join(a.salida, 'docs')
+    if os.path.isdir(viejo):
+        shutil.rmtree(viejo)   # formato anterior (un archivo por documento)
     hoy = datetime.date.today().strftime('%d/%m/%Y')
     json.dump({'corte': hoy, 'docs': docs}, open(os.path.join(a.salida, 'docs.json'), 'w', encoding='utf-8'),
               ensure_ascii=False, separators=(',', ':'))
