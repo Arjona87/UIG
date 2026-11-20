@@ -4580,6 +4580,422 @@
      "u": "Pág. 182"
     }
    ]
+  },
+  {
+   "id": "presentacion",
+   "cat": "marco",
+   "modo": "ambos",
+   "q": "¿Me compartes la presentación «Marco normativo de las UIG» (PPTX, PPT y PDF)?",
+   "kw": "pptx ppt pdf presentacion diapositivas laminas charla 25n powerpoint descargar presentacion marco normativo uig",
+   "v": [
+    "pptx",
+    "ppt",
+    "presentacion",
+    "la presentacion",
+    "descargar la presentacion",
+    "diapositivas",
+    "diapositivas de la charla",
+    "presentacion del 25n",
+    "charla uig",
+    "me compartes la presentacion",
+    "power point"
+   ],
+   "intro": "Aquí está la presentación «Unidades de Igualdad de Género: fundamentos normativos y herramientas para la protección de las mujeres ante la violencia», de la Coordinación General Estratégica de Seguridad (25N, 2026), en tres formatos.",
+   "lista": [
+    "PPTX: para editarla en PowerPoint actual.",
+    "PPT: para versiones anteriores de PowerPoint.",
+    "PDF: para leerla o imprimirla en cualquier equipo."
+   ],
+   "cierre": "Temas: las UIG, el estándar normativo aplicable, el modelo de atención, estrategias, metas e indicadores, y el Asistente virtual.",
+   "facil": [
+    "Toca un botón para descargar la presentación.",
+    "Hay versión PowerPoint y versión PDF."
+   ],
+   "citas": [
+    {
+     "d": "155",
+     "u": "Láminas 1-2"
+    }
+   ],
+   "descargas": [
+    "pres_pptx",
+    "pres_ppt",
+    "pres_pdf"
+   ]
+  },
+  {
+   "id": "dh_que",
+   "cat": "marco",
+   "modo": "ambos",
+   "q": "¿Qué son los derechos humanos y sus garantías?",
+   "kw": "que son los derechos humanos garantias definicion dignidad humana titulares mecanismos de proteccion",
+   "v": [
+    "que son los derechos humanos",
+    "que son las garantias de los derechos humanos",
+    "diferencia entre derechos humanos y garantias"
+   ],
+   "intro": "La presentación institucional de la CGES los define así:",
+   "lista": [
+    "Derechos humanos: facultades y libertades de todas las personas, reconocidas por el sistema jurídico, basadas en la dignidad humana, que establecen obligaciones frente a la autoridad.",
+    "Sus cuatro elementos: titulares (todas las personas), reconocimiento (por el sistema jurídico), fundamento (la dignidad humana) y efecto (obligaciones frente a la autoridad).",
+    "Garantías: técnicas o mecanismos para proteger el goce, el disfrute o el ejercicio de los derechos humanos.",
+    "La Constitución reconoce a todas las personas los derechos humanos de la Constitución y de los tratados, y las garantías para su protección, cuyo ejercicio no puede restringirse ni suspenderse salvo en los casos que ella establece."
+   ],
+   "cierre": "Fuente complementaria: presentación institucional de la CGES (25N, 2026).",
+   "facil": [
+    "Los derechos humanos son de todas las personas.",
+    "Las garantías sirven para protegerlos."
+   ],
+   "citas": [
+    {
+     "d": "155",
+     "u": "Láminas 6-7"
+    },
+    {
+     "d": "021",
+     "u": "Artículo 1",
+     "det": "párrafo primero"
+    }
+   ]
+  },
+  {
+   "id": "dh_obligaciones",
+   "cat": "marco",
+   "modo": "ambos",
+   "q": "¿Qué obligaciones tienen las autoridades con los derechos humanos según el artículo 1° constitucional?",
+   "kw": "obligaciones autoridades derechos humanos articulo 1 constitucional promover respetar proteger garantizar prevenir investigar sancionar reparar pro persona universalidad",
+   "v": [
+    "que dice el articulo 1 de la constitucion",
+    "obligaciones del estado en derechos humanos",
+    "que es el principio pro persona"
+   ],
+   "intro": "Todas las autoridades, en el ámbito de sus competencias, deben:",
+   "lista": [
+    "Promover, respetar, proteger y garantizar los derechos humanos.",
+    "Hacerlo conforme a los principios de universalidad, interdependencia, indivisibilidad y progresividad.",
+    "Interpretar las normas de derechos humanos conforme a la Constitución y los tratados, favoreciendo siempre la protección más amplia (interpretación conforme y principio pro persona).",
+    "En consecuencia, el Estado debe prevenir, investigar, sancionar y reparar las violaciones a los derechos humanos, en los términos de la ley."
+   ],
+   "cierre": "La Constitución también prohíbe toda discriminación motivada, entre otras razones, por el género.",
+   "facil": [
+    "Toda autoridad debe respetar y proteger tus derechos.",
+    "Si los violan, el Estado debe investigar, sancionar y reparar."
+   ],
+   "citas": [
+    {
+     "d": "021",
+     "u": "Artículo 1",
+     "det": "párrafos segundo, tercero y quinto"
+    },
+    {
+     "d": "155",
+     "u": "Lámina 8"
+    }
+   ]
+  },
+  {
+   "id": "parametro",
+   "cat": "marco",
+   "modo": "servidora",
+   "q": "¿Qué es el parámetro de regularidad constitucional?",
+   "kw": "parametro de regularidad constitucional bloque de constitucionalidad constitucion material tratados jurisprudencia corte interamericana",
+   "v": [
+    "que es el bloque de constitucionalidad",
+    "que es la constitucion material"
+   ],
+   "intro": "También se le llama bloque de constitucionalidad o Constitución material. Según la presentación institucional, lo integran:",
+   "lista": [
+    "Los derechos humanos contenidos en la Constitución y en los tratados internacionales.",
+    "La jurisprudencia de los órganos competentes para aplicar tratados o convenios, incluida la Corte Interamericana de Derechos Humanos.",
+    "La jurisprudencia y la interpretación sobre derechos humanos del Poder Judicial de la Federación.",
+    "Las opiniones consultivas de los órganos de los tratados.",
+    "Las garantías y los principios de aplicación e interpretación."
+   ],
+   "cierre": "Fuente complementaria: presentación institucional de la CGES (25N, 2026).",
+   "facil": [
+    "Son todas las normas de derechos humanos que una autoridad debe tomar en cuenta."
+   ],
+   "citas": [
+    {
+     "d": "155",
+     "u": "Lámina 9"
+    },
+    {
+     "d": "021",
+     "u": "Artículo 1"
+    }
+   ]
+  },
+  {
+   "id": "pg_scjn",
+   "cat": "marco",
+   "modo": "servidora",
+   "q": "¿Qué ha dicho la Suprema Corte sobre la perspectiva de género?",
+   "kw": "suprema corte scjn perspectiva de genero jurisprudencia tesis juzgar con perspectiva metodo seis pasos tribunales categoria analitica",
+   "v": [
+    "juzgar con perspectiva de genero",
+    "metodo de seis pasos de la scjn",
+    "jurisprudencia de perspectiva de genero"
+   ],
+   "intro": "La presentación institucional de la CGES resume así los criterios de la Suprema Corte:",
+   "lista": [
+    "Es una «categoría analítica» para estudiar lo que social y culturalmente se ha entendido como «lo femenino» y «lo masculino» (tesis 1a. XXVII/2017).",
+    "Sirve para considerar las desventajas que, por género, pueden generar discriminación; pero hay que verificarlas, no presumirlas, sin estereotipos contra mujeres u hombres.",
+    "En tribunales es un método obligatorio de seis pasos (jurisprudencia 1a./J. 22/2016), que, según la presentación, el Pleno reiteró en 2026 para el acoso laboral jerárquico (P./J. 126/2026).",
+    "Para las UIG, la perspectiva de género es el método de análisis y la igualdad sustantiva el derecho que se busca hacer efectivo; ambas son pilares de su objeto."
+   ],
+   "cierre": "El texto de estas tesis no forma parte de esta base: se citan como las refiere la presentación. Fuente complementaria: presentación institucional de la CGES (25N, 2026).",
+   "facil": [
+    "La Corte pide revisar si el género pone a alguien en desventaja.",
+    "Los jueces deben seguir un método de seis pasos."
+   ],
+   "citas": [
+    {
+     "d": "155",
+     "u": "Lámina 3"
+    },
+    {
+     "d": "091",
+     "u": "Artículo 5",
+     "det": "fracción VI"
+    },
+    {
+     "d": "147",
+     "u": "Lineamiento Segundo"
+    }
+   ]
+  },
+  {
+   "id": "acciones_afirmativas",
+   "cat": "marco",
+   "modo": "servidora",
+   "q": "¿Qué son las acciones afirmativas y qué límites tienen?",
+   "kw": "acciones afirmativas acciones positivas igualacion positiva cuotas medidas temporales proporcionalidad limites trato preferente igualdad sustantiva",
+   "v": [
+    "que son las acciones afirmativas",
+    "que son las cuotas de genero",
+    "limites de las acciones afirmativas"
+   ],
+   "intro": "La ley las define como medidas de carácter temporal, correctivo, compensatorio o de promoción, para acelerar la igualdad sustantiva entre mujeres y hombres. La presentación institucional agrega, con base en la tesis 1a. XLIII/2014 de la SCJN:",
+   "lista": [
+    "Dos tipos: acciones positivas (políticas que otorgan bienes o servicios adicionales para alcanzar el mismo grado de oportunidades) e igualación positiva (cuotas o trato preferente a una persona del grupo).",
+    "Condiciones de validez: justificación (el trato desigual solo se admite para conseguir la igualdad de hecho), proporcionalidad y temporalidad.",
+    "Son para grupos que han sido objeto de discriminación recurrente y sistemática; el punto de partida son las categorías del artículo 1° constitucional, entre ellas el género.",
+    "No hay lista cerrada de medidas: la autoridad decide con amplio margen según las circunstancias."
+   ],
+   "cierre": "Para las UIG: antes de proponer una medida diferenciada, verificar que exista una desventaja acreditada y que la medida sea proporcional y temporal. La tesis es aislada: orienta, no obliga.",
+   "facil": [
+    "Son apoyos temporales para quien ha estado en desventaja.",
+    "Deben estar justificados y tener fin."
+   ],
+   "citas": [
+    {
+     "d": "091",
+     "u": "Artículo 5",
+     "det": "fracción I"
+    },
+    {
+     "d": "155",
+     "u": "Lámina 4"
+    }
+   ]
+  },
+  {
+   "id": "marco_uig",
+   "cat": "marco",
+   "modo": "servidora",
+   "q": "¿Qué normas forman el marco normativo de las UIG?",
+   "kw": "marco normativo uig normas aplicables leyes tratados cedaw belem do para constitucion leyes generales leyes estatales acuerdo normas tecnicas",
+   "v": [
+    "marco juridico de las unidades de igualdad",
+    "que leyes aplican a las uig"
+   ],
+   "intro": "La presentación institucional de la CGES lo organiza así:",
+   "lista": [
+    "Internacional: CEDAW y su Protocolo Facultativo; Convención de Belém do Pará.",
+    "Constitución federal: artículos 1 (derechos humanos y prohibición de discriminar por género), 4 (igualdad sustantiva y vida libre de violencias) y 21 (seguridad pública con perspectiva de género).",
+    "Constitución de Jalisco: artículos 4, 7 (derechos de la víctima) y 8 (seguridad pública).",
+    "Leyes generales: de Acceso de las Mujeres a una Vida Libre de Violencias; para la Igualdad Sustantiva; para la Prevención Social de la Violencia y la Delincuencia.",
+    "Leyes estatales: de Acceso de las Mujeres; para la Igualdad entre Mujeres y Hombres; para Promover la Igualdad y Eliminar la Discriminación; de Prevención Social; y la Ley Orgánica del OPD Red de Centros de Justicia para las Mujeres.",
+    "Acuerdo DIELAG ACU 084/2020 y sus Lineamientos; normas técnicas NOM-035-STPS-2018 y NMX-R-025-SCFI-2015."
+   ],
+   "cierre": "Fuente complementaria: presentación institucional de la CGES (25N, 2026).",
+   "facil": [
+    "Las UIG se basan en tratados, la Constitución, leyes y un acuerdo del Gobernador."
+   ],
+   "citas": [
+    {
+     "d": "155",
+     "u": "Lámina 10"
+    },
+    {
+     "d": "147",
+     "u": "Acuerdo Primero"
+    }
+   ],
+   "descargas": [
+    "pres_pptx",
+    "pres_ppt",
+    "pres_pdf"
+   ]
+  },
+  {
+   "id": "nom035",
+   "cat": "marco",
+   "modo": "servidora",
+   "q": "¿Qué relación tienen la NOM-035 y la NMX-R-025 con las UIG?",
+   "kw": "nom 035 nom-035-stps-2018 riesgo psicosocial violencia laboral nmx-r-025 norma igualdad laboral certificacion comite",
+   "v": [
+    "que es la nom 035",
+    "que es la nmx r 025",
+    "norma mexicana de igualdad laboral"
+   ],
+   "intro": "La presentación institucional las incluye como normas técnicas del marco de las UIG:",
+   "lista": [
+    "NOM-035-STPS-2018 (factores de riesgo psicosocial en el trabajo): pide una política de prevención de riesgos psicosociales y violencia laboral (5.1), mecanismos seguros y confidenciales de queja por violencia laboral (8.1 b) e identificación y análisis al menos cada dos años (7.9).",
+    "NMX-R-025-SCFI-2015 (igualdad laboral y no discriminación): con certificado vigente se acreditan numerales de la NOM-035.",
+    "Si la dependencia está certificada en la NMX-R-025, la persona titular de su Comité de Igualdad Laboral y No Discriminación se suma a la UIG."
+   ],
+   "cierre": "El texto de estas normas no forma parte de esta base; los numerales se citan como los refiere la presentación.",
+   "facil": [
+    "La NOM-035 pide prevenir la violencia laboral.",
+    "Si la oficina tiene la norma de igualdad laboral, su comité entra a la UIG."
+   ],
+   "citas": [
+    {
+     "d": "155",
+     "u": "Lámina 10"
+    },
+    {
+     "d": "147",
+     "u": "Lineamiento Octavo"
+    }
+   ]
+  },
+  {
+   "id": "derechos_atencion",
+   "cat": "marco",
+   "modo": "ambos",
+   "q": "¿Qué derechos tengo en cada etapa de la atención: ayuda, asistencia y reparación?",
+   "kw": "ayuda asistencia reparacion integral derechos etapas atencion victima mujer refugio orden de proteccion 4 horas profilaxis anticoncepcion de emergencia reubicacion telefono",
+   "v": [
+    "que derechos tengo como victima de violencia",
+    "que es ayuda asistencia y reparacion",
+    "en cuanto tiempo me dan una orden de proteccion"
+   ],
+   "intro": "La presentación institucional organiza el modelo de atención a víctimas mujeres en tres momentos:",
+   "lista": [
+    "Ayuda: protección para superar la necesidad inmediata después de los hechos. Incluye órdenes de protección de inmediato o a más tardar dentro de las 4 horas siguientes al conocimiento de los hechos; acceso a refugio; recursos económicos para tu seguridad y acondicionar tu vivienda; y, en caso de violación, profilaxis posexposición, anticoncepción de emergencia e interrupción legal del embarazo.",
+    "Asistencia: apoyo médico, psicológico, educativo, laboral, económico y social para reintegrarte a la vida cotidiana; por ejemplo, reubicación de domicilio, residencia o centro educativo.",
+    "Reparación integral: restablecer tus derechos, reparar el daño y asegurar la no repetición; toda medida debe tener un enfoque transformador del contexto y de la cultura discriminatoria.",
+    "También puede proporcionarse un teléfono móvil con contacto directo para auxilio policial."
+   ],
+   "cierre": "Si estás en peligro, llama al 911.",
+   "facil": [
+    "Primero te protegen.",
+    "Luego te apoyan para seguir con tu vida.",
+    "Al final se repara el daño.",
+    "Las órdenes de protección se dan en máximo 4 horas."
+   ],
+   "citas": [
+    {
+     "d": "155",
+     "u": "Lámina 12"
+    },
+    {
+     "d": "080",
+     "u": "Artículo 28"
+    },
+    {
+     "d": "080",
+     "u": "Artículo 34 Ter",
+     "det": "fracciones IV, V, VI, VIII y XIII"
+    },
+    {
+     "d": "080",
+     "u": "Artículo 26"
+    }
+   ],
+   "directorio": true
+  },
+  {
+   "id": "pedg_metas",
+   "cat": "marco",
+   "modo": "servidora",
+   "q": "¿Qué metas e indicadores tiene Jalisco sobre violencia contra las mujeres?",
+   "kw": "metas indicadores pedg plan estatal mujeres libres de violencia e2 feminicidio tasa percepcion inseguridad mujeres judicializadas violacion plan sectorial jalisco tranquilo y en paz",
+   "v": [
+    "indicadores de violencia contra las mujeres en jalisco",
+    "metas del plan estatal sobre violencia contra las mujeres",
+    "tasa de feminicidio jalisco meta"
+   ],
+   "intro": "Según la presentación institucional de la CGES, el Plan Estatal de Desarrollo y Gobernanza (tema especial E2, «Mujeres libres de violencia») y el Plan Sectorial de Seguridad «Jalisco tranquilo y en paz» 2024-2030 miden el avance así (cifras preliminares):",
+   "lista": [
+    "Víctimas de feminicidio por cada cien mil mujeres: 0.51 (preliminar, reportado al 31/10/2026). Meta 2026: 0.749; valor 2025: 0.82; meta 2030: 0.427.",
+    "Índice de percepción de inseguridad de mujeres mayores de 18 años: 38.9 (preliminar, al 10/09/2026). Meta 2026: 41.5; valor 2025: 42.72; tendencia deseable descendente.",
+    "Percepción sobre inseguridad en mujeres mayores de 18 años: 83.8 % (preliminar, al 10/09/2026). Meta 2026: 79.75; valor 2025: 82.5; meta 2030: 75.0 %.",
+    "Carpetas por violación con víctima mujer judicializadas: 20.4 % (preliminar, al 01/08/2026). Meta 2026: 19.05; valor 2025: 18.1; meta 2030: 35.00 %.",
+    "Carpetas por abuso sexual infantil con víctima mujer judicializadas: 29.07 % (preliminar, al 01/08/2026). Meta 2026: 18.6; valor 2025: 17.2; meta 2030: 22.00 %."
+   ],
+   "cierre": "Resultados esperados del tema E2: prevención de factores de riesgo, atención con un modelo estatal unificado, menor prevalencia de las violencias, acceso a la justicia y reparación, y normatividad armonizada. Las cifras son preliminares y pueden cambiar.",
+   "facil": [
+    "Jalisco mide la violencia contra las mujeres con varios indicadores.",
+    "Las cifras más recientes son preliminares."
+   ],
+   "citas": [
+    {
+     "d": "155",
+     "u": "Lámina 14"
+    },
+    {
+     "d": "155",
+     "u": "Lámina 15"
+    }
+   ],
+   "descargas": [
+    "pres_pptx",
+    "pres_ppt",
+    "pres_pdf"
+   ]
+  },
+  {
+   "id": "uig_plan_cges",
+   "cat": "marco",
+   "modo": "servidora",
+   "q": "¿Qué lugar tiene la UIG en el Plan Institucional de la Coordinación General Estratégica de Seguridad?",
+   "kw": "plan institucional cges coordinacion general estrategica de seguridad uig unidades administrativas foda alineacion pnd ods tarea pendiente sector seguridad",
+   "v": [
+    "uig en el plan institucional de la cges",
+    "tarea pendiente de la uig en seguridad"
+   ],
+   "intro": "Según la presentación institucional, que cita el Plan Institucional de la CGES (Periódico Oficial, 26 de febrero de 2026):",
+   "lista": [
+    "La UIG es una de las seis unidades administrativas de la CGES, junto con la Secretaría Técnica, las coordinaciones Jurídica y Administrativa, y las direcciones generales de Análisis y Políticas Públicas y de Gestión Transversal.",
+    "Su objeto es garantizar la institucionalización de la perspectiva de género, la igualdad sustantiva y los derechos humanos en el diseño y la ejecución de las políticas públicas de la CGES.",
+    "El diagnóstico FODA del plan reconoce como oportunidad el avance en la institucionalización de la perspectiva de género.",
+    "Alineación: PND (eje T1, igualdad sustantiva y derechos de las mujeres), ODS (metas 5.2 y 5c) y PEDG (igualdad sustantiva y acciones para mujeres, como su participación en los Consejos Ciudadanos de Seguridad).",
+    "Tarea pendiente: llevar la Unidad de Igualdad de Género a las dependencias agrupadas y entidades sectorizadas de la Coordinación."
+   ],
+   "cierre": "El Plan Institucional no forma parte de esta base: se cita como lo refiere la presentación. La integración de la UIG de la CGES está en su Reglamento Interno (Acuerdo DIELAG ACU 43/2021).",
+   "facil": [
+    "La UIG es una de las seis áreas de la Coordinación de Seguridad.",
+    "Falta crearla en las demás instituciones del sector."
+   ],
+   "citas": [
+    {
+     "d": "155",
+     "u": "Lámina 16"
+    },
+    {
+     "d": "148",
+     "u": "Pág. 27"
+    }
+   ],
+   "descargas": [
+    "pres_pptx",
+    "pres_ppt",
+    "pres_pdf"
+   ]
   }
  ]
 }

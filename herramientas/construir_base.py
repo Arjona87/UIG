@@ -331,6 +331,12 @@ def main():
             if off and modo == 'pag':
                 for u in units:
                     u[0] = re.sub(r'\d+', lambda m: str(int(m.group()) + off), u[0])
+            if cj.get('etiqueta') and modo == 'pag':   # presentaciones: «Lámina 3» en lugar de «Pág. 3»
+                et = cj['etiqueta']
+                for u in units:
+                    u[0] = re.sub(r'^Págs\. ', et + 's ', re.sub(r'^Pág\. ', et + ' ', u[0]))
+            if cj.get('excluir'):                         # apartados que no deben consultarse (p. ej., portada o demostración)
+                units[:] = [u for u in units if u[0] not in cj['excluir']]
             cambios = cj.get('unidades', {})
             for u in units:
                 if u[0] in cambios:

@@ -1,6 +1,6 @@
 /* Asistente UIG · Service worker: funciona sin conexión después de la primera visita.
    construir_base.py actualiza VERSION en cada reconstrucción para que los teléfonos descarguen la base nueva. */
-const VERSION = '202611191425';
+const VERSION = '202611201234';
 const CASCARA = 'uig-cascara-' + VERSION;
 const DATOS = 'uig-datos-' + VERSION;
 const ESENCIALES = ['./', 'index.html', 'styles.css', 'app.js', 'manifest.webmanifest', 'aviso-privacidad.html',
