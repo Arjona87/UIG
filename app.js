@@ -5,7 +5,7 @@
 'use strict';
 
 const CONFIG = {
-  version: '3.3',
+  version: '3.3A',
   inactividadMin: 10,         // la conversación se borra tras 10 minutos sin uso
   ia: false,                 // Fase 2: activar con intermediario (Cloudflare Worker) y API de Anthropic
   estadisticas: null,        // Fase 2: URL del contador anónimo (solo tema, perfil y fecha)
@@ -322,7 +322,6 @@ const DESCARGAS = {
   programa_pdf: { t: 'Programa de Prevención del Protocolo Cero', f: 'PDF', url: 'descargas/Protocolo_Cero_Programa_de_Prevencion.pdf' },
   pres_pptx: { t: 'Presentación «Marco normativo de las UIG» (25N)', f: 'PPTX', url: 'descargas/Charla_UIG_Marco_normativo_25N.pptx' },
   pres_ppt: { t: 'Presentación «Marco normativo de las UIG» (25N)', f: 'PPT', url: 'descargas/Charla_UIG_Marco_normativo_25N.ppt' },
-  pres_pdf: { t: 'Presentación «Marco normativo de las UIG» (25N)', f: 'PDF', url: 'descargas/Charla_UIG_Marco_normativo_25N.pdf' },
   protocolo_web: { t: 'Página oficial del Protocolo Cero (Secretaría de Igualdad Sustantiva)', f: 'Sitio web', url: 'https://igualdad.jalisco.gob.mx/acciones/protocolo-cero/', web: true }
 };
 function descargasHTML(f) {

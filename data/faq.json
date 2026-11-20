@@ -4585,8 +4585,8 @@
    "id": "presentacion",
    "cat": "marco",
    "modo": "ambos",
-   "q": "¿Me compartes la presentación «Marco normativo de las UIG» (PPTX, PPT y PDF)?",
-   "kw": "pptx ppt pdf presentacion diapositivas laminas charla 25n powerpoint descargar presentacion marco normativo uig",
+   "q": "¿Me compartes la presentación «Marco normativo de las UIG» (PPTX y PPT)?",
+   "kw": "pptx ppt presentacion diapositivas laminas charla 25n powerpoint descargar presentacion marco normativo uig",
    "v": [
     "pptx",
     "ppt",
@@ -4600,16 +4600,15 @@
     "me compartes la presentacion",
     "power point"
    ],
-   "intro": "Aquí está la presentación «Unidades de Igualdad de Género: fundamentos normativos y herramientas para la protección de las mujeres ante la violencia», de la Coordinación General Estratégica de Seguridad (25N, 2026), en tres formatos.",
+   "intro": "Aquí está la presentación «Unidades de Igualdad de Género: fundamentos normativos y herramientas para la protección de las mujeres ante la violencia», de la Coordinación General Estratégica de Seguridad (25N, 2026), en dos formatos de PowerPoint.",
    "lista": [
-    "PPTX: para editarla en PowerPoint actual.",
-    "PPT: para versiones anteriores de PowerPoint.",
-    "PDF: para leerla o imprimirla en cualquier equipo."
+    "PPTX: para PowerPoint actual.",
+    "PPT: para versiones anteriores de PowerPoint."
    ],
    "cierre": "Temas: las UIG, el estándar normativo aplicable, el modelo de atención, estrategias, metas e indicadores, y el Asistente virtual.",
    "facil": [
     "Toca un botón para descargar la presentación.",
-    "Hay versión PowerPoint y versión PDF."
+    "Hay dos versiones de PowerPoint."
    ],
    "citas": [
     {
@@ -4619,8 +4618,7 @@
    ],
    "descargas": [
     "pres_pptx",
-    "pres_ppt",
-    "pres_pdf"
+    "pres_ppt"
    ]
   },
   {
@@ -4835,8 +4833,7 @@
    ],
    "descargas": [
     "pres_pptx",
-    "pres_ppt",
-    "pres_pdf"
+    "pres_ppt"
    ]
   },
   {
@@ -4954,8 +4951,7 @@
    ],
    "descargas": [
     "pres_pptx",
-    "pres_ppt",
-    "pres_pdf"
+    "pres_ppt"
    ]
   },
   {
@@ -4993,8 +4989,7 @@
    ],
    "descargas": [
     "pres_pptx",
-    "pres_ppt",
-    "pres_pdf"
+    "pres_ppt"
    ]
   }
  ]
