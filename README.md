@@ -1,4 +1,4 @@
-# Asistente UIG · v3.3A
+# Asistente UIG · v3.3B
 
 App web instalable (PWA) de orientación normativa para Unidades de Igualdad de Género y ciudadanía en Jalisco.
 Cada respuesta cita **artículo, ordenamiento y fecha de última reforma**, y funciona **sin conexión** después de la primera visita.
@@ -6,7 +6,7 @@ Elaborada por CGES/DGAPP/AA.
 
 ## Despliegue desde cero (GitHub Pages, desde el navegador)
 1. En github.com: **+ → New repository**. Nombre: `UIG` (o el que prefieras). Visibilidad: **Public**. Crear.
-2. Descomprime `AsistenteUIG_v3.3A.zip` en tu computadora. Entra a la carpeta `AsistenteUIG`.
+2. Descomprime `AsistenteUIG_v3.3B.zip` en tu computadora. Entra a la carpeta `AsistenteUIG`.
 3. En el repositorio nuevo, toca **uploading an existing file**. Selecciona **todo el contenido** de la carpeta (archivos y carpetas: `assets`, `data`, `descargas`, `herramientas` y los archivos sueltos) y arrástralo. Son unos 40 archivos: entran en **una sola carga**.
 4. Presiona **Commit changes** y espera a que termine de subir (los archivos de `data` pesan unos 30 MB en total).
 5. Revisa que `index.html` quede en la **raíz** del repositorio, no dentro de una subcarpeta.
@@ -15,6 +15,11 @@ Elaborada por CGES/DGAPP/AA.
 
 > El archivo `.gitignore` empieza con punto y algunas computadoras lo ocultan. Si no se sube, no pasa nada.
 > Para probar en tu computadora antes de publicar: dentro de la carpeta, `python -m http.server 8000` y abre `http://localhost:8000`.
+
+## Qué trae la v3.3B
+- Al pedir «PPTX», «presentación», «PDF» o algo similar, el Asistente entrega solo dos PDF, en este orden: 1) CGES, «Unidades de Igualdad de Género: marco normativo (25N)»; 2) CPSEJ, «La perspectiva de género como eje de transformación en las instituciones de seguridad». Ya no se ofrecen PPTX ni PPT.
+- La presentación del CPSEJ entra a la base (#156) como fuente complementaria, con 8 preguntas nuevas en la categoría «Prevención y cultura institucional».
+- En las presentaciones, cada lámina se cita por separado.
 
 ## Qué trae la v3.3A
 - La presentación «Marco normativo de las UIG» se sustituye por su versión final y se ofrece solo en PPTX y PPT.
@@ -62,7 +67,7 @@ Elaborada por CGES/DGAPP/AA.
 | `herramientas/construir_base.py` | Reconstruye `data/` desde el Excel y la carpeta de documentos |
 | `herramientas/probar_base.py` | Prueba automática: citas, reconocimiento de las 100 preguntas y sus variantes, frases de riesgo |
 | `herramientas/verificar_vigencia.py` | Compara la fecha de última reforma impresa en cada PDF con la del Excel |
-| `descargas/` | Guía para crear una UIG (Word y PDF), Plan de Trabajo, Acuerdo 084/2020 los tres documentos del Protocolo Cero y la presentación «Marco normativo de las UIG» (PPTX y PPT) |
+| `descargas/` | Guía para crear una UIG (Word y PDF), Plan de Trabajo, Acuerdo 084/2020 los tres documentos del Protocolo Cero y las presentaciones de la CGES y del CPSEJ (PDF) |
 | `herramientas/correcciones/` | Correcciones documentadas: tablas transcritas fila por fila y numeración de páginas de recortes del Periódico Oficial |
 | `herramientas/guia/guia.js` | Genera la guía en Word (`node guia.js`, requiere el paquete `docx` de npm) |
 

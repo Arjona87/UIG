@@ -5,7 +5,7 @@
 'use strict';
 
 const CONFIG = {
-  version: '3.3A',
+  version: '3.3B',
   inactividadMin: 10,         // la conversación se borra tras 10 minutos sin uso
   ia: false,                 // Fase 2: activar con intermediario (Cloudflare Worker) y API de Anthropic
   estadisticas: null,        // Fase 2: URL del contador anónimo (solo tema, perfil y fecha)
@@ -320,8 +320,8 @@ const DESCARGAS = {
   protocolo_pdf: { t: 'Protocolo Cero (Periódico Oficial, 11/06/2019)', f: 'PDF oficial', url: 'descargas/Protocolo_Cero_POEJ_11-06-2019.pdf' },
   guia_pc_pdf: { t: 'Guía de aplicación del Protocolo Cero', f: 'PDF', url: 'descargas/Protocolo_Cero_Guia_de_Aplicacion.pdf' },
   programa_pdf: { t: 'Programa de Prevención del Protocolo Cero', f: 'PDF', url: 'descargas/Protocolo_Cero_Programa_de_Prevencion.pdf' },
-  pres_pptx: { t: 'Presentación «Marco normativo de las UIG» (25N)', f: 'PPTX', url: 'descargas/Charla_UIG_Marco_normativo_25N.pptx' },
-  pres_ppt: { t: 'Presentación «Marco normativo de las UIG» (25N)', f: 'PPT', url: 'descargas/Charla_UIG_Marco_normativo_25N.ppt' },
+  pres_cges: { t: '1. CGES · Unidades de Igualdad de Género: marco normativo (25N)', f: 'PDF', url: 'descargas/CGES_Unidades_de_Igualdad_de_Genero_Marco_normativo_25N.pdf' },
+  pres_cpsej: { t: '2. CPSEJ · La perspectiva de género como eje de transformación', f: 'PDF', url: 'descargas/CPSEJ_Perspectiva_de_genero_eje_de_transformacion.pdf' },
   protocolo_web: { t: 'Página oficial del Protocolo Cero (Secretaría de Igualdad Sustantiva)', f: 'Sitio web', url: 'https://igualdad.jalisco.gob.mx/acciones/protocolo-cero/', web: true }
 };
 function descargasHTML(f) {
@@ -481,7 +481,7 @@ function mostrarRuta() {
   });
 }
 const CATS = [['uig', 'Unidades de Igualdad de Género'], ['adonde', 'A dónde dirigirme'], ['tipos', 'Tipos y modalidades de violencia'], ['proteccion', 'Protección y seguridad'],
-  ['protocolo', 'Protocolo Cero: acoso sexual en el gobierno'], ['denuncia', 'Denuncia y proceso'], ['derechos', 'Derechos y reparación'], ['desaparicion', 'Desaparición de personas'], ['servidoras', 'Para servidoras y servidores públicos'], ['marco', 'Marco normativo, derechos humanos e indicadores']];
+  ['protocolo', 'Protocolo Cero: acoso sexual en el gobierno'], ['denuncia', 'Denuncia y proceso'], ['derechos', 'Derechos y reparación'], ['desaparicion', 'Desaparición de personas'], ['servidoras', 'Para servidoras y servidores públicos'], ['marco', 'Marco normativo, derechos humanos e indicadores'], ['prevencion', 'Prevención y cultura institucional']];
 function mostrarTodas() {
   const lista = E.faq.filter(f => !(E.modo === 'ciudadania' && f.modo === 'servidora'));
   burbuja(`<span class="etq">Preguntas frecuentes</span><h2>${lista.length} preguntas por tema</h2>

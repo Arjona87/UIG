@@ -4585,40 +4585,51 @@
    "id": "presentacion",
    "cat": "marco",
    "modo": "ambos",
-   "q": "¿Me compartes la presentación «Marco normativo de las UIG» (PPTX y PPT)?",
-   "kw": "pptx ppt presentacion diapositivas laminas charla 25n powerpoint descargar presentacion marco normativo uig",
+   "q": "¿Me compartes las presentaciones sobre las Unidades de Igualdad de Género?",
+   "kw": "pptx ppt pdf presentacion presentaciones diapositivas laminas charla 25n powerpoint descargar presentaciones material cges cpsej",
    "v": [
     "pptx",
     "ppt",
+    "pdf",
     "presentacion",
+    "presentaciones",
     "la presentacion",
+    "las presentaciones",
     "descargar la presentacion",
+    "descargar las presentaciones",
     "diapositivas",
     "diapositivas de la charla",
     "presentacion del 25n",
     "charla uig",
     "me compartes la presentacion",
-    "power point"
+    "power point",
+    "material de la charla",
+    "presentaciones en pdf",
+    "laminas"
    ],
-   "intro": "Aquí está la presentación «Unidades de Igualdad de Género: fundamentos normativos y herramientas para la protección de las mujeres ante la violencia», de la Coordinación General Estratégica de Seguridad (25N, 2026), en dos formatos de PowerPoint.",
+   "intro": "Aquí están las presentaciones en PDF, en este orden:",
    "lista": [
-    "PPTX: para PowerPoint actual.",
-    "PPT: para versiones anteriores de PowerPoint."
+    "1. CGES · «Unidades de Igualdad de Género: fundamentos normativos y herramientas para la protección de las mujeres ante la violencia» (marco normativo, 25N). Coordinación General Estratégica de Seguridad, 18 láminas.",
+    "2. CPSEJ · «La perspectiva de género como eje de transformación en las instituciones de seguridad». Centro de Prevención Social del Estado de Jalisco, 23 de noviembre de 2026, 13 láminas."
    ],
-   "cierre": "Temas: las UIG, el estándar normativo aplicable, el modelo de atención, estrategias, metas e indicadores, y el Asistente virtual.",
+   "cierre": "Las dos se descargan también sin internet.",
    "facil": [
-    "Toca un botón para descargar la presentación.",
-    "Hay dos versiones de PowerPoint."
+    "Toca un botón para descargar cada presentación en PDF.",
+    "Primero la de la CGES y después la del Centro de Prevención Social."
    ],
    "citas": [
     {
      "d": "155",
-     "u": "Láminas 1-2"
+     "u": "Lámina 1"
+    },
+    {
+     "d": "156",
+     "u": "Lámina 1"
     }
    ],
    "descargas": [
-    "pres_pptx",
-    "pres_ppt"
+    "pres_cges",
+    "pres_cpsej"
    ]
   },
   {
@@ -4647,7 +4658,11 @@
    "citas": [
     {
      "d": "155",
-     "u": "Láminas 6-7"
+     "u": "Lámina 6"
+    },
+    {
+     "d": "155",
+     "u": "Lámina 7"
     },
     {
      "d": "021",
@@ -4832,8 +4847,7 @@
     }
    ],
    "descargas": [
-    "pres_pptx",
-    "pres_ppt"
+    "pres_cges"
    ]
   },
   {
@@ -4950,8 +4964,7 @@
     }
    ],
    "descargas": [
-    "pres_pptx",
-    "pres_ppt"
+    "pres_cges"
    ]
   },
   {
@@ -4988,8 +5001,266 @@
     }
    ],
    "descargas": [
-    "pres_pptx",
-    "pres_ppt"
+    "pres_cges"
+   ]
+  },
+  {
+   "id": "cpsej_dentro",
+   "cat": "prevencion",
+   "modo": "ambos",
+   "q": "¿Por qué la prevención de las violencias también debe empezar dentro de las instituciones?",
+   "kw": "prevencion empieza dentro de las instituciones hacia el interior hacia el exterior congruencia practicas internas entornos laborales seguros cultura organizacional",
+   "v": [
+    "la prevencion tambien comienza en casa",
+    "prevencion hacia el interior de la institucion"
+   ],
+   "intro": "La prevención social de las violencias tiene dos dimensiones inseparables:",
+   "lista": [
+    "Hacia el exterior: comunidades libres de violencia, relaciones igualitarias, protección de derechos y confianza en las instituciones.",
+    "Hacia el interior: entornos laborales seguros, relaciones respetuosas, igualdad de oportunidades y una cultura organizacional libre de discriminación y violencia.",
+    "Una institución preventiva también debe ser congruente con sus prácticas internas. La prevención comienza cuando se transforman las condiciones que permiten que ocurra la violencia, no solo cuando se interviene ante ella."
+   ],
+   "cierre": "Fuente complementaria: presentación del Centro de Prevención Social del Estado de Jalisco (23/11/2026).",
+   "facil": [
+    "Para prevenir la violencia afuera, la institución también debe evitarla adentro."
+   ],
+   "citas": [
+    {
+     "d": "156",
+     "u": "Lámina 3"
+    },
+    {
+     "d": "156",
+     "u": "Lámina 11"
+    }
+   ],
+   "descargas": [
+    "pres_cges",
+    "pres_cpsej"
+   ]
+  },
+  {
+   "id": "cpsej_pg_institucion",
+   "cat": "prevencion",
+   "modo": "servidora",
+   "q": "¿Para qué sirve la perspectiva de género dentro de una institución de seguridad?",
+   "kw": "para que sirve la perspectiva de genero en una institucion de seguridad herramienta de analisis y transformacion desigualdades barreras practicas institucionales",
+   "v": [
+    "perspectiva de genero en las instituciones de seguridad",
+    "como se aplica la perspectiva de genero en la institucion"
+   ],
+   "intro": "Es una herramienta de análisis y de transformación. En una institución:",
+   "lista": [
+    "Permite identificar desigualdades en las relaciones entre mujeres y hombres.",
+    "Hace visibles los estereotipos y roles asignados socialmente.",
+    "Analiza relaciones asimétricas de poder.",
+    "Identifica barreras para el acceso a oportunidades y derechos.",
+    "Permite reconocer prácticas institucionales que reproducen discriminación.",
+    "No se trata de otorgar privilegios, sino de garantizar condiciones de igualdad."
+   ],
+   "cierre": "Fuente complementaria: presentación del Centro de Prevención Social del Estado de Jalisco (23/11/2026). La definición legal de perspectiva de género está en la respuesta «¿Qué es la perspectiva de género?».",
+   "facil": [
+    "Sirve para ver dónde hay desigualdad entre mujeres y hombres en el trabajo.",
+    "No da privilegios: busca igualdad."
+   ],
+   "citas": [
+    {
+     "d": "156",
+     "u": "Lámina 4"
+    }
+   ]
+  },
+  {
+   "id": "cpsej_estereotipos",
+   "cat": "prevencion",
+   "modo": "ambos",
+   "q": "¿Cómo influyen los estereotipos de género en una institución?",
+   "kw": "estereotipos de genero institucion trabajo asignacion de tareas ascensos liderazgo capacitacion autoridad mujeres operativas cuidados hombres fuertes",
+   "v": [
+    "que son los estereotipos de genero en el trabajo",
+    "ejemplos de estereotipos de genero en la policia",
+    "estereotipos en instituciones de seguridad"
+   ],
+   "intro": "Los estereotipos de género también organizan las instituciones. Pueden influir en:",
+   "lista": [
+    "La asignación de tareas y responsabilidades.",
+    "El reconocimiento de capacidades y liderazgos.",
+    "El acceso a capacitación y ascensos.",
+    "La participación en la toma de decisiones.",
+    "La percepción de autoridad y competencia.",
+    "Ejemplos: «Las mujeres son menos aptas para las tareas operativas»; «Los hombres deben ser siempre fuertes y no mostrar vulnerabilidad»; «Las responsabilidades de cuidado corresponden principalmente a las mujeres»; «El liderazgo debe ejercerse mediante la imposición y la autoridad»."
+   ],
+   "cierre": "Fuente complementaria: presentación del Centro de Prevención Social del Estado de Jalisco (23/11/2026).",
+   "facil": [
+    "Son ideas fijas sobre lo que deben hacer mujeres y hombres.",
+    "Pueden quitarle a alguien un ascenso o una tarea."
+   ],
+   "citas": [
+    {
+     "d": "156",
+     "u": "Lámina 5"
+    }
+   ]
+  },
+  {
+   "id": "cpsej_poder",
+   "cat": "prevencion",
+   "modo": "ambos",
+   "q": "¿Cuándo el ejercicio del poder se vuelve un problema dentro de una organización?",
+   "kw": "poder relaciones de poder jerarquias abuso de autoridad intimidacion amenazas humillacion represalias exclusion obstaculizar desarrollo profesional rendicion de cuentas",
+   "v": [
+    "abuso de poder en el trabajo",
+    "mi jefe abusa de su autoridad",
+    "represalias por denunciar en el trabajo"
+   ],
+   "intro": "Las relaciones de poder no son negativas por sí mismas. El problema aparece cuando el poder se ejerce sin límites, controles o mecanismos de rendición de cuentas. Se nota en:",
+   "lista": [
+    "Intimidación o amenazas.",
+    "Descalificación y humillación.",
+    "Exclusión de espacios de decisión.",
+    "Uso de jerarquías para obtener beneficios.",
+    "Represalias ante la denuncia o el desacuerdo.",
+    "Obstaculización del desarrollo profesional."
+   ],
+   "cierre": "La autoridad debe ejercerse con responsabilidad, respeto y apego a los derechos humanos. Si vives hostigamiento sexual en el Gobierno de Jalisco, consulta la ruta del Protocolo Cero. Fuente complementaria: presentación del Centro de Prevención Social del Estado de Jalisco (23/11/2026).",
+   "facil": [
+    "Mandar no es malo.",
+    "Es un problema cuando alguien amenaza, humilla o castiga por denunciar."
+   ],
+   "citas": [
+    {
+     "d": "156",
+     "u": "Lámina 6"
+    }
+   ]
+  },
+  {
+   "id": "cpsej_violencias",
+   "cat": "prevencion",
+   "modo": "ambos",
+   "q": "¿Qué violencias se pueden reproducir en el trabajo sin advertirlo?",
+   "kw": "violencias normalizadas sin advertirlo practicas cotidianas trabajo discriminacion violencia psicologica laboral acoso hostigamiento digital normaliza",
+   "v": [
+    "violencias normalizadas en el trabajo",
+    "que violencias hay en las oficinas"
+   ],
+   "intro": "Las violencias también pueden estar presentes en las prácticas cotidianas:",
+   "lista": [
+    "Discriminación: limitar oportunidades por razón de género.",
+    "Violencia psicológica: humillar, intimidar o descalificar.",
+    "Violencia laboral: obstaculizar el desarrollo profesional o generar condiciones hostiles.",
+    "Acoso y hostigamiento sexual: conductas de naturaleza sexual no consentidas, en los términos establecidos por la normativa aplicable.",
+    "Violencia digital: difundir mensajes, imágenes o contenidos para intimidar, acosar o vulnerar a una persona."
+   ],
+   "cierre": "Lo que se normaliza también se reproduce. Las definiciones legales de cada tipo están en las respuestas sobre tipos y modalidades de violencia. Fuente complementaria: presentación del Centro de Prevención Social del Estado de Jalisco (23/11/2026).",
+   "facil": [
+    "Humillar, excluir o acosar también es violencia.",
+    "Si se vuelve normal, se repite."
+   ],
+   "citas": [
+    {
+     "d": "156",
+     "u": "Lámina 7"
+    }
+   ]
+  },
+  {
+   "id": "cpsej_uig_cultura",
+   "cat": "prevencion",
+   "modo": "servidora",
+   "q": "¿Cómo pueden las Unidades de Género transformar la cultura organizacional?",
+   "kw": "unidades de genero agentes de transformacion cultura organizacional sensibilizacion formacion brechas igualdad sustantiva conmemoracion transformacion",
+   "v": [
+    "uig como agentes de transformacion",
+    "como cambia la uig la cultura de la institucion"
+   ],
+   "intro": "Las Unidades de Género pueden contribuir a transformar la cultura organizacional mediante:",
+   "lista": [
+    "Sensibilización y formación continua.",
+    "Identificación de brechas y desigualdades.",
+    "Impulso de medidas de igualdad sustantiva.",
+    "Promoción de ambientes laborales libres de violencia.",
+    "Seguimiento a políticas y acciones institucionales.",
+    "Vinculación y coordinación con las instancias competentes."
+   ],
+   "cierre": "La idea central: pasar de la conmemoración a la transformación. Las funciones formales de las UIG están en el Acuerdo DIELAG ACU 084/2020 y en su Plan de Trabajo. Fuente complementaria: presentación del Centro de Prevención Social del Estado de Jalisco (23/11/2026).",
+   "facil": [
+    "La UIG ayuda a que la institución cambie sus costumbres hacia la igualdad."
+   ],
+   "citas": [
+    {
+     "d": "156",
+     "u": "Lámina 8"
+    },
+    {
+     "d": "147",
+     "u": "Lineamiento Sexto"
+    }
+   ]
+  },
+  {
+   "id": "cpsej_cinco_lineas",
+   "cat": "prevencion",
+   "modo": "servidora",
+   "q": "¿Cuáles son las cinco líneas de acción para pasar de la sensibilización a la transformación?",
+   "kw": "cinco lineas de accion sensibilizacion transformacion diagnosticar sensibilizar formar revisar practicas prevenir atender evaluar prevencion institucional",
+   "v": [
+    "cinco lineas de accion de la prevencion institucional",
+    "como pasar de la sensibilizacion a la transformacion",
+    "pasos para fortalecer la prevencion institucional"
+   ],
+   "intro": "Para fortalecer la prevención institucional:",
+   "lista": [
+    "1. Diagnosticar: identificar brechas, riesgos y prácticas discriminatorias.",
+    "2. Sensibilizar y formar: fortalecer conocimientos y capacidades del personal.",
+    "3. Revisar las prácticas: analizar procesos de selección, capacitación, promoción y toma de decisiones.",
+    "4. Prevenir y atender: fortalecer mecanismos de orientación, denuncia, atención y seguimiento.",
+    "5. Evaluar: medir avances y ajustar las acciones institucionales."
+   ],
+   "cierre": "Sin diagnóstico no hay transformación sostenible. Fuente complementaria: presentación del Centro de Prevención Social del Estado de Jalisco (23/11/2026).",
+   "facil": [
+    "Primero se revisa qué pasa, luego se capacita, se cambian prácticas, se atiende y se evalúa."
+   ],
+   "citas": [
+    {
+     "d": "156",
+     "u": "Lámina 9"
+    }
+   ],
+   "descargas": [
+    "pres_cges",
+    "pres_cpsej"
+   ]
+  },
+  {
+   "id": "cpsej_corresponsabilidad",
+   "cat": "prevencion",
+   "modo": "servidora",
+   "q": "¿Qué le toca a cada área en la prevención de las violencias dentro de la institución?",
+   "kw": "corresponsabilidad responsabilidad compartida personas titulares mandos areas juridicas organos internos de control areas administrativas operativas todo el personal",
+   "v": [
+    "responsabilidad compartida en la prevencion",
+    "que le toca a los mandos en la igualdad"
+   ],
+   "intro": "La transformación institucional requiere corresponsabilidad:",
+   "lista": [
+    "Personas titulares: liderazgo y compromiso institucional.",
+    "Mandos: ejercicio responsable de la autoridad.",
+    "Áreas administrativas y operativas: prácticas de igualdad y respeto.",
+    "Áreas jurídicas: revisión y fortalecimiento de la normativa interna y protocolos institucionales con perspectiva de género.",
+    "Órganos internos de control: atender quejas por violencia de género, acoso y discriminación, con apego a los principios de igualdad y no discriminación.",
+    "Unidades de Género: articulación, asesoría y seguimiento.",
+    "Todo el personal: corresponsabilidad en la construcción de ambientes libres de violencia."
+   ],
+   "cierre": "La igualdad no es una tarea exclusiva de las mujeres ni de las Unidades de Género. Fuente complementaria: presentación del Centro de Prevención Social del Estado de Jalisco (23/11/2026).",
+   "facil": [
+    "Todas las personas de la institución tienen una parte en prevenir la violencia."
+   ],
+   "citas": [
+    {
+     "d": "156",
+     "u": "Lámina 10"
+    }
    ]
   }
  ]

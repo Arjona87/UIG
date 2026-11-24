@@ -257,10 +257,11 @@ def segmentar(texto, tipo):
                         units.append([et, cuerpo])
                 return 'art', units
     units, buf, ini = [], '', 1
+    minimo = 1 if tipo.startswith('Presentación') else 400   # en presentaciones, cada lámina es su propia cita
     for i, p in enumerate(pags):
         if not buf: ini = i + 1
         buf += ('\n' if buf else '') + p
-        if len(buf.strip()) >= 400 or i == len(pags) - 1:
+        if len(buf.strip()) >= minimo or i == len(pags) - 1:
             if buf.strip():
                 etiqueta = f'Pág. {ini}' if ini == i + 1 else f'Págs. {ini}-{i + 1}'
                 units.append([etiqueta, parrafos(buf)])
